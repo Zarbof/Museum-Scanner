@@ -1,27 +1,6 @@
 import React, { Component } from 'react'
 import QRScan from 'qrscan'
 
-<<<<<<< HEAD
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Edit <code>src/App.js</code> I WISH THERE WOULD BE A THUNDERSTORM!!!!!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-=======
 class App extends Component {
 
     constructor(props) {
@@ -52,7 +31,6 @@ class App extends Component {
             </React.Fragment>
         )
     }
->>>>>>> 582c9310ff20f4fd35d9314c55874bf5809a3b43
 }
 
 export default App;
