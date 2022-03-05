@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import QRScan from 'qrscan'
-
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Button, Alert, Nav, Container, Navbar } from 'react-bootstrap'
 
 class App extends Component {
 
