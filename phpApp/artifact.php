@@ -50,6 +50,8 @@ catch(PDOException $e){
 
 ?>
 	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link href='//fonts.googleapis.com/css?family=Forum|Open+Sans:600,regular,italic,700&amp;subset=latin' rel='stylesheet' type='text/css'>
 		<meta charset="UTF-8" />
 		<title>Artifact Info</title>
 		<link rel="stylesheet" href="styles.css" />
