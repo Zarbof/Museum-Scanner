@@ -68,11 +68,9 @@ catch(PDOException $e){
 
 			<!--Title and Form-->
 			<article class="content">
-				<header class="title">
-					<h2><?php echo "$entryName"; ?></h2>
-					<p><br><?php echo "$entryDescription"; ?></p>
-				</header>
 				<section>
+				<h2><?php echo "$entryName"; ?></h2>
+				<p><br><?php echo "$entryDescription"; ?></p>
 
 				<!-- Display Artifact Info and Media -->
 				<?php
@@ -96,14 +94,8 @@ catch(PDOException $e){
 			    		$location = $tuple["location"];
 			    		$mediaDescription = $tuple["description"];
 			    		echo '<br>';
-			    		for ($x = 0; $x < 50; $x++){
-			    			echo '&nbsp;';
-			    		}
 			    		echo '<img src="'.$location.$mediaName.'" width=auto height=300 ><br><br>';
 			    		if ($mediaDescription != "NULL"){
-			    			for ($x = 0; $x < 50; $x++){
-			    				echo '&nbsp;';
-			    			}
 			    			echo "$mediaDescription<br>";
 			    		};
 					}

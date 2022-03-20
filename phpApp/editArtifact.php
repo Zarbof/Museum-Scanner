@@ -5,7 +5,6 @@
         header("Location: museumLogin.php");
     }
 
-    include('./lib/full/qrlib.php');
 ?>
 
 <!DOCTYPE html>
@@ -86,8 +85,7 @@ catch(PDOException $e){
 		            <a href="editArtifact.php?ID=<?php echo "$artifactID"; ?>&code=true" class="strong-button small">Generate new QR code for artifact</a>
 		            <?php
 			            if (isset($_GET['code'])){
-			            	QRcode::png('http://google.com', 'test.png', 'L', 4);
-			            	echo '<br><br><img src="./test.png" width=auto height=auto >';
+			            	echo '<br><br><img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=http%3A%2F%2Flelooska.pugetsound.edu%2FphpApp%2Fartifact.php%3FID='.$artifactID.'&choe=UTF-8" title = Link to Google.com" />';
 			            }
 		            ?>
 
