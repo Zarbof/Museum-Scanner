@@ -143,8 +143,6 @@ catch(PDOException $e){
 		                }
 	           		?>
 
-				</header>
-
 				<!-- Display Artifact Media -->
 				<?php
 
@@ -161,20 +159,15 @@ catch(PDOException $e){
 				    // select media related to this artifact
 			        $results = $db->query("SELECT * FROM Media WHERE entryID = $artifactID");
 			        $t = $results->fetchAll(PDO::FETCH_ASSOC);
+				echo '<br>';
 
 			        foreach($t as $tuple) {
 			    		$mediaName = $tuple["mediaName"];
 			    		$location = $tuple["location"];
 			    		$mediaDescription = $tuple["description"];
 			    		echo '<br>';
-			    		for ($x = 0; $x < 50; $x++){
-			    			echo '&nbsp;';
-			    		}
 			    		echo '<img src="'.$location.$mediaName.'" width=auto height=300 > <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'">Remove media</a><br><br>';
 			    		echo '<form action="edit.php?mediaID='.$tuple['mediaID'].'" method="post">';
-			    		for ($x = 0; $x < 50; $x++){
-			    			echo '&nbsp;';
-			    		}
 						echo '<textarea name="mediaDescription" rows="10" cols="89">';
 						if ($mediaDescription != "NULL"){ echo "$mediaDescription"; };
 						echo '</textarea>
@@ -191,6 +184,8 @@ catch(PDOException $e){
 				}
 
 				?>
+
+				</header>
 
 			</article>
 		</div>
