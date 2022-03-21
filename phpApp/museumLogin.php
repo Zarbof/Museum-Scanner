@@ -16,7 +16,7 @@ session_start();
 			<header class="menu-container">
 				<h1 class="logo">
 					<img src="./media/salmon.png" width=auto height=100 >
-					<a class="logo-link" href="./artifactList.php">Lelooska Museum Login</a>
+					<a class="logo-link" href="./nav.php">Lelooska Museum</a>
 				</h1>
 			</header>
 

@@ -28,6 +28,10 @@
 	                    <ul>
 	                        <p>Scan new QR code<p>
 	                    <ul>
+							<br>
+							<a href="http://lelooska.org">Lelooska Foundation main website</a>
+							<br>
+							<a href="http://lelooska.org/donate/"> Donate to the Lelooska Foundation</a>
 	                </nav>
 	                </p>
            		</section>
