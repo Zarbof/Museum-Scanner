@@ -34,12 +34,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
             <h1>Application</h1>
             <BrowserRouter>
             <Routes>
-                <Route path="/home">
-                <ArtifactBody />
-                </Route>
-                <Route path="/plantbook">
-                <PlantBook />
-                </Route>
+                <Route path="home" element={<ArtifactBody />} />
+
             </Routes>
             </BrowserRouter>
         </div>
