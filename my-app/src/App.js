@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Alert, Nav, Container, Navbar } from 'react-bootstrap'
 
-import ArtifactBody from './components/ArtifactBody';
-import ArtifactHistory from './components/ArtifactHistory';
-import PlantBook from './components/PlantBook'
+import ArtifactHomeApp from './components/ArtifactHomeApp';
+import PlantBookApp from './components/PlantBookApp'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -34,7 +33,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
             <h1>Application</h1>
             <BrowserRouter>
             <Routes>
-                <Route path="home" element={<ArtifactBody />} />
+                <Route path="home" element={<ArtifactHomeApp />} />
+                <Route path="plantbook" element={<PlantBookApp />} />
 
             </Routes>
             </BrowserRouter>
