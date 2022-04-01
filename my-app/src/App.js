@@ -4,26 +4,22 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Alert, Nav, Container, Navbar } from 'react-bootstrap'
 
 class App extends Component {
-
-    constructor(props) {
-        super(props)
-        this.state = { value: '', watching: false }
-        this.onFind = this.onFind.bind(this)
-    }
-
-    onFind(value) {
-        this.setState({ value, watching: false })
-    }
-
+    // handleClick = () => {
+    //     console.log('clicked');
+    // }
+    handleClick = (e) => {
+        e.preventDefault();
+        console.log('The link was clicked.');
+      };
+       
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <button>Click me bitch</button>
-
-                </header>
-            </div>
-        )
+            <a href="wwww.google.com" onClick={this.handleClick}>
+              Click me
+            </a>
+          );
+          
+        
     }
 }
 
