@@ -12,7 +12,7 @@ class App extends Component {
     //     console.log('The link was clicked.');
     //   };
     handleClick() {
-        window.location.assign('http://google.com');
+        window.location.assign('http://lelooska.pugetsound.edu/');
     }
     render() {
         return (
