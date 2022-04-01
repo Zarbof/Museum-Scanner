@@ -14,7 +14,7 @@ class App extends Component {
        
     render() {
         return (
-            <a href="wwww.google.com" onClick={this.handleClick}>
+            <a href="www.google.com" onClick={this.handleClick}>
               Click me
             </a>
           );
