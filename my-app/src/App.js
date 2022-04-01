@@ -16,7 +16,7 @@ class App extends Component {
     }
     render() {
         return (
-            <button onClick = {this.handleClick.bind(this)} />
+            <button onClick = {this.handleClick.bind(this)} Click me/>
           );
           
         
