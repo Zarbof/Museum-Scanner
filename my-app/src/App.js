@@ -7,18 +7,16 @@ class App extends Component {
     // handleClick = () => {
     //     console.log('clicked');
     // }
-    handleClick = (e) => {
-        e.preventDefault();
-        console.log('The link was clicked.');
-      };
-       
+    // handleClick = (e) => {
+    //     e.preventDefault();
+    //     console.log('The link was clicked.');
+    //   };
+    handleClick() {
+        window.location.assign('http://google.com');
+    }
     render() {
         return (
-
-            <a href="../wwww.google.com" onClick={this.handleClick}>
-
-              Click me
-            </a>
+            <button onClick = {this.handleClick.bind(this)} />
           );
           
         
