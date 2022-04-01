@@ -6,7 +6,7 @@ import ArtifactBody from './components/ArtifactBody';
 import ArtifactHistory from './components/ArtifactHistory';
 import PlantBook from './components/PlantBook'
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 // class App extends Component {
@@ -33,14 +33,14 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
         <div className="wrapper">
             <h1>Application</h1>
             <BrowserRouter>
-            <Switch>
+            <Routes>
                 <Route path="/home">
                 <ArtifactBody />
                 </Route>
                 <Route path="/plantbook">
                 <PlantBook />
                 </Route>
-            </Switch>
+            </Routes>
             </BrowserRouter>
         </div>
         );
