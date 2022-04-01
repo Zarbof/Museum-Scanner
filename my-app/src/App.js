@@ -17,20 +17,11 @@ class App extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                <h1>QRScan Demo</h1>
-                {this.state.watching
-                    ? (
-                        <QRScan onFind={this.onFind} />
-                    )
-                    : (
-                        <React.Fragment>
-                            <button onClick={() => this.setState({ watching: true })}>Scan</button>
-                            <h4>value: {this.state.value}</h4>
-                        </React.Fragment>
-                    )
-                }
-            </React.Fragment>
+            <div className="App">
+                <header className="App-header">
+
+                </header>
+            </div>
         )
     }
 }
