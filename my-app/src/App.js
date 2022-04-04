@@ -30,8 +30,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
     function App() {
         return (
         <div className="wrapper">
-            <h1>Application</h1>
             <BrowserRouter>
+                <Navbar bg="light" expand="lg">
+                    <Container>
+                        <Navbar.Brand href="#home">Lelooska</Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link href="#home">Plant Book</Nav.Link>
+                            <Nav.Link href="#link">Admin Login</Nav.Link>
+                        </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
             <Routes>
                 <Route path="home" element={<ArtifactHomeApp />} />
                 <Route path="plantbook" element={<PlantBookApp />} />
