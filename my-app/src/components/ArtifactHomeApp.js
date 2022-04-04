@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function ArtifactHomeApp() {
   return(
     <div>
-      <Button>Words</Button>
 
       <h2>Artifact Body!!</h2>
       
