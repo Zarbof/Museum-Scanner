@@ -37,8 +37,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Plant Book</Nav.Link>
-                            <Nav.Link href="#link">Admin Login</Nav.Link>
+                            <Nav.Link href="plantbook">Plant Book</Nav.Link>
+                            <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
                         </Nav>
                         </Navbar.Collapse>
                     </Container>
