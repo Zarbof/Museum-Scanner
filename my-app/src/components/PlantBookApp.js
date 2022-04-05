@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordionm, Image } from 'react-bootstrap'
+import { Accordion, Image } from 'react-bootstrap'
 
 export default function PlantBookApp() {
   return(
