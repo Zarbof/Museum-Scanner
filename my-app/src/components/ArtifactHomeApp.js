@@ -15,13 +15,7 @@ export default function ArtifactHomeApp() {
             <p>flowers :)</p>
           </ListGroup.Item>
           <ListGroup.Item>
-          <View style={{flex: 1, height: 50, backgroundColor: 'yellow'}}>
-            <Image
-              style={{flex: 1}}
-              resizeMode="stretch"
-              source={{uri: 'http://aristotlebuzz.com/wp-content/uploads/2017/01/Facebook.png'}}
-            />
-          </View>
+            <p>please code this soon</p>
           </ListGroup.Item>
           <ListGroup.Item>Morbi leo risus</ListGroup.Item>
           <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
