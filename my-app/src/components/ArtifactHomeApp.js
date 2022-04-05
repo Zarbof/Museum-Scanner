@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs } from 'react-bootstrap'
+import { Tabs , Tab } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function ArtifactHomeApp() {
