@@ -1,13 +1,14 @@
 import React from 'react';
-import { Accordion } from 'react-bootstrap'
+import { Accordionm, Image } from 'react-bootstrap'
 
 export default function PlantBookApp() {
   return(
     <div>
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
-          <Accordion.Header>Accordion Item #1</Accordion.Header>
+          <Accordion.Header>Plant #1</Accordion.Header>
           <Accordion.Body>
+            <Image src="https://watchandlearn.scholastic.com/content/dam/classroom-magazines/watchandlearn/videos/animals-and-plants/plants/what-are-plants-/What-Are-Plants.jpg"></Image>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
