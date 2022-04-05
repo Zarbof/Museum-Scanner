@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function ArtifactHomeApp() {
   return(
-    <div>
+    <div class="text-center">
 
       <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
         <Tab eventKey="media" title="Media">
