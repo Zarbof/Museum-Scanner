@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, Image } from 'react-bootstrap'
+import { Accordion, Image, Card } from 'react-bootstrap'
 
 export default function PlantBookApp() {
   return(
@@ -8,11 +8,18 @@ export default function PlantBookApp() {
         <Accordion.Item eventKey="0">
           <Accordion.Header>Plant #1</Accordion.Header>
           <Accordion.Body>
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="https://watchandlearn.scholastic.com/content/dam/classroom-magazines/watchandlearn/videos/animals-and-plants/plants/what-are-plants-/What-Are-Plants.jpg" />
+            <Card.Body>
+              <Card.Title>Plant Name</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the bulk of
+                the card's content.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
             <Image src="https://watchandlearn.scholastic.com/content/dam/classroom-magazines/watchandlearn/videos/animals-and-plants/plants/what-are-plants-/What-Are-Plants.jpg" width="64" height="64"></Image>
-            <p>This is a paragraphs</p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris.
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="1">
