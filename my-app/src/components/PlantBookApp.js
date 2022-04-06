@@ -9,6 +9,7 @@ export default function PlantBookApp() {
           <Accordion.Header>Plant #1</Accordion.Header>
           <Accordion.Body>
             <Image src="https://watchandlearn.scholastic.com/content/dam/classroom-magazines/watchandlearn/videos/animals-and-plants/plants/what-are-plants-/What-Are-Plants.jpg" width="24" height="24"></Image>
+            <h1>THis is a paragraphs</h1>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris.
