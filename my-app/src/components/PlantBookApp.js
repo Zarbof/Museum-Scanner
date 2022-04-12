@@ -1,5 +1,6 @@
 import React from 'react';
 import { Accordion, Card, CardGroup } from 'react-bootstrap'
+import { ReactSession } from 'react-client-session';
 
 
 
@@ -7,12 +8,12 @@ import { Accordion, Card, CardGroup } from 'react-bootstrap'
 
 export default function PlantBookApp(props) {
   const plantType = props.plantType
-
+  const username = ReactSession.get("username");
 
   var rows = [];
   for (var i = 0; i < 5; i++) {
     rows.push(<Accordion.Item eventKey={i} key={i}>
-    <Accordion.Header>{plantType}</Accordion.Header>
+    <Accordion.Header>{username}</Accordion.Header>
     <Accordion.Body>
     <CardGroup>
       <Card>
