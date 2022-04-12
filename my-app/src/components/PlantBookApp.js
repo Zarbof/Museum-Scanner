@@ -1,11 +1,18 @@
 import React from 'react';
 import { Accordion, Card, CardGroup } from 'react-bootstrap'
 
-export default function PlantBookApp() {
+
+
+
+
+export default function PlantBookApp(props) {
+  const plantType = props.plantType
+
+
   var rows = [];
   for (var i = 0; i < 5; i++) {
     rows.push(<Accordion.Item eventKey={i} key={i}>
-    <Accordion.Header>Plant Type</Accordion.Header>
+    <Accordion.Header>{plantType}</Accordion.Header>
     <Accordion.Body>
     <CardGroup>
       <Card>

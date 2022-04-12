@@ -8,6 +8,8 @@ import PlantBookApp from './components/PlantBookApp'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
     function App() {
+        const plantType = 'flowers'
+
         return (
         <div className="wrapper">
             <BrowserRouter>
@@ -25,7 +27,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                 </Navbar>
             <Routes>
                 <Route path="home" element={<ArtifactHomeApp />} />
-                <Route path="plantbook" element={<PlantBookApp />} />
+                <Route path="plantbook" element={<PlantBookApp plantType={plantType} />} />
 
             </Routes>
             </BrowserRouter>
