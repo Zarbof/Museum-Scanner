@@ -32,14 +32,12 @@ session_start();
             $result = $db->query("SELECT MAX(mediaID) AS max_mediaID FROM Media");
             $row = $result->fetch(PDO::FETCH_ASSOC);
 
-            //$tmp = $_FILES["myimage"]["name"];
-
-            // set values of input fields
             $mediaID = $row['max_mediaID'] + 1;
             $mediaType = $_POST['mediaType'];
+            // must convert all videos to mp4 (.mov and other types not supported in html)
             $mediaName = $mediaID;
             $location =__DIR__.'/media/';
-            copy($_FILES["myimage"]["tmp_name"], "$location".$mediaName);
+            copy($_FILES["mymedia"]["tmp_name"], "$location".$mediaName);
             $description = $_POST['mediaDescription'];
             $entryID = $_GET['artifactID'];
             $location ='media/';
