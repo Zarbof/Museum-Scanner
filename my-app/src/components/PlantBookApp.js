@@ -4,7 +4,7 @@ import { Accordion, Card, CardGroup } from 'react-bootstrap'
 export default function PlantBookApp() {
   var rows = [];
   for (var i = 0; i < 5; i++) {
-    rows.push(<Accordion.Item eventKey="0" key={i}>
+    rows.push(<Accordion.Item eventKey={i} key={i}>
     <Accordion.Header>Plant Type</Accordion.Header>
     <Accordion.Body>
     <CardGroup>
@@ -57,7 +57,7 @@ export default function PlantBookApp() {
   return(
     <div>
       <Accordion defaultActiveKey="0">
-        <Accordion.Item eventKey="0">
+        {/* <Accordion.Item eventKey="0">
           <Accordion.Header>Plant Type</Accordion.Header>
           <Accordion.Body>
           <CardGroup>
@@ -104,7 +104,7 @@ export default function PlantBookApp() {
           </CardGroup>
 
           </Accordion.Body>
-        </Accordion.Item>
+        </Accordion.Item> */}
         { rows }
       </Accordion>
     </div>
