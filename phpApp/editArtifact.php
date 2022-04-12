@@ -67,6 +67,7 @@ catch(PDOException $e){
                     <a class="logo-link" href="./artifactList.php">Lelooska Museum</a>
                 </h1>
                 <nav class="menu">
+                	<li><a class="nav-link" href="./account.php">Account Info</a></li>
 					<li><a class="nav-link" href="./signOut.php">Sign Out</a></li>
 				</nav>
             </header>
@@ -84,7 +85,7 @@ catch(PDOException $e){
 		            <br>
 		            <h2>QR Code</h2>
 		            <br>
-		            <a href="editArtifact.php?ID=<?php echo "$artifactID"; ?>&code=true" class="strong-button small">View QR code for artifact</a>
+		            <a href="editArtifact.php?ID=<?php echo "$artifactID"; ?>&code=true" class="strong-button small">Generate new QR code for artifact</a>
 		            <?php
 			            if (isset($_GET['code'])){
 			            	echo '<br><br><img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=http%3A%2F%2Flelooska.pugetsound.edu%2FphpApp%2Fartifact.php%3FID='.$artifactID.'&choe=UTF-8" title = "Link to artifact" />';
@@ -161,14 +162,21 @@ catch(PDOException $e){
 				    // select media related to this artifact
 			        $results = $db->query("SELECT * FROM Media WHERE entryID = $artifactID");
 			        $t = $results->fetchAll(PDO::FETCH_ASSOC);
-				echo '<br>';
+
+			        echo '<br>';
 
 			        foreach($t as $tuple) {
+			        	$mediaType = $tuple["mediaType"];
 			    		$mediaName = $tuple["mediaName"];
 			    		$location = $tuple["location"];
 			    		$mediaDescription = $tuple["description"];
 			    		echo '<br>';
-			    		echo '<img src="'.$location.$mediaName.'" width=auto height=300 > <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'">Remove media</a><br><br>';
+			    		if ($mediaType == 'photo'){
+			    			echo '<img src="'.$location.$mediaName.'" width=auto height=300 > <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'">Remove media</a><br><br>';
+			    		}
+			    		else if ($mediaType == 'video'){
+			    			echo '<video width="320" height="240" controls> <source src="'.$location.$mediaName.'"></video> <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'">Remove media</a><br><br>';
+			    		}
 			    		echo '<form action="edit.php?mediaID='.$tuple['mediaID'].'" method="post">';
 						echo '<textarea name="mediaDescription" rows="10" cols="89">';
 						if ($mediaDescription != "NULL"){ echo "$mediaDescription"; };
