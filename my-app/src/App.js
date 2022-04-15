@@ -15,7 +15,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
         ReactSession.setStoreType("localStorage");
         ReactSession.set("username", "TestUsername");
 
-        if(ReactSession.get("token") == "dogs") {
+        if(true/*ReactSession.get("token") == "dogs"*/) {
             return (
                 <div className="wrapper">
                     <BrowserRouter>
