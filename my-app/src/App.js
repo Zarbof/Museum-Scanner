@@ -5,7 +5,8 @@ import { ReactSession } from 'react-client-session';
 
 
 import ArtifactHomeApp from './components/ArtifactHomeApp';
-import PlantBookApp from './components/PlantBookApp'
+import PlantBookApp from './components/PlantBookApp';
+import ScavengerHuntApp from './components/ScavengerHuntApp';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -25,6 +26,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                                 <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="me-auto">
                                     <Nav.Link href="plantbook">Plant Book</Nav.Link>
+                                    <Nav.link href="scavengerhunt">Scavenger Hunt</Nav.link>
+                                    <Nav.link href="http://lelooska.org">Lelooska Foundation main website</Nav.link>
+                                    <Nav.link href="http://lelooska.org/donate/"> Donate</Nav.link>
                                     <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
                                 </Nav>
                                 </Navbar.Collapse>
@@ -33,7 +37,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                     <Routes>
                         <Route path="home" element={<ArtifactHomeApp />} />
                         <Route path="plantbook" element={<PlantBookApp plantType={plantType} />} />
-        
+                        <Route path="scavengerhunt" element={<ScavengerHuntApp/>} />
                     </Routes>
                     </BrowserRouter>
                 </div>
