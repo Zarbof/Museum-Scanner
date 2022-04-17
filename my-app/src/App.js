@@ -8,6 +8,7 @@ import $ from "jquery";
 import ArtifactHomeApp from './components/ArtifactHomeApp';
 import PlantBookApp from './components/PlantBookApp'
 import AccessDataBase from './components/AccessDataBase'; 
+import GrabToken from './components/AccessDataBase'; 
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -60,6 +61,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                                 <Nav className="me-auto">
                                     <Nav.Link href="plantbook">Plant Book</Nav.Link>
                                     <Nav.Link href="db">Database Test</Nav.Link>
+                                    <Nav.Link href="dbToken">Token Test</Nav.Link>
+
 
                                     <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
                                 </Nav>
@@ -70,6 +73,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                         <Route path="home" element={<ArtifactHomeApp />} />
                         <Route path="plantbook" element={<PlantBookApp plantType={plantType} />} />
                         <Route path="db" element={<AccessDataBase />} />
+                        <Route path="dbToken" element={<GrabToken />} />
+
         
                     </Routes>
                     </BrowserRouter>
