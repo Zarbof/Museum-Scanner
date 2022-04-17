@@ -15,7 +15,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
         ReactSession.setStoreType("localStorage");
         ReactSession.set("username", "TestUsername");
 
-        if(ReactSession.get("token") == "dogs") {
+        //if(ReactSession.get("token") == "dogs") {
             return (
                 <div className="wrapper">
                     <BrowserRouter>
@@ -41,8 +41,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                     </Routes>
                     </BrowserRouter>
                 </div>
-                );
-        }
+            );
+        //}
+        /*
         return (
         <div className="wrapper">
             <InputGroup className="mb-3">
@@ -55,6 +56,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
             </InputGroup>
         </div>
         );
+        */
     }
+    
 
 export default App;
