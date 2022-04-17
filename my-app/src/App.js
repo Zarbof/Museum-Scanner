@@ -53,10 +53,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                 alignItems: 'center',
                 justifyContent: 'center',
             }}>
-                <br />
-                <br />
-                <br />
-                <br />
+                <br>
+                </br>
+                <br>
+                </br>
+                <br>
+                </br>
 
                 <Card>
                     <Card.Body>
