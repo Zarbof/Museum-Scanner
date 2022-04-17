@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Nav, Container, Navbar, InputGroup, FormControl, Button } from 'react-bootstrap'
+import { Nav, Container, Navbar, InputGroup, FormControl, Button, Card } from 'react-bootstrap'
 import { ReactSession } from 'react-client-session';
 
 import ArtifactHomeApp from './components/ArtifactHomeApp';
@@ -49,15 +49,28 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
         }
         return (
             <div className="wrapper">
-                <InputGroup className="mb-3">
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Please enter the access token.</Card.Title>
+                        <Card.Text>
+                        This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.
+                        <InputGroup className="mb-3">
                     <InputGroup.Text id="basic-addon1">Token</InputGroup.Text>
-                    <FormControl
-                        placeholder="Username"
-                        aria-label="Username"
-                        aria-describedby="basic-addon1"
-                    />
-                    <Button type="text" onClick={handleClick}>Submit</Button>
-                </InputGroup>
+                        <FormControl
+                            placeholder="Access Token"
+                            aria-label="Access Token"
+                            aria-describedby="basic-addon1"
+                        />
+                        <Button type="text" onClick={handleClick}>Submit</Button>
+                    </InputGroup>
+                        </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                        <small className="text-muted">Last updated 3 mins ago</small>
+                    </Card.Footer>
+                </Card>
+                
             </div>
         );
     }
