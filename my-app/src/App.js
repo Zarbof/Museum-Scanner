@@ -56,7 +56,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                         aria-label="Username"
                         aria-describedby="basic-addon1"
                     />
-                    <Button type="text" onClick={this.handleClick.bind(this)}>Submit</Button>
+                    <Button type="text" onClick={this.handleClick}>Submit</Button>
                 </InputGroup>
             </div>
         );
