@@ -16,8 +16,20 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
         ReactSession.set("token", token);
 
         function handleClick() {
+            
             window.location.assign('https://google.com');
         }
+
+
+        const handleChange = (e) => {
+            console.log("handleChange Function...")
+            console.log(e.target.value);
+        };
+        const handleSumbit = (e) => {
+            console.log("handleSubmit Function...")
+            e.preventDefault();
+            console.log(e.target.value);
+        };
 
         if(ReactSession.get("token") == "dogs") {
             return (
@@ -56,6 +68,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
                 <Card>
                     <Card.Body>
+                    <form
+                        onSubmit={(event) => handleSumbit(event)}
+                    >
+                        <label>Please enter the access token.</label>
+                        <input
+                            type="text"
+                            onChange={(event) => handleChange(event)}
+                        />
+                        <br />
+                        <button type="submit">Submit</button>
+                    </form>
+
+
                         <Card.Title>Please enter the access token.</Card.Title>
                         <Card.Text>
                         <InputGroup className="mb-3">
