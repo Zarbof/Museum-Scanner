@@ -48,17 +48,17 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                 );
         }
         return (
-            <div className="wrapper mt-6" style={{
+            <div className="wrapper" style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
             }}>
 
-                <Card className="mt-6">
+                <Card>
                     <Card.Body>
                         <Card.Title>Please enter the access token.</Card.Title>
                         <Card.Text>
-                        <InputGroup className="mb-3 mt-2">
+                        <InputGroup className="mb-3">
                     <InputGroup.Text id="basic-addon1">Token</InputGroup.Text>
                         <FormControl
                             placeholder="Access Token"
