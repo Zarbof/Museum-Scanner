@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
     function App() {
         const [usertoken, setUserToken] = useState("");
+        const [result, setResult] = useState("");
 
         const plantType = 'plant1';
         const token = '';
@@ -30,6 +31,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
             e.preventDefault();
             console.log("handleSubmit Function...")
             console.log(usertoken);
+
+            const form = $(e.target);
+            $.ajax({
+                type: "POST",
+                url: form.attr("action"),
+                data: form.serialize(),
+                success(data) {
+                    setResult(data);
+                },
+            });
+
+            console.log("Trying to print results");
+            console.log(result);
         };
 
         if(ReactSession.get("token") == "dogs") {
@@ -74,6 +88,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                     >
                         <label>Please enter the access token.</label>
                         <input
+                            action="http://lelooska.pugetsound.edu/phpApp/getAccessCode.php"
+                            method="post"
                             type="text"
                             onChange={(event) => handleChange(event)}
                         />
