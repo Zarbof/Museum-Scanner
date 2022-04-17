@@ -48,13 +48,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                 );
         }
         return (
-            <div className="wrapper">
+            <div className="wrapper" style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+            }}>
                 <Card>
                     <Card.Body>
                         <Card.Title>Please enter the access token.</Card.Title>
                         <Card.Text>
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.
                         <InputGroup className="mb-3">
                     <InputGroup.Text id="basic-addon1">Token</InputGroup.Text>
                         <FormControl
@@ -66,9 +68,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                     </InputGroup>
                         </Card.Text>
                     </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Footer>
+
                 </Card>
                 
             </div>
