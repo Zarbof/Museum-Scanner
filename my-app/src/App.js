@@ -10,6 +10,8 @@ import AccessDataBase from './components/AccessDataBase';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
     function App() {
+        const [usertoken, setUserToken] = useState("");
+
         const plantType = 'plant1';
         const token = '';
         ReactSession.setStoreType("localStorage");
@@ -22,13 +24,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
         const handleChange = (e) => {
-            console.log("handleChange Function...")
-            console.log(e.target.value);
+            setUserToken(e.target.value);
         };
         const handleSumbit = (e) => {
-            console.log("handleSubmit Function...")
             e.preventDefault();
-            console.log(e.target.value);
+            console.log("handleSubmit Function...")
+            console.log(usertoken);
         };
 
         if(ReactSession.get("token") == "dogs") {
