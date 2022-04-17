@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Nav, Container, Navbar } from 'react-bootstrap'
+import { Nav, Container, Navbar, InputGroup, FormControl, Button } from 'react-bootstrap'
 import { ReactSession } from 'react-client-session';
 
 
