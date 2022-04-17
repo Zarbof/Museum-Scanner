@@ -90,7 +90,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                     >
                         <label>Please enter the access token.</label>
                         <input
-                            action="http://lelooska.pugetsound.edu/phpApp/getAccessCode.php"
+                            action="http://lelooska.pugetsound.edu/phpApp/getData.php"
                             method="post"
                             type="text"
                             onChange={(event) => handleChange(event)}
