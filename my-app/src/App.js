@@ -30,6 +30,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                                 <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="me-auto">
                                     <Nav.Link href="plantbook">Plant Book</Nav.Link>
+                                    <Nav.Link href="db">Database Test</Nav.Link>
+
                                     <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
                                 </Nav>
                                 </Navbar.Collapse>
