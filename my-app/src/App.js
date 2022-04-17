@@ -11,9 +11,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
     function App() {
         const plantType = 'plant1';
-        const token = 'dogs';
+        const token = '';
         ReactSession.setStoreType("localStorage");
         ReactSession.set("token", token);
+
+        function handleClick() {
+            window.location.assign('https://google.com');
+        }
 
         if(ReactSession.get("token") == "dogs") {
             return (
@@ -50,11 +54,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                         aria-label="Username"
                         aria-describedby="basic-addon1"
                     />
-                    <Button type="text">Submit</Button>
+                    <Button type="text" onClick={this.handleClick.bind(this)}>Submit</Button>
                 </InputGroup>
-                </div>
+            </div>
         );
     }
+
 export default App;
             
     
