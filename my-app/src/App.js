@@ -12,8 +12,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
     function App() {
         const plantType = 'flowers'
-        ReactSession.setStoreType("localStorage");
-        ReactSession.set("username", "TestUsername");
+        //ReactSession.setStoreType("localStorage");
+       // ReactSession.set("username", "TestUsername");
 
         //if(ReactSession.get("token") == "dogs") {
             return (
