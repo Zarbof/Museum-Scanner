@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function ArtifactHomeApp() {
   return(
-    <div class="text-center">
+    <div className="text-center">
 
 
       <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
