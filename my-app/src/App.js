@@ -10,7 +10,8 @@ import AccessDataBase from './components/AccessDataBase';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
     function App() {
-        const token = 'dogs'
+        const plantType = 'plant1';
+        const token = 'dogs';
         ReactSession.setStoreType("localStorage");
         ReactSession.set("token", token);
 
