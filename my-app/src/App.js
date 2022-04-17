@@ -53,18 +53,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                 alignItems: 'center',
                 justifyContent: 'center',
             }}>
-                <br>
-                </br>
-                <br>
-                </br>
-                <br>
-                </br>
-
+                <p>&nbsp;</p>
                 <Card>
                     <Card.Body>
                         <Card.Title>Please enter the access token.</Card.Title>
                         <Card.Text>
-                        <InputGroup className="mb-3">
+                        <InputGroup className="mb-3 mt-2">
                     <InputGroup.Text id="basic-addon1">Token</InputGroup.Text>
                         <FormControl
                             placeholder="Access Token"
