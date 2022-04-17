@@ -2,7 +2,7 @@
     header('Access-Control-Allow-Origin: *');
 
     // get artifactID
-	$artifactID = $_POST['id'];
+
 
 	// path to the SQLite database file
 	$db_file = './museum.db';
@@ -18,7 +18,7 @@
 		$stmt = $db->prepare("select * from Token");
 
 		// fetch info of artifact with this id
-		$stmt->execute([$artifactID]);
+		$stmt->execute();
 		$tuple = $stmt->fetch(PDO::FETCH_ASSOC);
 
 		// if artifactID was invalid (if no artifact with this id)
