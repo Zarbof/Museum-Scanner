@@ -33,6 +33,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                     <Routes>
                         <Route path="home" element={<ArtifactHomeApp />} />
                         <Route path="plantbook" element={<PlantBookApp plantType={plantType} />} />
+                        <Route path="db" element={<AccessDataBase />} />
         
                     </Routes>
                     </BrowserRouter>
