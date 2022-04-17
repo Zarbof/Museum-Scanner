@@ -23,6 +23,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="plantbook">Plant Book</Nav.Link>
+                            <Nav.link href="http://lelooska.org">Lelooska Foundation main website</Nav.link>
+                            <Nav.link href="http://lelooska.org/donate/"> Donate</Nav.link>
                             <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
                         </Nav>
                         </Navbar.Collapse>
