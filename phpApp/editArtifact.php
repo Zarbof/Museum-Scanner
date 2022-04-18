@@ -167,15 +167,17 @@ catch(PDOException $e){
 
 			        foreach($t as $tuple) {
 			        	$mediaType = $tuple["mediaType"];
-			    		$mediaName = $tuple["mediaName"];
 			    		$location = $tuple["location"];
 			    		$mediaDescription = $tuple["description"];
 			    		echo '<br>';
 			    		if ($mediaType == 'photo'){
-			    			echo '<img src="'.$location.$mediaName.'" width=auto height=300 > <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'">Remove media</a><br><br>';
+			    			echo '<img src="'.$location.'" width=auto height=300 > <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'">Remove media</a><br><br>';
 			    		}
 			    		else if ($mediaType == 'video'){
-			    			echo '<video width="320" height="240" controls> <source src="'.$location.$mediaName.'"></video> <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'">Remove media</a><br><br>';
+			    			echo '<video width="320" height="240" controls> <source src="'.$location.'"></video> <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'">Remove media</a><br><br>';
+			    		}
+			    		else if ($mediaType == 'audio'){
+			    			echo '<audio controls> <source src="'.$location.'"></audio> <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'">Remove media</a><br><br>';
 			    		}
 			    		echo '<form action="edit.php?mediaID='.$tuple['mediaID'].'" method="post">';
 						echo '<textarea name="mediaDescription" rows="10" cols="89">';
