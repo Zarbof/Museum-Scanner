@@ -70,9 +70,9 @@ catch(PDOException $e){
 
 			<!--Title and Form-->
 			<article class="content">
-				<section>
-				<h2><?php echo "$entryName"; ?></h2>
-				<p><br><?php echo "$entryDescription"; ?></p>
+				<header class="title">
+					<h2><?php echo "$entryName"; ?></h2>
+					<p><br><?php echo "$entryDescription"; ?></p>
 
 				<!-- Display Artifact Info and Media -->
 				<?php
@@ -92,11 +92,19 @@ catch(PDOException $e){
 			        $t = $results->fetchAll(PDO::FETCH_ASSOC);
 
 			        foreach($t as $tuple) {
-			    		$mediaName = $tuple["mediaName"];
+			        	$mediaType = $tuple["mediaType"];
 			    		$location = $tuple["location"];
 			    		$mediaDescription = $tuple["description"];
 			    		echo '<br>';
-			    		echo '<img src="'.$location.$mediaName.'" width=auto height=300 ><br><br>';
+			    		if ($mediaType == 'photo'){
+			    			echo '<img src="'.$location.'" width=auto height=300 ><br><br>';
+			    		}
+			    		else if ($mediaType == 'video'){
+			    			echo '<video width="320" height="240" controls> <source src="'.$location.'"></video><br><br>';
+			    		}
+			    		else if ($mediaType == 'audio'){
+			    			echo '<audio controls> <source src="'.$location.'"></audio><br><br>';
+			    		}
 			    		if ($mediaDescription != "NULL"){
 			    			echo "$mediaDescription<br>";
 			    		};
@@ -112,7 +120,7 @@ catch(PDOException $e){
 
 				?>
 
-			    </section>
+			    </header>
 			</article>
 		</div>
 	</body>

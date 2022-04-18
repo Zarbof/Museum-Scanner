@@ -20,27 +20,29 @@ session_start();
         if (isset($_GET['artifactID'])) { // if adding media to artifact
             $addSuccess = "Media successfully added!";
             // prepare to insert new media info 
-            $qry = $db->prepare('INSERT INTO Media (mediaID, mediaType, mediaName, location, description, entryID) VALUES (?, ?, ?, ?, ?, ?)');
+            $qry = $db->prepare('INSERT INTO Media (mediaID, mediaType, location, description, entryID) VALUES (?, ?, ?, ?, ?)');
             $qry->bindParam(1, $mediaID);
             $qry->bindParam(2, $mediaType);
-            $qry->bindParam(3, $mediaName);
-            $qry->bindParam(4, $location);
-            $qry->bindParam(5, $description);
-            $qry->bindParam(6, $entryID);
+            $qry->bindParam(3, $location);
+            $qry->bindParam(4, $description);
+            $qry->bindParam(5, $entryID);
 
             // find current max mediaID to find next available mediaID
             $result = $db->query("SELECT MAX(mediaID) AS max_mediaID FROM Media");
             $row = $result->fetch(PDO::FETCH_ASSOC);
 
+            // find file extension
+            $target_file = 'media/' . basename($_FILES["mymedia"]["name"]);
+            $extension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+            // fill in variables
             $mediaID = $row['max_mediaID'] + 1;
             $mediaType = $_POST['mediaType'];
-            // must convert all videos to mp4 (.mov and other types not supported in html)
-            $mediaName = $mediaID;
-            $location =__DIR__.'/media/';
-            copy($_FILES["mymedia"]["tmp_name"], "$location".$mediaName);
+            $path = realpath($_FILES["mymedia"]["tmp_name"]);
+            $location ='media/'.$mediaID.'.'.$extension;
+            copy($path, $location);
             $description = $_POST['mediaDescription'];
             $entryID = $_GET['artifactID'];
-            $location ='media/';
 
             // insert new info into media
             $qry->execute();
