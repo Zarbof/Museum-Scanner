@@ -14,17 +14,17 @@
 	    // set errormode to use exceptions
 	    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	    // prepare to fetch info of artifact item with this id
+	    // prepare to fetch info of token
 		$stmt = $db->prepare("select * from Token");
 
-		// fetch info of artifact with this id
+		// fetch info of token
 		$stmt->execute();
 		$tuple = $stmt->fetch(PDO::FETCH_ASSOC);
 
-		// if artifactID was invalid (if no artifact with this id)
+		// if no token in database
 		if (empty($tuple)){
 			$db = null;
-			echo ("No Tokens in Databse");
+			echo ("No Tokens in Database");
 		}
 		else{
 			// if token exists, echo its str
