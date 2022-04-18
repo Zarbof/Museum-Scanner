@@ -30,19 +30,17 @@ session_start();
             $tuple = $stmt->fetch(PDO::FETCH_ASSOC);
 
             // prepare to update media info
-            $qry = $db->prepare('UPDATE Media SET mediaID = ?, mediaType = ?, mediaName = ?, location = ?, description = ?, entryID = ? WHERE mediaID = ?');
+            $qry = $db->prepare('UPDATE Media SET mediaID = ?, mediaType = ?, location = ?, description = ?, entryID = ? WHERE mediaID = ?');
             $qry->bindParam(1, $mediaID);
             $qry->bindParam(2, $mediaType);
-            $qry->bindParam(3, $mediaName);
-            $qry->bindParam(4, $location);
-            $qry->bindParam(5, $description);
-            $qry->bindParam(6, $entryID);
-            $qry->bindParam(7, $mediaID);
+            $qry->bindParam(3, $location);
+            $qry->bindParam(4, $description);
+            $qry->bindParam(5, $entryID);
+            $qry->bindParam(6, $mediaID);
 
             // set values of input fields
             $mediaID = $id;
             $mediaType = $tuple['mediaType'];
-            $mediaName = $tuple['mediaName'];
             $location = $tuple['location'];
             if (!strlen(trim($_POST['mediaDescription']))){ // if no description for media
                 $description = NULL;
