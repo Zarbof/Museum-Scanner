@@ -21,32 +21,22 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
         ReactSession.setStoreType("localStorage");
         ReactSession.set("token", token);
 
-        function handleClick() {
-            
-            window.location.assign('https://google.com');
-        }
-
-
-        const handleChange = (e) => {
-            setUserToken(e.target.value);
-        };
-        const handleSumbit = (e) => {
+        function onFormSubmitSuccess(e) {
             e.preventDefault();
-            console.log("handleSubmit Function...")
-            console.log(usertoken);
-
-            const form = $(e.target);
-            $.ajax({
-                type: "POST",
-                url: form.attr("action"),
-                data: form.serialize(),
-                success(data) {
-                    setResult(data);
-                },
-            });
-
-            console.log("Trying to print results");
-            console.log(result);
+            console.log(e);
+            console.log(e.target);
+            console.log(e.target.value);
+          $.ajax({
+            url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
+            type: "GET",
+            success: function(data) {
+              console.log('success')
+              console.log(data);
+            }.bind(this),
+            error: function(xhr, status, err) {
+              console.log('error')
+            }.bind(this)
+          });
         };
 
         if(ReactSession.get("token") == "dogs") {
@@ -90,21 +80,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
                 <Card>
                     <Card.Body>
-                    <form
-                        onSubmit={(event) => handleSumbit(event)}
-                    >
-                        <label>Please enter the access token.</label>
-                        <input
-                            action="http://lelooska.pugetsound.edu/phpApp/getData.php"
-                            method="post"
-                            type="text"
-                            onChange={(event) => handleChange(event)}
-                        />
-                        <br />
-                        <button type="submit">Submit</button>
-                    </form>
-
-
                         <Card.Title>Please enter the access token.</Card.Title>
                         <Card.Text>
                         <InputGroup className="mb-3">
@@ -114,7 +89,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                             aria-label="Access Token"
                             aria-describedby="basic-addon1"
                         />
-                        <Button type="text" onClick={handleClick}>Submit</Button>
+                        <Button type="text" onClick={onFormSubmitSuccess}>Submit</Button>
                     </InputGroup>
                         </Card.Text>
                     </Card.Body>
