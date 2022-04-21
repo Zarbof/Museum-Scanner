@@ -17,7 +17,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
         const [userToken, setUserToken] = useState("");
         const [dailyDBToken, setDailyDBToken] = useState("");
 
-        ReactSession.setStoreType("localStorage");
+        ReactSession.setStoreType("cookie");
 
         const plantType = 'plant1';
 
@@ -38,8 +38,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
               if(dailyTokenString === userTokenString) {
                 ReactSession.set("token", dailyTokenString);
                 setDailyDBToken(dailyTokenString);
-              } else {
-              }
+              } 
             }.bind(this),
             error: function(xhr, status, err) {
               console.log('error')
