@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
+//import 'bootstrap/dist/css/bootstrap.min.css'
 import { Nav, Container, Navbar, InputGroup, FormControl, Button, Card } from 'react-bootstrap'
 import { ReactSession } from 'react-client-session';
 import $ from "jquery";
