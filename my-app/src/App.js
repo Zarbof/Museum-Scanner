@@ -36,34 +36,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
           });
         };
 
-        function handleClick() {
-            
-            window.location.assign('https://google.com');
-        }
-
-
-        const handleChange = (e) => {
-            setUserToken(e.target.value);
-        };
-        const handleSumbit = (e) => {
-            e.preventDefault();
-            console.log("handleSubmit Function...")
-            console.log(usertoken);
-
-            const form = $(e.target);
-            $.ajax({
-                type: "POST",
-                url: form.attr("action"),
-                data: form.serialize(),
-                success(data) {
-                    setResult(data);
-                },
-            });
-
-            console.log("Trying to print results");
-            console.log(result);
-        };
-
         if(ReactSession.get("token") == "dogs") {
             return (
                 <div className="wrapper">
@@ -105,21 +77,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
                 <Card>
                     <Card.Body>
-                    <form
-                        onSubmit={(event) => handleSumbit(event)}
-                    >
-                        <label>Please enter the access token.</label>
-                        <input
-                            action="http://lelooska.pugetsound.edu/phpApp/getData.php"
-                            method="post"
-                            type="text"
-                            onChange={(event) => handleChange(event)}
-                        />
-                        <br />
-                        <button type="submit">Submit</button>
-                    </form>
-
-
                         <Card.Title>Please enter the access token.</Card.Title>
                         <Card.Text>
                         <InputGroup className="mb-3">
