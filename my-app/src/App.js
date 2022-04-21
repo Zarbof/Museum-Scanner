@@ -21,6 +21,21 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
         ReactSession.setStoreType("localStorage");
         ReactSession.set("token", token);
 
+        function onFormSubmitSuccess(e) {
+            e.preventDefault();
+          $.ajax({
+            url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
+            type: "GET",
+            success: function(data) {
+              console.log('success')
+              console.log(data);
+            }.bind(this),
+            error: function(xhr, status, err) {
+              console.log('error')
+            }.bind(this)
+          });
+        };
+
         function handleClick() {
             
             window.location.assign('https://google.com');
@@ -114,7 +129,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                             aria-label="Access Token"
                             aria-describedby="basic-addon1"
                         />
-                        <Button type="text" onClick={handleClick}>Submit</Button>
+                        <Button type="text" onClick={onFormSubmitSuccess}>Submit</Button>
                     </InputGroup>
                         </Card.Text>
                     </Card.Body>
