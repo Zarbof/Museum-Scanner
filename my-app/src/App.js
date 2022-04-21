@@ -83,7 +83,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                 justifyContent: 'center',
             }}>
 
-                <Card style="background-color: #009688;">
+                <Card>
                     <Card.Body>
                         <Card.Title>Please enter the access token.</Card.Title>
                         <Card.Text>
