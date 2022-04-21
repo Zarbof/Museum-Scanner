@@ -33,9 +33,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
               console.log('success')
               const myObject = JSON.parse(data);
               const dailyToken = JSON.stringify(myObject.tokenValue);
-              console.log("dailyToken...");
-              console.log(dailyToken);
-              console.log(typeof dailyToken);
+              const dailyTokenString = dailyToken.replaceAll('"', '');
+              console.log("dailyTokenString...");
+              console.log(dailyTokenString);
+              console.log(typeof dailyTokenString);
 
               const userTokenString = {userToken}.userToken;
               console.log("userTokenString...");
@@ -45,7 +46,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
               if(dailyToken === userTokenString) {
                   console.log("The tokens are equal");
               } else {
-                  console.log({userToken})
                   console.log("The tokens are not equal");
               }
             }.bind(this),
