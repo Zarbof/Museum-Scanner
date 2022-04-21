@@ -23,6 +23,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
         function onFormSubmitSuccess(e) {
             e.preventDefault();
+            console.log(e);
+            console.log(e.target);
+            console.log(e.target.value);
           $.ajax({
             url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
             type: "GET",
