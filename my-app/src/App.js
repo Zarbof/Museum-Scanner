@@ -38,9 +38,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
               if(dailyTokenString === userTokenString) {
                 ReactSession.set("token", dailyTokenString);
                 setDailyDBToken(dailyTokenString);
-                console.log("The tokens are equal");
               } else {
-                  console.log("The tokens are not equal");
               }
             }.bind(this),
             error: function(xhr, status, err) {
