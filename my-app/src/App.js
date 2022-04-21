@@ -25,8 +25,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
         function onFormSubmitSuccess(e) {
             e.preventDefault();
-            console.log("onFormSubmitSuccess");
-            console.log({userToken});
 
           $.ajax({
             url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
@@ -35,14 +33,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
               console.log('success')
               const myObject = JSON.parse(data);
               const dailyToken = JSON.stringify(myObject.tokenValue);
+              console.log("dailyToken...");
+              console.log(dailyToken);
+              console.log(typeof dailyToken);
 
-              const tokenAttempt = {userToken}.userToken;
-            //   const tokenAttemptString = JSON.stringify({userToken});
-            //   const tokenAttemptObject = JSON.parse(tokenAttemptString);
-            //   const tokenAttempt = tokenAttemptObject;
+              const userTokenString = {userToken}.userToken;
+              console.log("userTokenString...");
+              console.log(userTokenString);
+              console.log(typeof userTokenString);
 
-              console.log(tokenAttempt);
-              if(dailyToken === tokenAttempt) {
+              if(dailyToken === userTokenString) {
                   console.log("The tokens are equal");
               } else {
                   console.log({userToken})
