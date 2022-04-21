@@ -1,7 +1,11 @@
 .card {
-  background-color: blueviolet;
+  background-color: #281e20 !important;
 }
 
 .card-title {
   color: white !important;
+}
+
+.button {
+  background-color: #791212;
 }
