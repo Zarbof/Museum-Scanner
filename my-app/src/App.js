@@ -17,7 +17,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
         const [userToken, setUserToken] = useState("");
         const [dailyDBToken, setDailyDBToken] = useState("");
 
-        ReactSession.setStoreType("localStorage");
+        ReactSession.setStoreType("cookie");
 
         const plantType = 'plant1';
 
