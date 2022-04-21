@@ -1,3 +1,7 @@
 .custom-card {
   background-color: blueviolet !important;
 }
+
+.card-title {
+  color: white !important;
+}
