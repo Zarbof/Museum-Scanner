@@ -24,8 +24,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
         function onFormSubmitSuccess(e) {
             e.preventDefault();
+            console.log("onFormSubmitSuccess");
             console.log({userToken});
-            console.log("Second");
 
           $.ajax({
             url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
@@ -42,6 +42,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
         function handleChange(e) {
             setUserToken(e.target.value);
+            console.log("after handleChange");
+            console.log({userToken});
         }
 
         if(ReactSession.get("token") == "dogs") {
