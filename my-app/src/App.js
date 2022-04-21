@@ -13,7 +13,7 @@ import GrabToken from './components/AccessDataBase';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
     function App() {
-        const [usertoken, setUserToken] = useState("");
+        const [userToken, setUserToken] = useState("");
         const [result, setResult] = useState("");
 
         const plantType = 'plant1';
@@ -25,6 +25,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
         function onFormSubmitSuccess(e) {
             e.preventDefault();
             console.log(this.userToken);
+            console.log("Second");
+
           $.ajax({
             url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
             type: "GET",
