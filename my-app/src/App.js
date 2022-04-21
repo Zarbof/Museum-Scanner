@@ -86,6 +86,18 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                 alignItems: 'center',
                 justifyContent: 'center',
             }}>
+                <Navbar bg="light" expand="lg">
+                    <Container>
+                        <Navbar.Brand >Lelooska</Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
+                            <Nav.Link href="http://lelooska.org/">Lelooska Foundation Website</Nav.Link>
+                        </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
 
                 <Card >
                     <Card.Body>
