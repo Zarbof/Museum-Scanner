@@ -90,8 +90,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                         <Card.Title>Please enter the access token.</Card.Title>
                         <Card.Text>
                         <InputGroup className="mb-3">
-                    <InputGroup.Text onChange={ handleChange } id="basic-addon1">Token</InputGroup.Text>
+                    <InputGroup.Text id="basic-addon1">Token</InputGroup.Text>
                         <FormControl
+                            onChange={ handleChange }
                             placeholder="Access Token"
                             aria-label="Access Token"
                             aria-describedby="basic-addon1"
