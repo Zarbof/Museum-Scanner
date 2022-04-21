@@ -21,9 +21,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
         const plantType = 'plant1';
 
-        console.log("Function Start...")
-        console.log({dailyDBToken});
-
         function onFormSubmitSuccess(e) {
             e.preventDefault();
 
@@ -57,7 +54,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
         }
 
-        if(ReactSession.get("token") === {dailyDBToken}) {
+        if(ReactSession.get("token") === {dailyDBToken}.dailyDBToken) {
             return (
                 <div className="wrapper">
                     <BrowserRouter>
