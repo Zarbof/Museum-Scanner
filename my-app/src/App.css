@@ -15,7 +15,11 @@
 
 .navbar{
   background: #1b6d85;
-}  
+}
+
+.card{
+  background: #282c34;
+}
 
 .App-header {
   background-color: #282c34;
