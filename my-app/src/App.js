@@ -39,6 +39,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
               if(dailyToken == {userToken}) {
                   console.log("The tokens are equal");
               } else {
+                  console.log({userToken})
                   console.log("The tokens are not equal");
               }
             }.bind(this),
