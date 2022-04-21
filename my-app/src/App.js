@@ -99,7 +99,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                             aria-label="Access Token"
                             aria-describedby="basic-addon1"
                         />
-                        <Button type="text" class="red-button" onClick={onFormSubmitSuccess}>Submit</Button>
+                        <Button type="text" onClick={onFormSubmitSuccess}>Submit</Button>
                     </InputGroup>
                         </Card.Text>
                     </Card.Body>
