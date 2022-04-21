@@ -43,7 +43,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
               console.log(userTokenString);
               console.log(typeof userTokenString);
 
-              if(dailyToken === userTokenString) {
+              if(dailyTokenString === userTokenString) {
                   console.log("The tokens are equal");
               } else {
                   console.log("The tokens are not equal");
