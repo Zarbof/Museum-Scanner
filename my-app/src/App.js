@@ -35,6 +35,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
               console.log('success')
               const myObject = JSON.parse(data);
               const dailyToken = myObject.tokenValue;
+              console.log(dailyToken);
               if(dailyToken == {userToken}) {
                   console.log("The tokens are equal");
               } else {
