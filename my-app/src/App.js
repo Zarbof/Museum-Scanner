@@ -86,7 +86,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                 justifyContent: 'center',
             }}>
 
-                <Card>
+                <Card className="custom-card">
                     <Card.Body>
                         <Card.Title>Please enter the access token.</Card.Title>
                         <Card.Text>
