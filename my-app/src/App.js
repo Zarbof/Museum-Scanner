@@ -18,14 +18,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
         const plantType = 'plant1';
         const token = '';
+
         ReactSession.setStoreType("localStorage");
         ReactSession.set("token", token);
 
         function onFormSubmitSuccess(e) {
             e.preventDefault();
-            console.log(e);
-            console.log(e.target);
-            console.log(e.target.value);
+            console.log(userToken);
           $.ajax({
             url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
             type: "GET",
@@ -38,6 +37,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
             }.bind(this)
           });
         };
+
+        function handleChange(e) {
+            setUserToken(e.target.value);
+        }
 
         if(ReactSession.get("token") == "dogs") {
             return (
@@ -83,7 +86,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
                         <Card.Title>Please enter the access token.</Card.Title>
                         <Card.Text>
                         <InputGroup className="mb-3">
-                    <InputGroup.Text id="basic-addon1">Token</InputGroup.Text>
+                    <InputGroup.Text onChange={ handleChange } id="basic-addon1">Token</InputGroup.Text>
                         <FormControl
                             placeholder="Access Token"
                             aria-label="Access Token"
