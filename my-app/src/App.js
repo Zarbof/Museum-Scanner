@@ -15,13 +15,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
     function App() {
         const [userToken, setUserToken] = useState("");
-        const [result, setResult] = useState("");
-
-        const plantType = 'plant1';
-        const token = '';
+        const [dailyDBToken, setDailyDBToken] = useState("");
 
         ReactSession.setStoreType("localStorage");
-        ReactSession.set("token", token);
+
+        const plantType = 'plant1';
+
+        console.log("Function Start...")
+        console.log({dailyDBToken});
 
         function onFormSubmitSuccess(e) {
             e.preventDefault();
@@ -34,17 +35,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
               const myObject = JSON.parse(data);
               const dailyToken = JSON.stringify(myObject.tokenValue);
               const dailyTokenString = dailyToken.replaceAll('"', '');
-              console.log("dailyTokenString...");
-              console.log(dailyTokenString);
-              console.log(typeof dailyTokenString);
 
               const userTokenString = {userToken}.userToken;
-              console.log("userTokenString...");
-              console.log(userTokenString);
-              console.log(typeof userTokenString);
 
               if(dailyTokenString === userTokenString) {
-                  console.log("The tokens are equal");
+                ReactSession.set("token", dailyTokenString);
+                setDailyDBToken(dailyTokenString);
+                console.log("The tokens are equal");
               } else {
                   console.log("The tokens are not equal");
               }
@@ -60,7 +57,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
         }
 
-        if(ReactSession.get("token") == "dogs") {
+        if(ReactSession.get("token") === {dailyDBToken}) {
             return (
                 <div className="wrapper">
                     <BrowserRouter>
