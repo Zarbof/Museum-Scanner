@@ -7,5 +7,6 @@
 }
 
 .red-button {
-  color: #791212 !important;
+  background-color: #791212 !important;
+  border: white !important;
 }
