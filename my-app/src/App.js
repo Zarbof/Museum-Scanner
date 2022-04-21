@@ -32,7 +32,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
             type: "GET",
             success: function(data) {
               console.log('success')
-              console.log(data.results);
+              console.log(data[0]);
             }.bind(this),
             error: function(xhr, status, err) {
               console.log('error')
