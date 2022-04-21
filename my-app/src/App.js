@@ -24,7 +24,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
         function onFormSubmitSuccess(e) {
             e.preventDefault();
-            console.log(this.userToken);
+            console.log({userToken});
             console.log("Second");
 
           $.ajax({
