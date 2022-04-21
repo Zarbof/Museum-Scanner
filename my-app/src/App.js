@@ -36,9 +36,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
               const myObject = JSON.parse(data);
               const dailyToken = JSON.stringify(myObject.tokenValue);
 
-              const tokenAttemptString = JSON.stringify({userToken});
-              const tokenAttemptObject = JSON.parse(tokenAttemptString);
-              const tokenAttempt = tokenAttemptObject;
+              const tokenAttempt = {userToken}.userToken;
+            //   const tokenAttemptString = JSON.stringify({userToken});
+            //   const tokenAttemptObject = JSON.parse(tokenAttemptString);
+            //   const tokenAttempt = tokenAttemptObject;
 
               console.log(tokenAttempt);
               if(dailyToken === tokenAttempt) {
