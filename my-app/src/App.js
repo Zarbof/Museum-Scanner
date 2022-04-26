@@ -5,14 +5,14 @@ import { Nav, Container, Navbar, InputGroup, FormControl, Button, Card } from 'r
 import { ReactSession } from 'react-client-session';
 import $ from "jquery";
 
-import Cookies from 'universal-cookie';
-
 import ArtifactHomeApp from './components/ArtifactHomeApp';
 import PlantBookApp from './components/PlantBookApp'
 import AccessDataBase from './components/AccessDataBase'; 
 import GrabToken from './components/AccessDataBase'; 
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import Cookies from 'universal-cookie';
 
     function App() {
         const [userToken, setUserToken] = useState("");
