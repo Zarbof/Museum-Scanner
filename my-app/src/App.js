@@ -18,7 +18,7 @@ import Cookies from 'universal-cookie';
         const [userToken, setUserToken] = useState("");
         const [dailyDBToken, setDailyDBToken] = useState("");
 
-        // ReactSession.setStoreType("localStorage");
+        ReactSession.setStoreType("localStorage");
         const cookies = new Cookies();
 
         const plantType = 'plant1';
