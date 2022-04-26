@@ -12,14 +12,14 @@ import GrabToken from './components/AccessDataBase';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-// import Cookies from 'universal-cookie';
+import Cookies from 'universal-cookie';
 
     function App() {
         const [userToken, setUserToken] = useState("");
         const [dailyDBToken, setDailyDBToken] = useState("");
 
         ReactSession.setStoreType("localStorage");
-        // const cookies = new Cookies();
+        const cookies = new Cookies();
 
         const plantType = 'plant1';
 
@@ -50,11 +50,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
         function handleChange(e) {
             setUserToken(e.target.value);
-            // cookies.set('token', e.target.value, { path: '/' });
+            cookies.set('token', e.target.value, { path: '/' });
         }     
 
-        // || cookies.get('token') 
-        if(ReactSession.get("token") === {dailyDBToken}.dailyDBToken) {
+        if(ReactSession.get("token") || cookies.get('token') === {dailyDBToken}.dailyDBToken) {
             return (
                 <div className="wrapper">
                     <BrowserRouter>
