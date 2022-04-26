@@ -5,6 +5,7 @@ import { Nav, Container, Navbar, InputGroup, FormControl, Button, Card } from 'r
 import { ReactSession } from 'react-client-session';
 import $ from "jquery";
 
+import Cookies from 'universal-cookie';
 
 import ArtifactHomeApp from './components/ArtifactHomeApp';
 import PlantBookApp from './components/PlantBookApp'
@@ -17,7 +18,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
         const [userToken, setUserToken] = useState("");
         const [dailyDBToken, setDailyDBToken] = useState("");
 
-        ReactSession.setStoreType("localStorage");
+        // ReactSession.setStoreType("localStorage");
+        const cookies = new Cookies();
 
         const plantType = 'plant1';
 
@@ -48,10 +50,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
         function handleChange(e) {
             setUserToken(e.target.value);
-
+            cookies.set('token', e.target.value, { path: '/' });
         }
 
-        if(ReactSession.get("token") === {dailyDBToken}.dailyDBToken) {
+        if(ReactSession.get("token") || cookies.get('token') === {dailyDBToken}.dailyDBToken) {
             return (
                 <div className="wrapper">
                     <BrowserRouter>
