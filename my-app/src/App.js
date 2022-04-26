@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react'
 //import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import { Nav, Container, Navbar, InputGroup, FormControl, Button, Card } from 'react-bootstrap'
-import { ReactSession } from 'react-client-session';
+// import { ReactSession } from 'react-client-session';
 import $ from "jquery";
 
 import ArtifactHomeApp from './components/ArtifactHomeApp';
@@ -18,7 +18,7 @@ import Cookies from 'universal-cookie';
         const [userToken, setUserToken] = useState("");
         const [dailyDBToken, setDailyDBToken] = useState("");
 
-        ReactSession.setStoreType("localStorage");
+        // ReactSession.setStoreType("localStorage");
         const cookies = new Cookies();
 
         const plantType = 'plant1';
@@ -49,11 +49,11 @@ import Cookies from 'universal-cookie';
         };
 
         function handleChange(e) {
-            setUserToken(e.target.value);
+            // setUserToken(e.target.value);
             cookies.set('token', e.target.value, { path: '/' });
         }     
-
-        if(ReactSession.get("token") || cookies.get('token') === {dailyDBToken}.dailyDBToken) {
+        // ReactSession.get("token") || 
+        if(cookies.get('token') === {dailyDBToken}.dailyDBToken) {
             return (
                 <div className="wrapper">
                     <BrowserRouter>
