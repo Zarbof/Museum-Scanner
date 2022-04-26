@@ -10,6 +10,30 @@ export default function PlantBookApp(props) {
   const plantType = props.plantType
   const username = ReactSession.get("username");
 
+  // // Code to grab the data from the database
+  // $.ajax({
+  //   // Change URL to correct path for plants
+  //   url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
+  //   type: "GET",
+  //   success: function(data) {
+  //     console.log('success')
+
+  //     const myObject = JSON.parse(data);
+  //     const dailyToken = JSON.stringify(myObject.tokenValue);
+  //     const dailyTokenString = dailyToken.replaceAll('"', '');
+
+  //     const userTokenString = {userToken}.userToken;
+
+  //     if(dailyTokenString === userTokenString) {
+  //       ReactSession.set("token", dailyTokenString);
+  //       setDailyDBToken(dailyTokenString);
+  //     } 
+  //   }.bind(this),
+  //   error: function(xhr, status, err) {
+  //     console.log('error')
+  //   }.bind(this)
+  // });
+
   var rows = [];
   for (var i = 0; i < 5; i++) {
     rows.push(<Accordion.Item eventKey={i} key={i}>
