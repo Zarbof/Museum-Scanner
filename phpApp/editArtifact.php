@@ -12,7 +12,7 @@
 
 <?php
 
-// get artifactID from URL
+// get artifact ID from URL
 $artifactID = $_GET['ID'];
 $iderror = "Invalid artifact ID (please select an artifact from the list below).";
 
@@ -33,14 +33,14 @@ try {
 	$stmt->execute([$artifactID]);
 	$tuple = $stmt->fetch(PDO::FETCH_ASSOC);
 
-	// if artifactID was invalid (if no artifact with this id)
+	// if id was invalid (if no artifact with this id)
 	if (empty($tuple)){
 		$_SESSION['error'] = $iderror;
 		$db = null;
 		header("Location: artifactList.php");
 	}
 
-	// if artifactID was valid, define variables
+	// if id was valid, define variables
 	$entryName = $tuple['entryName'];
 	$entryDescription = $tuple['entryDescription'];
 
@@ -56,7 +56,7 @@ catch(PDOException $e){
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<link href='//fonts.googleapis.com/css?family=Forum|Open+Sans:600,regular,italic,700&amp;subset=latin' rel='stylesheet' type='text/css'>
 		<meta charset="UTF-8" />
-		<title>Edit Artifact</title>
+		<title>Edit Artifact Info</title>
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
@@ -67,6 +67,9 @@ catch(PDOException $e){
                     <a class="logo-link" href="./artifactList.php">Lelooska Museum</a>
                 </h1>
                 <nav class="menu">
+                	<li><a class="nav-link" href="./artifactList.php">Artifacts</a></li>
+                	<li><a class="nav-link" href="./plantList.php">Plants</a></li>
+                	<li><a class="nav-link" href="./accessCode.php">Access Code</a></li>
                 	<li><a class="nav-link" href="./account.php">Account Info</a></li>
 					<li><a class="nav-link" href="./signOut.php">Sign Out</a></li>
 				</nav>
@@ -85,7 +88,7 @@ catch(PDOException $e){
 		            <br>
 		            <h2>QR Code</h2>
 		            <br>
-		            <a href="editArtifact.php?ID=<?php echo "$artifactID"; ?>&code=true" class="strong-button small">Generate new QR code for artifact</a>
+		            <a href="editArtifact.php?ID=<?php echo "$artifactID"; ?>&code=true" class="strong-button small">Show QR code for artifact</a>
 		            <?php
 			            if (isset($_GET['code'])){
 			            	echo '<br><br><img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=http%3A%2F%2Flelooska.pugetsound.edu%2FphpApp%2Fartifact.php%3FID='.$artifactID.'&choe=UTF-8" title = "Link to artifact" />';
@@ -100,7 +103,7 @@ catch(PDOException $e){
 				<form
 					class="museumForm"
 					method="post"
-					action="edit.php?ID=<?php echo "$artifactID"; ?>"
+					action="edit.php?ID=<?php echo "$artifactID"; ?>&type=artifact"
 				>
 					<!-- entryName, entryDescription -->
 					<label for="entryName">Artifact Name</label>
@@ -130,18 +133,47 @@ catch(PDOException $e){
 				</form>
 
 				<header class="title">
-					<h2>Artifact Media</h2><br>
-					<a href="addMedia.php?ID=<?php echo "$artifactID"; ?>" class="strong-button small">Add new media for artifact</a>
+					<h2>Artifact Media</h2>
+					<p>(max of five media files per artifact)</p>
 
 					<?php
+						// check whether media limit is exceeded
+						// path to the SQLite database file
+						$db_file = './museum.db';
+
+						try {
+						    // open connection to the museum database file
+						    $db = new PDO('sqlite:' . $db_file);
+
+						    // set errormode to use exceptions
+						    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+						    // prepare to fetch count of media files associated with this entry
+							$result = $db->prepare("SELECT COUNT(*) AS mediaCount FROM Media WHERE entryID = ?");
+
+							// fetch count
+							$result->execute([$artifactID]);
+							$row = $result->fetch(PDO::FETCH_ASSOC);
+							$count = $row['mediaCount'];
+							if ($count < 5){
+								echo "<br><a href='addMedia.php?ID=$artifactID' class='strong-button small'>Add new media for artifact</a><br>";
+							}
+            			}
+            			catch(PDOException $e){
+							die('Exception : '.$e->getMessage());
+						}
+
+						// disconnect from db
+						$db = null;
+
 		                if(isset($_SESSION['success'])){
 		                    $success = $_SESSION['success'];
-		                    echo "<br><br><span><b>$success</b></span><br>";
+		                    echo "<br><span><b>$success</b></span><br>";
 		                    unset($_SESSION['success']);
 		                }
 		                if(isset($_SESSION['error'])){
 		                    $error = $_SESSION['error'];
-		                    echo "<br><br><span><b>$error</b></span><br>";
+		                    echo "<br><span><b>$error</b></span><br>";
 		                    unset($_SESSION['error']);
 		                }
 	           		?>
@@ -171,15 +203,16 @@ catch(PDOException $e){
 			    		$mediaDescription = $tuple["description"];
 			    		echo '<br>';
 			    		if ($mediaType == 'photo'){
-			    			echo '<img src="'.$location.'" width=auto height=300 > <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'">Remove media</a><br><br>';
+			    			echo '<img src="'.$location.'" width=auto height=300 >';
 			    		}
 			    		else if ($mediaType == 'video'){
-			    			echo '<video width="320" height="240" controls> <source src="'.$location.'"></video> <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'">Remove media</a><br><br>';
+			    			echo '<video width="320" height="240" controls> <source src="'.$location.'"></video>';
 			    		}
 			    		else if ($mediaType == 'audio'){
-			    			echo '<audio controls> <source src="'.$location.'"></audio> <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'">Remove media</a><br><br>';
+			    			echo '<audio controls> <source src="'.$location.'"></audio>';
 			    		}
-			    		echo '<form action="edit.php?mediaID='.$tuple['mediaID'].'" method="post">';
+			    		echo ' <a class="strong-button small" href="remove.php?mediaID='.$tuple['mediaID'].'&type=artifact">Remove media</a><br><br>';
+			    		echo '<form action="edit.php?mediaID='.$tuple['mediaID'].'&type=artifact" method="post">';
 						echo '<textarea name="mediaDescription" rows="10" cols="89">';
 						if ($mediaDescription != "NULL"){ echo "$mediaDescription"; };
 						echo '</textarea>
