@@ -18,6 +18,7 @@ export default function PlantBookApp(props) {
         url: form.attr("action"),
         data: form.serialize(),
         success(data) {
+          console.log("------ test ------")
           console.log(data)
         },
     });
