@@ -19,9 +19,9 @@ export default function PlantBookApp(props) {
         data: form.serialize(),
         success(data) {
           console.log("------ test ------")
-          const myObject = JSON.parse(data);
-          console.log(myObject.name);
-          console.log(data);
+          // const myObject = JSON.parse(data);
+          // console.log(myObject.name);
+          console.log(data[0]);
         },
     });
 };
