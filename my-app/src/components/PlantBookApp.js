@@ -10,29 +10,44 @@ export default function PlantBookApp(props) {
   const plantType = props.plantType
   const username = ReactSession.get("username");
 
-  // Code to grab the data from the database
-  $.ajax({
-    // Change URL to correct path for plants
-    url: 'http://lelooska.pugetsound.edu/phpApp/plantList.php',
-    type: "GET",
-    success: function(data) {
-      console.log('success')
-      console.log(data)
-      // const myObject = JSON.parse(data);
-      // const mystring = JSON.stringify(myObject);
-      // const dailyTokenString = dailyToken.replaceAll('"', '');
+  const handleSumbit = (e) => {
+    e.preventDefault();
+    const form = $(e.target);
+    $.ajax({
+        type: "POST",
+        url: form.attr("action"),
+        data: form.serialize(),
+        success(data) {
+          console.log(data)
+        },
+    });
+};
 
-      // const userTokenString = {userToken}.userToken;
+  // // Code to grab the data from the database
+  // $.ajax({
+  //   // Change URL to correct path for plants
+  //   url: 'http://lelooska.pugetsound.edu/phpApp/plantList.php',
+  //   type: "GET",
+  //   success: function(data) {
+  //     console.log('success')
+  //     console.log(data)
+  //     // const myObject = JSON.parse(data);
+  //     // const mystring = JSON.stringify(myObject);
+  //     // const dailyTokenString = dailyToken.replaceAll('"', '');
 
-      // if(dailyTokenString === userTokenString) {
-      //   ReactSession.set("token", dailyTokenString);
-      //   setDailyDBToken(dailyTokenString);
-      // } 
-    }.bind(this),
-    error: function(xhr, status, err) {
-      console.log('error')
-    }.bind(this)
-  });
+  //     // const userTokenString = {userToken}.userToken;
+
+  //     // if(dailyTokenString === userTokenString) {
+  //     //   ReactSession.set("token", dailyTokenString);
+  //     //   setDailyDBToken(dailyTokenString);
+  //     // } 
+  //   }.bind(this),
+  //   error: function(xhr, status, err) {
+  //     console.log('error')
+  //   }.bind(this)
+  // });
+
+
 
   var rows = [];
   for (var i = 0; i < 5; i++) {
@@ -88,6 +103,15 @@ export default function PlantBookApp(props) {
 
   return(
     <div>
+      <form
+                action="http://lelooska.pugetsound.edu/phpApp/plantList.php"
+                method="post"
+                onSubmit={(event) => handleSumbit(event)}
+            >
+                <button type="submit">Submit</button>
+      </form>
+
+
       <Accordion defaultActiveKey="0">
         {/* <Accordion.Item eventKey="0">
           <Accordion.Header>Plant Type</Accordion.Header>
