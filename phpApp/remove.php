@@ -47,20 +47,31 @@
             // disconnect from db
             $db = null;
 
-            // redirect to editArtifact.php
-            header("Location: editArtifact.php?ID=$entryID");
+            // redirect
+            if ($_GET['type'] == 'artifact'){
+                header("Location: editArtifact.php?ID=$entryID");
+            }
+            else if ($_GET['type'] == 'plant'){
+                header("Location: editPlant.php?ID=$entryID");
+            }
 
         }
-        else if (isset($_GET['artifactID'])){ // if removing an artifact
+        else if (isset($_GET['ID'])){ // if removing entry info
 
-            $removeSuccess = "Artifact successfully removed!";
-            $artifactID = $_GET['artifactID'];
+            $removeSuccess;
+            if ($_GET['type'] == 'artifact'){
+                $removeSuccess = "Artifact successfully removed!";
+            }
+            else if ($_GET['type'] == 'plant'){
+                $removeSuccess = "Plant successfully removed!";
+            }
+            $id = $_GET['ID'];
 
-            //retrieve all media associated with this artifact
+            //retrieve all media associated with this entry
             $stmt = $db->prepare("select * from Media where entryID = ?");
-            $stmt->execute([$artifactID]);
+            $stmt->execute([$id]);
             $t = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            // if media associated with artifact ID
+            // if media associated with ID
             if (!empty($t)){
                 foreach($t as $tuple){
 
@@ -78,11 +89,11 @@
                 }
             }
 
-            // prepare to delete this artifact item from entry table
+            // prepare to delete this entry from entry table
             $stmt = $db->prepare("DELETE FROM Entry WHERE entryID = ?");
 
-            // delete artifact
-            $stmt->execute([$artifactID]);
+            // delete entry
+            $stmt->execute([$id]);
 
             // set success message
             $_SESSION['success'] = $removeSuccess;
@@ -90,10 +101,13 @@
             // disconnect from db
             $db = null;
 
-            // redirect to artifactList.php
-            header("Location: artifactList.php");
-
-
+            // redirect
+            if ($_GET['type'] == 'artifact'){
+                header("Location: artifactList.php");
+            }
+            else if ($_GET['type'] == 'plant'){
+                header("Location: plantList.php");
+            }
         }
 
         exit();
