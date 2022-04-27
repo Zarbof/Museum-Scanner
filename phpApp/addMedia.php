@@ -66,8 +66,11 @@ catch(PDOException $e){
                     <a class="logo-link" href="./artifactList.php">Lelooska Museum</a>
                 </h1>
                 <nav class="menu">
-                	<li><a class="nav-link" href="./account.php">Account Info</a></li>
-					<li><a class="nav-link" href="./signOut.php">Sign Out</a></li>
+                	<li><a class="nav-link" href="./artifactList.php">Artifacts</a></li>
+                    <li><a class="nav-link" href="./plantList.php">Plants</a></li>
+                    <li><a class="nav-link" href="./accessCode.php">Access Code</a></li>
+                    <li><a class="nav-link" href="./account.php">Account Info</a></li>
+                    <li><a class="nav-link" href="./signOut.php">Sign Out</a></li>
 				</nav>
             </header>
 
