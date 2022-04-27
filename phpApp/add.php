@@ -17,7 +17,7 @@ session_start();
         // set errormode to use exceptions
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        if (isset($_GET['artifactID'])) { // if adding media to artifact
+        if (isset($_GET['artifactID'])) { // if adding media to entry
             $addSuccess = "Media successfully added!";
             // prepare to insert new media info 
             $qry = $db->prepare('INSERT INTO Media (mediaID, mediaType, location, description, entryID) VALUES (?, ?, ?, ?, ?)');
@@ -58,9 +58,15 @@ session_start();
 
             exit();
         }
-        else if (!isset($_GET['artifactID'])) { // if adding new artifact
+        else if (!isset($_GET['artifactID'])) { // if adding new entry
 
-            $addSuccess = "Artifact successfully added!";
+            $addSuccess;
+            if ($_GET['type'] == 'artifact'){
+                $addSuccess = "Artifact successfully added!";
+            }
+            else if ($_GET['type'] == 'plant'){
+                $addSuccess = "Plant successfully added!";
+            }
 
             // create unique artifactID
             $usedID = true;
@@ -68,12 +74,12 @@ session_start();
 
             while($usedID){
                 $possibleID = rand(1000, 2000);
-                // prepare to fetch artifact info
+                // prepare to fetch entry info
                 $stmt = $db->prepare("SELECT * FROM Entry WHERE entryID = ?");
-                // fetch info of artifact with this ID (if exists)
+                // fetch info of entry with this ID (if exists)
                 $stmt->execute([$possibleID]);
                 $tuple = $stmt->fetch(PDO::FETCH_ASSOC);
-                if (!empty($tuple)){ // if artifact with this ID already exists
+                if (!empty($tuple)){ // if entry with this ID already exists
                     $usedID = true;
                 }
                 else{ // if ID is available, exit loop
@@ -82,20 +88,22 @@ session_start();
             }
 
             // prepare to insert new info into Entry 
-            $qry = $db->prepare('INSERT INTO Entry (entryID, entryName, entryDescription) VALUES (?, ?, ?)');
+            $qry = $db->prepare('INSERT INTO Entry (entryID, entryName, entryDescription, entryType) VALUES (?, ?, ?, ?)');
             $qry->bindParam(1, $entryID);
             $qry->bindParam(2, $entryName);
             $qry->bindParam(3, $entryDescription);
+            $qry->bindParam(4, $entryType);
 
             // set values of input fields
             $entryID = $possibleID;
             $entryName = $_POST['entryName'];
-            if (!strlen(trim($_POST['entryDescription']))){ // if no description for artifact
+            if (!strlen(trim($_POST['entryDescription']))){ // if no description for entry
                 $entryDescription = NULL;
             }
             else{
                 $entryDescription = $_POST['entryDescription'];
             }
+            $entryType = $_GET['type'];
 
             // insert new info into Entry
             $qry->execute();
@@ -106,8 +114,13 @@ session_start();
             // disconnect from db
             $db = null;
 
-            // redirect to addArtifact.php
-            header("Location: editArtifact.php?ID=$entryID");
+            // redirect
+            if ($_GET['type'] == 'artifact'){
+                header("Location: editArtifact.php?ID=$entryID");
+            }
+            else if ($_GET['type'] == 'plant'){
+                header("Location: editPlant.php?ID=$entryID");
+            }
 
             exit();
         }
