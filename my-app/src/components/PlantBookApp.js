@@ -16,10 +16,10 @@ export default function PlantBookApp(props) {
     url: 'http://lelooska.pugetsound.edu/phpApp/plantList.php',
     type: "GET",
     success: function(data) {
-      console.log('success')
-      console.log(data)
-      // const myObject = JSON.parse(data);
-      // const dailyToken = JSON.stringify(myObject.tokenValue);
+      console.log('success');
+      const myObject = JSON.parse(data);
+      const mystring = JSON.stringify(myObject);
+      console.log(mystring);
       // const dailyTokenString = dailyToken.replaceAll('"', '');
 
       // const userTokenString = {userToken}.userToken;
