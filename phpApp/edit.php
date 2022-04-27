@@ -18,7 +18,7 @@ session_start();
         // set errormode to use exceptions
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        if (isset($_GET['mediaID'])) { // if editing artifact media description
+        if (isset($_GET['mediaID'])) { // if editing entry media description
             $editSuccess = "Media description successfully edited!";
             $id = $_GET['mediaID'];
 
@@ -59,22 +59,34 @@ session_start();
             // disconnect from db
             $db = null;
 
-            // redirect to editArtifact.php
-            header("Location: editArtifact.php?ID=$entryID");
+            // redirect
+            if ($_GET['type'] == 'artifact'){
+                header("Location: editArtifact.php?ID=$entryID");
+            }
+            else if ($_GET['type'] == 'plant'){
+                header("Location: editPlant.php?ID=$entryID");
+            }
 
             exit();
 
         }
-        else if (!isset($_GET['mediaID'])) { // if editing artifact info
+        else if (!isset($_GET['mediaID'])) { // if editing entry info
 
-            $editSuccess = "Artifact info successfully edited!";
+            $editSuccess;
+            if ($_GET['type'] == 'artifact'){
+                $editSuccess = "Artifact info successfully edited!";
+            }
+            else if ($_GET['type'] == 'plant'){
+                $editSuccess = "Plant info successfully edited!";
+            }
 
-            // prepare to update artifact info
-            $qry = $db->prepare('UPDATE Entry SET entryID = ?, entryName = ?, entryDescription = ? WHERE entryID = ?');
+            // prepare to update entry info
+            $qry = $db->prepare('UPDATE Entry SET entryID = ?, entryName = ?, entryDescription = ?, entryType= ? WHERE entryID = ?');
             $qry->bindParam(1, $entryID);
             $qry->bindParam(2, $entryName);
             $qry->bindParam(3, $entryDescription);
-            $qry->bindParam(4, $entryID);
+            $qry->bindParam(4, $entryType);
+            $qry->bindParam(5, $entryID);
 
             // set values of input fields
             $entryID = $_GET['ID'];
@@ -85,6 +97,7 @@ session_start();
             else{
                 $entryDescription = $_POST['entryDescription'];
             }
+            $entryType = $_GET['type'];
 
             // update artifact info
             $qry->execute();
@@ -95,8 +108,13 @@ session_start();
             // disconnect from db
             $db = null;
 
-            // redirect to editArtifact.php
-            header("Location: editArtifact.php?ID=$entryID");
+            // redirect
+            if ($_GET['type'] == 'artifact'){
+                header("Location: editArtifact.php?ID=$entryID");
+            }
+            else if ($_GET['type'] == 'plant'){
+                header("Location: editPlant.php?ID=$entryID");
+            }
 
             exit();
         }
