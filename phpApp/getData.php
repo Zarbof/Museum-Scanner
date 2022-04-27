@@ -15,7 +15,7 @@
 	    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	    // prepare to fetch info of artifact item with this id
-		$stmt = $db->prepare("select * from Entry where entryID = ?");
+		$stmt = $db->prepare("select * from Entry where entryID = ? and entryType = 'artifact'");
 
 		// fetch info of artifact with this id
 		$stmt->execute([$artifactID]);
