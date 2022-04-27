@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion, Card, CardGroup } from 'react-bootstrap'
 import { ReactSession } from 'react-client-session';
-
+import $ from "jquery";
 
 
 
