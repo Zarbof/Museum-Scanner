@@ -16,7 +16,7 @@ session_start();
 			<header class="menu-container">
 				<h1 class="logo">
 					<img src="./media/salmon.png" width=auto height=100 >
-					<a class="logo-link" href="./nav.php">Lelooska Museum</a>
+					<a class="logo-link" href="./artifactList.php">Lelooska Museum</a>
 				</h1>
 			</header>
 
@@ -45,11 +45,14 @@ session_start();
 					<label for="password">Password</label>
 					<input
 						class="textInput"
-						type="text"
+						type="password"
 						name="password"
+						id="myInput"
 						pattern="[A-Za-z0-9]{1,}"
 						required
 					/>
+
+					<br><input type="checkbox" onclick="myFunction()"> Show Password
 
 					<input type="submit" value="Login" />
 
@@ -65,6 +68,17 @@ session_start();
 		</div>
 	</body>
 </html>
+
+<script type="text/javascript">
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
 
 <?php
 	unset($_SESSION['error']);
