@@ -24,6 +24,9 @@
                     <a class="logo-link" href="./artifactList.php">Lelooska Museum</a>
                 </h1>
                 <nav class="menu">
+                    <li><a class="nav-link" href="./artifactList.php">Artifacts</a></li>
+                    <li><a class="nav-link" href="./plantList.php">Plants</a></li>
+                    <li><a class="nav-link" href="./accessCode.php">Access Code</a></li>
                     <li><a class="nav-link" href="./account.php">Account Info</a></li>
                     <li><a class="nav-link" href="./signOut.php">Sign Out</a></li>
                 </nav>
@@ -81,9 +84,9 @@
                             //set errormode to use exceptions
                             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                            if (isset($_GET['s'])) {
+                            if (isset($_GET['s'])) { // if searching for artifact(s)
                                 $searchTerm = $_GET['s'];
-                                $stmt = $db->prepare("select * from Entry where entryName like ? order by entryName");
+                                $stmt = $db->prepare("select * from Entry where entryType = 'artifact' and entryName like ? order by entryName");
                                 $stmt->execute(["%".$_GET["s"]."%"]);
                                 $t = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -106,7 +109,7 @@
                                                 <form action="editArtifact.php?ID='.$tuple['entryID'].'" method="post">
                                                 <td><input type="submit" value=" Edit Artifact "></td>
                                                 </form>
-                                                <form action="remove.php?artifactID='.$tuple['entryID'].'" method="post">
+                                                <form action="remove.php?ID='.$tuple['entryID'].'&type=artifact" method="post">
                                                 <td><input type="submit" value=" Remove Artifact "></td>
                                                 </form>
                                             </tr>';
@@ -119,7 +122,7 @@
 
                             else if (!isset($_GET['s'])){
                                 //retrieve all artifacts
-                                $qry = "select * from Entry order by entryName;";
+                                $qry = "select * from Entry where entryType = 'artifact' order by entryName;";
                                 $result_set = $db->query($qry);
 
                                 //print the table
@@ -137,7 +140,7 @@
                                             <form action="editArtifact.php?ID='.$tuple['entryID'].'" method="post">
                                             <td><input type="submit" value=" Edit Artifact "></td>
                                             </form>
-                                            <form action="remove.php?artifactID='.$tuple['entryID'].'" method="post">
+                                            <form action="remove.php?ID='.$tuple['entryID'].'&type=artifact" method="post">
                                             <td><input type="submit" value=" Remove Artifact "></td>
                                             </form>
                                         </tr>';
