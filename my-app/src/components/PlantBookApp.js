@@ -21,7 +21,7 @@ export default function PlantBookApp(props) {
           console.log("------ test ------")
           // const myObject = JSON.parse(data);
           // console.log(myObject.name);
-          console.log(data[0]);
+          console.log(data);
         },
     });
 };
@@ -107,7 +107,7 @@ export default function PlantBookApp(props) {
   return(
     <div>
       <form
-                action="http://lelooska.pugetsound.edu/phpApp/plantList.php"
+                action="http://lelooska.pugetsound.edu/phpApp/getPlantData.php"
                 method="post"
                 onSubmit={(event) => handleSumbit(event)}
             >
