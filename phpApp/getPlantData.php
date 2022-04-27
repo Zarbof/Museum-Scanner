@@ -1,8 +1,8 @@
 <?php
     header('Access-Control-Allow-Origin: *');
 
-    // get artifactID
-	$artifactID = $_POST['id'];
+    // get plantID
+	$plantID = $_POST['id'];
 
 	// path to the SQLite database file
 	$db_file = './museum.db';
@@ -15,10 +15,10 @@
 	    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	    // prepare to fetch info of artifact item with this id
-		$stmt = $db->prepare("select * from Entry where entryID = ? and entryType = 'plant'");
+		$stmt = $db->prepare("select * from Entry where entryType = 'plant'");
 
 		// fetch info of artifact with this id
-		$stmt->execute([$artifactID]);
+		$stmt->execute([$plantID]);
 		$tuple = $stmt->fetch(PDO::FETCH_ASSOC);
 
 		// if artifactID was invalid (if no artifact with this id)
@@ -31,7 +31,7 @@
 			echo json_encode($tuple);
 
 			// echo media info
-			$results = $db->query("SELECT * FROM Media WHERE entryID = $artifactID");
+			$results = $db->query("SELECT * FROM Media WHERE entryID = $plantID");
 			$t = $results->fetchAll(PDO::FETCH_ASSOC);
 			foreach($t as $tuple) {
 				echo json_encode($tuple);
