@@ -80,7 +80,7 @@ const CardFiles = (props) => {
 
         return (
 
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%'}}>
                 <Card sx={{ maxWidth: 345 }} variant="outlined">
                     <CardActionArea>
                         <CardContent>
