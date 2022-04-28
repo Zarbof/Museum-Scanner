@@ -68,6 +68,7 @@ import Cookies from 'universal-cookie';
               if(dailyTokenString === userTokenString) {
                 ReactSession.set("token", dailyTokenString);
                 setDailyDBToken(dailyTokenString);
+                setLoggedIn("True");
               } 
             }.bind(this),
             error: function(xhr, status, err) {
