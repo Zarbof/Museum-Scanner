@@ -81,6 +81,14 @@ import Cookies from 'universal-cookie';
             cookies.set('token', e.target.value, { path: '/' });
         }     
 
+        console.log("COOKIES ---");
+        console.log("ReactSession ---");
+        console.log(ReactSession.get("token"));
+        console.log("cookies ---");
+        console.log(cookies.get('token'));
+        console.log("dailyDBToken ---");
+        console.log({dailyDBToken}.dailyDBToken);
+
         if(ReactSession.get("token") || cookies.get('token') === {dailyDBToken}.dailyDBToken) {
             return (
                 <div className="wrapper">
