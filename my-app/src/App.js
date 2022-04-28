@@ -91,37 +91,43 @@ import Cookies from 'universal-cookie';
                 alignItems: 'center',
                 justifyContent: 'center',
             }}>
-                <Navbar bg="light" expand="lg">
-                    <Container>
-                        <Navbar.Brand >Lelooska</Navbar.Brand>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
-                            <Nav.Link href="http://lelooska.org/">Lelooska Foundation Website</Nav.Link>
-                        </Nav>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar>
+               <Container>
+                    <Row>
+                        <Navbar bg="light" expand="lg">
+                            <Container>
+                                <Navbar.Brand >Lelooska</Navbar.Brand>
+                                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                                <Navbar.Collapse id="basic-navbar-nav">
+                                    <Nav className="me-auto">
+                                        <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
+                                        <Nav.Link href="http://lelooska.org/">Lelooska Foundation Website</Nav.Link>
+                                    </Nav>
+                                </Navbar.Collapse>
+                            </Container>
+                        </Navbar>
+                    </Row>
+                    <Row className = "align-items-center">
+                        <Card >
+                            <Card.Body>
+                                <Card.Title>Please enter the access token.</Card.Title>
+                                <Card.Text>
+                                    <InputGroup className="mb-3">
+                                        <InputGroup.Text id="basic-addon1">Token</InputGroup.Text>
+                                        <FormControl
+                                            onChange={handleChange}
+                                            placeholder="Access Token"
+                                            aria-label="Access Token"
+                                            aria-describedby="basic-addon1"
+                                        />
+                                        <Button type="text" onClick={onFormSubmitSuccess}>Submit</Button>
+                                    </InputGroup>
+                                </Card.Text>
+                            </Card.Body>
 
-                <Card >
-                    <Card.Body>
-                        <Card.Title>Please enter the access token.</Card.Title>
-                        <Card.Text>
-                        <InputGroup className="mb-3">
-                    <InputGroup.Text id="basic-addon1">Token</InputGroup.Text>
-                        <FormControl
-                            onChange={ handleChange }
-                            placeholder="Access Token"
-                            aria-label="Access Token"
-                            aria-describedby="basic-addon1"
-                        />
-                        <Button type="text" onClick={onFormSubmitSuccess}>Submit</Button>
-                    </InputGroup>
-                        </Card.Text>
-                    </Card.Body>
+                        </Card>
+                    </Row>
+                </Container>
 
-                </Card>
                 
             </div>
         );
