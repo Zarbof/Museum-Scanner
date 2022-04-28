@@ -24,35 +24,35 @@ import Cookies from 'universal-cookie';
 
         const plantType = 'plant1';
 
-        function onFormSubmitSuccess(e) {
-            e.preventDefault();
+        // function onFormSubmitSuccess(e) {
+        //     e.preventDefault();
 
-          $.ajax({
-            url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
-            type: "GET",
-            success: function(data) {
-              console.log('success')
-              const myObject = JSON.parse(data);
-              const dailyToken = JSON.stringify(myObject.tokenValue);
-              const dailyTokenString = dailyToken.replaceAll('"', '');
+        //   $.ajax({
+        //     url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
+        //     type: "GET",
+        //     success: function(data) {
+        //       console.log('success')
+        //       const myObject = JSON.parse(data);
+        //       const dailyToken = JSON.stringify(myObject.tokenValue);
+        //       const dailyTokenString = dailyToken.replaceAll('"', '');
 
-              const userTokenString = {userToken}.userToken;
+        //       const userTokenString = {userToken}.userToken;
 
-              if(dailyTokenString === userTokenString) {
-                ReactSession.set("token", dailyTokenString);
-                setDailyDBToken(dailyTokenString);
-              } 
-            }.bind(this),
-            error: function(xhr, status, err) {
-              console.log('error')
-            }.bind(this)
-          });
-        };
+        //       if(dailyTokenString === userTokenString) {
+        //         ReactSession.set("token", dailyTokenString);
+        //         setDailyDBToken(dailyTokenString);
+        //       } 
+        //     }.bind(this),
+        //     error: function(xhr, status, err) {
+        //       console.log('error')
+        //     }.bind(this)
+        //   });
+        // };
 
-        function handleChange(e) {
-            setUserToken(e.target.value);
-            cookies.set('token', e.target.value, { path: '/' });
-        }     
+        // function handleChange(e) {
+        //     setUserToken(e.target.value);
+        //     cookies.set('token', e.target.value, { path: '/' });
+        // }     
 
         // if(ReactSession.get("token") || cookies.get('token') === {dailyDBToken}.dailyDBToken) {
         //     return (
