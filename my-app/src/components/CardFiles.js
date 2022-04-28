@@ -81,7 +81,7 @@ const CardFiles = (props) => {
         return (
 
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch', height: '100%'}}>
-                <Card sx={{ maxWidth: 345 }} variant="outlined" style={{textAlign: "center"}}>
+                <Card  variant="outlined" style={{textAlign: "center"}}>
                     <CardActionArea>
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
