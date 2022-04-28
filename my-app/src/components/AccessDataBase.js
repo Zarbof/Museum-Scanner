@@ -2,14 +2,20 @@ import { Component, React, useState, useEffect, useRef } from "react";
 import $ from "jquery"
 import CardFiles from "./CardFiles";
 import { Grid } from "@mui/material"
+import { useSearchParams } from 'react-router-dom'
+
 const AccessDataBase = (props) => {
-    var idTest = props.idTest;
+
+    const [searchParams, setSearchParams] = useSearchParams();
+    const id = searchParams.get('id');
+    var idTest = searchParams.get('id');
+
     const buttonRef = useRef(null);
     const [id, setName] = useState(idTest);
     const [result, setResult] = useState("");
     var [length, setLength] = useState(0);
     const phpUrl = "http://lelooska.pugetsound.edu/phpApp/getData.php?id=";
-    var idTest = props.idTest;
+    
 
     //const tempStr2 = result[0].split(",");
     var [array, setArray] = useState([]);
