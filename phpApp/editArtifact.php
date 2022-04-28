@@ -91,7 +91,7 @@ catch(PDOException $e){
 		            <a href="editArtifact.php?ID=<?php echo "$artifactID"; ?>&code=true" class="strong-button small">Show QR code for artifact</a>
 		            <?php
 			            if (isset($_GET['code'])){
-			            	echo '<br><br><img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=http%3A%2F%2F10%2E150%2E3%2E4%3A3000%2db%3Fid='.$artifactID.'&choe=UTF-8" title = "Link to artifact" />';
+			            	echo '<br><br><img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=http%3A%2F%2F10%2E150%2E3%2E4%3A3000%2Fdb%3Fid='.$artifactID.'&choe=UTF-8" title = "Link to artifact" />';
 			            }
 		            ?>
 
