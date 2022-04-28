@@ -10,3 +10,8 @@
   background-color: #791212 !important;
   border: white !important;
 }
+
+.MuiCard-root{
+  background-color: #281e20 !important;
+  color: white !important;
+}

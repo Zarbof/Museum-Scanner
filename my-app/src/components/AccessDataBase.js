@@ -183,8 +183,6 @@ const AccessDataBase = (props) => {
                 <Grid container>
                     <Grid alignItems="stretch"
                         justify="center">
-
-                        <h1>id be like:{idTest}</h1>
                         <CardFiles bigArray={array}></CardFiles>
                     </Grid>
                 </Grid>
