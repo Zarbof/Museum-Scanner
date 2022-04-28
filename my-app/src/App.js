@@ -107,7 +107,7 @@ import Cookies from 'universal-cookie';
                             </Container>
                         </Navbar> */}
                     </Row>
-                    <Row className = "align-items-center">
+                    <Row className = "align-items-center" className = "justifyContent: 'center">
                         <Card >
                             <Card.Body>
                                 <Card.Title>Please enter the access token.</Card.Title>
