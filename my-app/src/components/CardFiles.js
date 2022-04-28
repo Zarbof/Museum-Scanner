@@ -50,6 +50,7 @@ const CardFiles = (props) => {
                 console.log("audio before", mediaNames[i - 1])
                 if (!mediaNames[i - 1].endsWith("3")) {
                     mediaNames[i - 1] = mediaNames[i - 1].concat('', str1)
+                    console.log("we have liftoff")
                 }
                 console.log(mediaNames[i - 1].concat('', str1))
                 console.log("audio after", mediaNames[i - 1])
