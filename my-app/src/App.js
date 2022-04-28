@@ -117,7 +117,7 @@ function App() {
                             </Container>
                         </Navbar>
                     </Row>
-                    <Row>
+                    <Row className = "align-middle">
                         <Card >
                             <Card.Body>
                                 <Card.Title>Please enter the access token.</Card.Title>
