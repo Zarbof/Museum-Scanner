@@ -65,6 +65,13 @@ import Cookies from 'universal-cookie';
               const dailyTokenString = dailyToken.replaceAll('"', '');
 
               const userTokenString = {userToken}.userToken;
+            
+              console.log("Strings after button input");
+              console.log("dailyTokenString ---");
+              console.log(dailyTokenString)
+              console.log("userTokenString ---");
+            
+              console.log(userTokenString)
 
               if(dailyTokenString === userTokenString) {
                 console.log('& the user token and db token are the same')
