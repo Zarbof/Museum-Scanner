@@ -17,7 +17,7 @@ import Cookies from 'universal-cookie';
     function App() {
         const [userToken, setUserToken] = useState("");
         const [dailyDBToken, setDailyDBToken] = useState("");
-        const [loggedIn, setLoggedIn] = useState("");
+        // const [loggedIn, setLoggedIn] = useState("");
 
         ReactSession.setStoreType("localStorage");
         const cookies = new Cookies();
@@ -40,9 +40,10 @@ import Cookies from 'universal-cookie';
                     console.log('The tokens are not the same')
                     ReactSession.set("token", 'NOT VALID');
                     cookies.set('token', 'NOT VALID', { path: '/' });
+                    cookies.set('loggedIn', 'False', { path: '/' });
 
                     setDailyDBToken("NOT VALID");
-                    setLoggedIn("False");
+                    // setLoggedIn("False");
                   } 
                 }.bind(this),
                 error: function(xhr, status, err) {
@@ -68,8 +69,8 @@ import Cookies from 'universal-cookie';
               if(dailyTokenString === userTokenString) {
                 ReactSession.set("token", dailyTokenString);
                 setDailyDBToken(dailyTokenString);
-                setLoggedIn("True");
-              } 
+                cookies.set('loggedIn', 'True', { path: '/' });
+            } 
             }.bind(this),
             error: function(xhr, status, err) {
               console.log('error')
@@ -89,10 +90,10 @@ import Cookies from 'universal-cookie';
         console.log(cookies.get('token'));
         console.log("dailyDBToken ---");
         console.log({dailyDBToken}.dailyDBToken);
-        console.log("loggedIn ---");
-        console.log({loggedIn}.loggedIn);
+        console.log("cookies loggedIn ---");
+        console.log(cookies.get('loggedIn'));
 
-        if({loggedIn}.loggedIn === "False") {
+        if(cookies.get('loggedIn') === "False") {
             return (
                 <div className="wrapper" style={{
                     display: 'flex',
