@@ -15,12 +15,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
     function App() {
-        const [userToken, setUserToken] = useState("");
-        const [dailyDBToken, setDailyDBToken] = useState("");
+        // const [userToken, setUserToken] = useState("");
+        // const [dailyDBToken, setDailyDBToken] = useState("");
         document.body.style = 'background: #343d46;';
 
-        ReactSession.setStoreType("localStorage");
-        const cookies = new Cookies();
+        // ReactSession.setStoreType("localStorage");
+        // const cookies = new Cookies();
 
         const plantType = 'plant1';
 
@@ -54,84 +54,117 @@ import Cookies from 'universal-cookie';
             cookies.set('token', e.target.value, { path: '/' });
         }     
 
-        if(ReactSession.get("token") || cookies.get('token') === {dailyDBToken}.dailyDBToken) {
-            return (
-                <div className="wrapper">
-                    <BrowserRouter>
-                        <Navbar bg="light" expand="lg">
-                            <Container>
-                                <Navbar.Brand href="#home">Lelooska</Navbar.Brand>
-                                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                                <Navbar.Collapse id="basic-navbar-nav">
-                                <Nav className="me-auto">
-                                    <Nav.Link href="plantbook">Plant Book</Nav.Link>
-                                    <Nav.Link href="db">Database Test</Nav.Link>
-                                    <Nav.Link href="dbToken">Token Test</Nav.Link>
+        // if(ReactSession.get("token") || cookies.get('token') === {dailyDBToken}.dailyDBToken) {
+        //     return (
+        //         <div className="wrapper">
+        //             <BrowserRouter>
+        //                 <Navbar bg="light" expand="lg">
+        //                     <Container>
+        //                         <Navbar.Brand href="#home">Lelooska</Navbar.Brand>
+        //                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        //                         <Navbar.Collapse id="basic-navbar-nav">
+        //                         <Nav className="me-auto">
+        //                             <Nav.Link href="plantbook">Plant Book</Nav.Link>
+        //                             <Nav.Link href="db">Database Test</Nav.Link>
+        //                             <Nav.Link href="dbToken">Token Test</Nav.Link>
 
 
-                                    <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
-                                </Nav>
-                                </Navbar.Collapse>
-                            </Container>
-                        </Navbar>
-                    <Routes>
-                        <Route path="home" element={<ArtifactHomeApp />} />
-                        <Route path="plantbook" element={<PlantBookApp plantType={plantType} />} />
-                        <Route path="db" element={<AccessDataBase />} />
-                        <Route path="dbToken" element={<GrabToken />} />
+        //                             <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
+        //                         </Nav>
+        //                         </Navbar.Collapse>
+        //                     </Container>
+        //                 </Navbar>
+        //             <Routes>
+        //                 <Route path="home" element={<ArtifactHomeApp />} />
+        //                 <Route path="plantbook" element={<PlantBookApp plantType={plantType} />} />
+        //                 <Route path="db" element={<AccessDataBase />} />
+        //                 <Route path="dbToken" element={<GrabToken />} />
 
         
-                    </Routes>
-                    </BrowserRouter>
-                </div>
-                );
-        }
-        return (
-            <div className="wrapper" style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-            }}>
-               <Container>
-                    <Row>
-                        {/* <Navbar bg="light" expand="lg">
-                            <Container>
-                                <Navbar.Brand >Lelooska</Navbar.Brand>
-                                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                                <Navbar.Collapse id="basic-navbar-nav">
-                                    <Nav className="me-auto">
-                                        <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
-                                        <Nav.Link href="http://lelooska.org/">Lelooska Foundation Website</Nav.Link>
-                                    </Nav>
-                                </Navbar.Collapse>
-                            </Container>
-                        </Navbar> */}
-                    </Row>
-                    <Row className = "align-items-center" className = "justifyContent: 'center">
-                        <Card >
-                            <Card.Body>
-                                <Card.Title>Please enter the access token.</Card.Title>
-                                <Card.Text>
-                                    <InputGroup className="mb-3">
-                                        <InputGroup.Text id="basic-addon1">Token</InputGroup.Text>
-                                        <FormControl
-                                            onChange={handleChange}
-                                            placeholder="Access Token"
-                                            aria-label="Access Token"
-                                            aria-describedby="basic-addon1"
-                                        />
-                                        <Button type="text" onClick={onFormSubmitSuccess}>Submit</Button>
-                                    </InputGroup>
-                                </Card.Text>
-                            </Card.Body>
+        //             </Routes>
+        //             </BrowserRouter>
+        //         </div>
+        //         );
+        // }
+        // return (
+        //     <div className="wrapper" style={{
+        //         display: 'flex',
+        //         alignItems: 'center',
+        //         justifyContent: 'center',
+        //     }}>
+        //        <Container>
+        //             <Row>
+        //                 {/* <Navbar bg="light" expand="lg">
+        //                     <Container>
+        //                         <Navbar.Brand >Lelooska</Navbar.Brand>
+        //                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        //                         <Navbar.Collapse id="basic-navbar-nav">
+        //                             <Nav className="me-auto">
+        //                                 <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
+        //                                 <Nav.Link href="http://lelooska.org/">Lelooska Foundation Website</Nav.Link>
+        //                             </Nav>
+        //                         </Navbar.Collapse>
+        //                     </Container>
+        //                 </Navbar> */}
+        //             </Row>
+        //             <Row className = "align-items-center">
+        //                 <Card >
+        //                     <Card.Body>
+        //                         <Card.Title>Please enter the access token.</Card.Title>
+        //                         <Card.Text>
+        //                             <InputGroup className="mb-3">
+        //                                 <InputGroup.Text id="basic-addon1">Token</InputGroup.Text>
+        //                                 <FormControl
+        //                                     onChange={handleChange}
+        //                                     placeholder="Access Token"
+        //                                     aria-label="Access Token"
+        //                                     aria-describedby="basic-addon1"
+        //                                 />
+        //                                 <Button type="text" onClick={onFormSubmitSuccess}>Submit</Button>
+        //                             </InputGroup>
+        //                         </Card.Text>
+        //                     </Card.Body>
 
-                        </Card>
-                    </Row>
-                </Container>
+        //                 </Card>
+        //             </Row>
+        //         </Container>
 
                 
+        //     </div>
+        // );
+
+
+        // with no access token
+        return (
+            <div className="wrapper">
+                <BrowserRouter>
+                    <Navbar bg="light" expand="lg">
+                        <Container>
+                            <Navbar.Brand href="#home">Lelooska</Navbar.Brand>
+                            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                            <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="me-auto">
+                                <Nav.Link href="plantbook">Plant Book</Nav.Link>
+                                <Nav.Link href="db">Database Test</Nav.Link>
+                                <Nav.Link href="dbToken">Token Test</Nav.Link>
+
+
+                                <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
+                            </Nav>
+                            </Navbar.Collapse>
+                        </Container>
+                    </Navbar>
+                <Routes>
+                    <Route path="home" element={<ArtifactHomeApp />} />
+                    <Route path="plantbook" element={<PlantBookApp plantType={plantType} />} />
+                    <Route path="db" element={<AccessDataBase />} />
+                    <Route path="dbToken" element={<GrabToken />} />
+
+    
+                </Routes>
+                </BrowserRouter>
             </div>
-        );
+            );
     }
 
 export default App;
