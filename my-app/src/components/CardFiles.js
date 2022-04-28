@@ -46,7 +46,7 @@ const CardFiles = (props) => {
             else{
                 mediaTypes[i-1] = array[i][1];
             }
-            if(array[i][1] == "audio" && mediaNames[i-1].endsWith('m4a')){ //check if is set to photo and change to img for each element that is a photo
+            if(array[i][1] == "audio"){ //check if is set to photo and change to img for each element that is a photo
                 console.log("audio before", mediaNames[i-1])
                 mediaNames[i-1] = mediaNames[i-1].concat('',str1)
                 console.log(mediaNames[i-1].concat('',str1))
