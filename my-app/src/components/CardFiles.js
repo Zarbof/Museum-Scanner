@@ -54,7 +54,7 @@ const CardFiles = (props) => {
                 }
                 console.log(mediaNames[i - 1].concat('', str1))
                 console.log("audio after", mediaNames[i - 1])
-                break;
+                
 
             }
 
