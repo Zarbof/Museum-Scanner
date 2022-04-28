@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { Component, useState } from 'react'
 //import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import { Nav, Container, Navbar, InputGroup, FormControl, Button, Card } from 'react-bootstrap'
@@ -22,8 +22,6 @@ import Cookies from 'universal-cookie';
         const cookies = new Cookies();
 
         const plantType = 'plant1';
-
-        
 
         function onFormSubmitSuccess(e) {
             e.preventDefault();
