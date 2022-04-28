@@ -1,5 +1,5 @@
 import { Component, React, useState, useEffect, useRef } from "react";
-import $ from "@jquery"
+import $ from "jQuery"
 import CardFiles from "./CardFiles";
 import { Grid } from "@mui/material"
 const AccessDataBase = (props) => {
