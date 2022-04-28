@@ -7,7 +7,7 @@ import { useSearchParams } from 'react-router-dom'
 const AccessDataBase = (props) => {
 
     const [searchParams, setSearchParams] = useSearchParams();
-    const id = searchParams.get('id');
+    // const id = searchParams.get('id');
     var idTest = searchParams.get('id');
 
     const buttonRef = useRef(null);
