@@ -5,7 +5,7 @@ import { Grid } from "@mui/material"
 import { useSearchParams } from 'react-router-dom'
 
 const AccessDataBase = (props) => {
-    document.body.style = 'background: #a7adba;';
+    document.body.style = 'background: #281e20;';
     const [searchParams, setSearchParams] = useSearchParams();
     // const id = searchParams.get('id');
     var idTest = searchParams.get('id');
