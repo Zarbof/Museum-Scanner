@@ -17,6 +17,7 @@ import Cookies from 'universal-cookie';
     function App() {
         const [userToken, setUserToken] = useState("");
         const [dailyDBToken, setDailyDBToken] = useState("");
+        document.body.style = 'background: #343d46;';
 
         ReactSession.setStoreType("localStorage");
         const cookies = new Cookies();
@@ -93,7 +94,7 @@ import Cookies from 'universal-cookie';
             }}>
                <Container>
                     <Row>
-                        <Navbar bg="light" expand="lg">
+                        {/* <Navbar bg="light" expand="lg">
                             <Container>
                                 <Navbar.Brand >Lelooska</Navbar.Brand>
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -104,7 +105,7 @@ import Cookies from 'universal-cookie';
                                     </Nav>
                                 </Navbar.Collapse>
                             </Container>
-                        </Navbar>
+                        </Navbar> */}
                     </Row>
                     <Row className = "align-items-center">
                         <Card >
