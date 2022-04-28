@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 //import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import { Nav, Container, Navbar, InputGroup, FormControl, Button, Card } from 'react-bootstrap'
@@ -22,6 +22,29 @@ import Cookies from 'universal-cookie';
         const cookies = new Cookies();
 
         const plantType = 'plant1';
+
+        useEffect(() => {
+            $.ajax({
+                url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
+                type: "GET",
+                success: function(data) {
+                  console.log('success with use effect')
+                  const myObject = JSON.parse(data);
+                  const dailyToken = JSON.stringify(myObject.tokenValue);
+                  const dailyTokenString = dailyToken.replaceAll('"', '');
+                
+                  const userTokenString = {userToken}.userToken;
+    
+                  if(dailyTokenString !== userTokenString) {
+                    ReactSession.set("token", dailyTokenString);
+                    setDailyDBToken(dailyTokenString);
+                  } 
+                }.bind(this),
+                error: function(xhr, status, err) {
+                  console.log('error')
+                }.bind(this)
+              });
+        });
 
         function onFormSubmitSuccess(e) {
             e.preventDefault();
