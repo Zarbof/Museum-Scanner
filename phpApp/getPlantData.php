@@ -14,27 +14,25 @@
 	    // set errormode to use exceptions
 	    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	    // prepare to fetch info of artifact item with this id
-		$stmt = $db->prepare("select * from Entry where entryType = 'plant'");
+	    // prepare to fetch info of plants
+		$stmt = $db->query("select * from Entry where entryType = 'plant'");
+		// fetch info of plants
+		$t = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-		// fetch info of artifact with this id
-		$stmt->execute([$plantID]);
-		$tuple = $stmt->fetch(PDO::FETCH_ASSOC);
-
-		// if artifactID was invalid (if no artifact with this id)
+		// if no plants
 		if (empty($tuple)){
 			$db = null;
-			echo ("Artifact ID invalid");
+			echo 'no plants';
 		}
 		else{
-			// if artifactID was valid, echo basic artifact info
-			echo json_encode($tuple);
-
-			// echo media info
-			$results = $db->query("SELECT * FROM Media WHERE entryID = $plantID");
-			$t = $results->fetchAll(PDO::FETCH_ASSOC);
-			foreach($t as $tuple) {
-				echo json_encode($tuple);
+			foreach($t as $tuple){
+				echo json_encode($t);
+				$id = $tuple['entryID'];
+				$media = $db->query("SELECT * FROM Media WHERE entryID = $id");
+				$m = $media->fetchAll(PDO::FETCH_ASSOC);
+				foreach($m as $mtuple){
+					echo json_encode($m);
+				}
 			}
 		}
 		// disconnect from db
