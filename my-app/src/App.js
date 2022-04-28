@@ -89,7 +89,9 @@ import Cookies from 'universal-cookie';
         console.log(cookies.get('token'));
         console.log("dailyDBToken ---");
         console.log({dailyDBToken}.dailyDBToken);
-    
+        console.log("loggedIn ---");
+        console.log({loggedIn}.loggedIn);
+
         if({loggedIn}.loggedIn === "False") {
             return (
                 <div className="wrapper" style={{
