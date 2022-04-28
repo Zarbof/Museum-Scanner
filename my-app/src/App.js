@@ -67,6 +67,8 @@ import Cookies from 'universal-cookie';
               const userTokenString = {userToken}.userToken;
 
               if(dailyTokenString === userTokenString) {
+                console.log('& the user token and db token are the same')
+
                 ReactSession.set("token", dailyTokenString);
                 setDailyDBToken(dailyTokenString);
                 cookies.set('loggedIn', 'True', { path: '/' });
