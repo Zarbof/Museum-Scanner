@@ -18,7 +18,7 @@ session_start();
         // set errormode to use exceptions
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    	$code = bin2hex(random_bytes(3));
+    	$code = random_int(10000, 99999);
 		// prepare to update token
         $qry = $db->prepare('UPDATE Token SET tokenValue = ?, lastChanged = ? WHERE tokenID = ?');
         $qry->bindParam(1, $tokenValue);
