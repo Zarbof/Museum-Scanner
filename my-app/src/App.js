@@ -36,6 +36,7 @@ import Cookies from 'universal-cookie';
                   const userTokenString = {userToken}.userToken;
     
                   if(dailyTokenString !== userTokenString) {
+                    console.log('The tokens are not the same')
                     ReactSession.set("token", dailyTokenString);
                     setDailyDBToken(dailyTokenString);
                   } 
