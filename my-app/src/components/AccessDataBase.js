@@ -197,7 +197,7 @@ const AccessDataBase = (props) => {
     else{
         return (
             <div>
-                QR error: Please scan a different code
+                QR error: Please scan a code
             </div>
         )
     }
