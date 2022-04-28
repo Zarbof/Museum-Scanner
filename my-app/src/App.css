@@ -14,4 +14,8 @@
 .MuiCard-root{
   background-color: #281e20 !important;
   color: white !important;
+
+}
+.MuiCardHeader-subheader{
+  color: white !important;
 }
