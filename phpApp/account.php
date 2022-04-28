@@ -87,7 +87,7 @@ catch(PDOException $e){
 						required
 					/>
 
-					<label for="password">password</label>
+					<label for="password">Password</label>
 					<input
 						class="textInput"
 						type="text"
