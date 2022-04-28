@@ -18,7 +18,7 @@ function App() {
     const [userToken, setUserToken] = useState("");
     const [dailyDBToken, setDailyDBToken] = useState("");
     // const [loggedIn, setLoggedIn] = useState("");
-
+    document.body.style = 'background: red;';
     ReactSession.setStoreType("localStorage");
     const cookies = new Cookies();
 
