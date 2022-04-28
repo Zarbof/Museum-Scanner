@@ -23,7 +23,6 @@ const AccessDataBase = (props) => {
     useEffect(() => {
 
         if (id != null) {
-            console.log("IS NOT NULL", id)
             // handleSumbit(id);
             buttonRef.current.click();
 
@@ -35,23 +34,16 @@ const AccessDataBase = (props) => {
             // var bigArray = Array.from(Array(2), () => new Array(4))
             var lengths = 5;
             var bigArray = [];
-            console.log("entry0");
-            console.log("result length = ", { length } - 1)
             for (var k = 0; k < result.length - 1; k++) {   //loops through array of all entry blocks
-                console.log("entry");
                 var array = [];
                 var tempStr = result[k];
                 tempStr = result[k].split(",");
-                console.log("tempStr", { tempStr });
                 //tempStr = tempStr.split(",");
                 for (var i = 0; i < tempStr.length; i++) {  //loops through each element in array for processing
                     var updatedStr = tempStr[i];
                     var updatedStr2 = updatedStr.split(":");
-                    console.log("updatedStr", { updatedStr2 });
                     updatedStr = updatedStr2[1];
                     array[i] = updatedStr;
-                    //console.log("updatedStr", {updatedStr2});
-                    console.log("entry2");
                 }
                 bigArray[k] = array;
             }
@@ -80,34 +72,23 @@ const AccessDataBase = (props) => {
         // var bigArray = Array.from(Array(2), () => new Array(4))
         var length = 5;
         var bigArray = [];
-        console.log("entry0");
-        console.log("result length = ", { length } - 1)
-        for (var k = 0; k < length - 1; k++) {   //loops through array of all entry blocks
-            console.log("entry");
+        for (var k = 0; k < length - 1; k++) {   //loops through array of all entry blocks    
             var array = [];
             var tempStr = result[k];
-            tempStr = result[k].split(",");
-            console.log("tempStr", { tempStr });
+            tempStr = result[k].split(","); 
             //tempStr = tempStr.split(",");
             for (var i = 0; i < tempStr.length; i++) {  //loops through each element in array for processing
                 var updatedStr = tempStr[i];
-                var updatedStr2 = updatedStr.split(":");
-                console.log("updatedStr", { updatedStr2 });
+                var updatedStr2 = updatedStr.split(":");  
                 updatedStr = updatedStr2[1];
                 array[i] = updatedStr;
-                //console.log("updatedStr", {updatedStr2});
-                console.log("entry2");
+                
 
 
             }
             bigArray[k] = array;
         }
         setArray(bigArray);
-
-        console.log("initialization test")
-        console.log(bigArray[0][0])
-
-
 
     }
 
@@ -127,9 +108,7 @@ const AccessDataBase = (props) => {
                 const presplit = data.replace(/[^,.:}'0-9a-zA-Z ]/g, "")
                 const split = presplit.split("}");
                 setResult(split);
-                console.log("length", split.length)
                 setLength(split.length);
-                console.log("recorded length", this.length)
                 //handleString();
 
             },
