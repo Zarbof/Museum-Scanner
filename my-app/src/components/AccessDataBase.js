@@ -181,7 +181,7 @@ const AccessDataBase = (props) => {
 
                 <br></br>
                 <Grid container>
-                    <Grid alignItems="center"
+                    <Grid alignItems="stretch"
                         justify="center">
 
                         <h1>id be like:{idTest}</h1>
