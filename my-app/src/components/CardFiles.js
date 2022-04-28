@@ -30,38 +30,40 @@ const CardFiles = (props) => {
     console.log(array);
     console.log(array);
     var mediaUrl = "http://lelooska.pugetsound.edu/phpApp/media/"
-    if(array[1] != null){
+    if (array[1] != null) {
         // var mediaNumber = array[1][2];
         var mediaNames = [];
         var mediaDescriptions = [];
         var mediaTypes = [];
         const str1 = "a";
-        for(var i = 1; i < array.length; i++){
+        for (var i = 1; i < array.length; i++) {
             var mediaNumber = array[i][2];
-            mediaNames[i-1] = mediaNumber.split("a")[1];   //set back to pos 0 in assignment
-            mediaDescriptions[i-1] = array[i][3];
-            if(array[i][1] == "photo"){ //check if is set to photo and change to img for each element that is a photo
-                mediaTypes[i-1] = "img";
+            mediaNames[i - 1] = mediaNumber.split("a")[1];   //set back to pos 0 in assignment
+            mediaDescriptions[i - 1] = array[i][3];
+            if (array[i][1] == "photo") { //check if is set to photo and change to img for each element that is a photo
+                mediaTypes[i - 1] = "img";
             }
-            else{
-                mediaTypes[i-1] = array[i][1];
+            else {
+                mediaTypes[i - 1] = array[i][1];
             }
-            if(array[i][1] == "audio"){ //check if is set to photo and change to img for each element that is a photo
-                console.log("audio before", mediaNames[i-1])
-                mediaNames[i-1] = mediaNames[i-1].concat('',str1)
-                console.log(mediaNames[i-1].concat('',str1))
-                console.log("audio after", mediaNames[i-1])
+            if (array[i][1] == "audio") { //check if is set to photo and change to img for each element that is a photo
+                console.log("audio before", mediaNames[i - 1])
+                if (!mediaNames[i - 1].endsWith("3")) {
+                    mediaNames[i - 1] = mediaNames[i - 1].concat('', str1)
+                }
+                console.log(mediaNames[i - 1].concat('', str1))
+                console.log("audio after", mediaNames[i - 1])
                 break;
 
             }
-        
-            
+
+
         }
         console.log("media type audi", mediaTypes[1]);
 
-        
 
-    
+
+
         // console.log("string location name", mediaNumber);
         // console.log("string name", media2[1]);
         // console.log(mediaUrl.concat('',media2[1]));
@@ -71,14 +73,14 @@ const CardFiles = (props) => {
 
         console.log(array[0][2])
 
-        
-        
-        
+
+
+
 
         return (
-        
+
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-                <Card sx={{ maxWidth: 345 }}variant = "outlined">
+                <Card sx={{ maxWidth: 345 }} variant="outlined">
                     <CardActionArea>
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
@@ -92,7 +94,7 @@ const CardFiles = (props) => {
                         <CardMedia
                             component={mediaTypes[0]}
                             controls
-                            src={mediaUrl.concat('',mediaNames[0])}
+                            src={mediaUrl.concat('', mediaNames[0])}
                         />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
@@ -101,57 +103,57 @@ const CardFiles = (props) => {
                         </CardContent>
 
                         <CardMedia
-                            component= {mediaTypes[1]}
+                            component={mediaTypes[1]}
                             controls
                             src={mediaUrl.concat('', mediaNames[1])}
                         />
-                         <CardContent>
+                        <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                            {mediaDescriptions[1]}
+                                {mediaDescriptions[1]}
                             </Typography>
                         </CardContent>
                         <CardMedia
-                            component= {mediaTypes[2]}
+                            component={mediaTypes[2]}
                             controls
                             src={mediaUrl.concat('', mediaNames[2])}
                         />
-                         <CardContent>
+                        <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                            {mediaDescriptions[2]}
+                                {mediaDescriptions[2]}
                             </Typography>
                         </CardContent>
                         <CardMedia
-                            component= {mediaTypes[3]}
+                            component={mediaTypes[3]}
                             controls
                             src={mediaUrl.concat('', mediaNames[3])}
                         />
-                         <CardContent>
+                        <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                            {mediaDescriptions[3]}
+                                {mediaDescriptions[3]}
                             </Typography>
                         </CardContent>
                         <CardMedia
-                            component= {mediaTypes[4]}
+                            component={mediaTypes[4]}
                             controls
                             src={mediaUrl.concat('', mediaNames[4])}
                         />
-                         <CardContent>
+                        <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                            {mediaDescriptions[4]}
+                                {mediaDescriptions[4]}
                             </Typography>
                         </CardContent>
                     </CardActionArea>
                 </Card>
 
-                
-    
-    
+
+
+
             </div>
         );
     }
-         
+
     return (
-       <div>Fatal Error: Invalid Code</div>
+        <div>Fatal Error: Invalid Code</div>
     );
 };
 
