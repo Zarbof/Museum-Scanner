@@ -20,7 +20,7 @@
 		$t = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		// if no plants
-		if (empty($tuple)){
+		if (empty($t)){
 			$db = null;
 			echo 'no plants';
 		}
