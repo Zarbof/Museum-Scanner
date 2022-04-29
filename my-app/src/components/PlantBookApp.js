@@ -154,7 +154,7 @@ export default function PlantBookApp(props) {
         var mediaDescriptions = [];
         var mediaTypes = [];
         const str1 = "a";
-        for (var i = 4; i < tempArrays.length; i++) {
+        for (var i = 4; i < tempArrays[cardNum].length; i++) {
             var mediaNumber = tempArrays[i][2];
             mediaNames[i - 1] = mediaNumber.split("a")[1];   //set back to pos 0 in assignment
             mediaDescriptions[i - 1] = array[i][3];
