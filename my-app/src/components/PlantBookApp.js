@@ -20,7 +20,7 @@ export default function PlantBookApp(props) {
   const [id, setName] = useState("5");
   var [cardsArray, addCard] = useState([]);
   const buttonRef = useRef(null);
-  let card = [];
+  let bigCard = [];
 
   useEffect(() => {
 
@@ -178,7 +178,7 @@ export default function PlantBookApp(props) {
 
 
         }
-        card[cardNum] = <Card variant="outlined" style={{ textAlign: "center" }}>
+        let card = <Card variant="outlined" style={{ textAlign: "center" }}>
           <CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
@@ -245,7 +245,7 @@ export default function PlantBookApp(props) {
 
       
       }
-
+      bigCard[cardNum] = card;
 
     }
   }, [result]);
@@ -254,7 +254,7 @@ export default function PlantBookApp(props) {
 
 
   console.log("cardsArray", cardsArray)
-  console.log("cardsArray2", card)
+  console.log("cardsArray2", bigCard)
 
   var rows = [];
 
