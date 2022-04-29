@@ -132,8 +132,9 @@ export default function PlantBookApp(props) {
       console.log("finalArray", tempArray);
       setTemp(tempArray);
       //create a card from each data point
+      let card = "";
       for(var cardNum = 0; cardNum < tempArray.length; cardNum++){
-        let card = <CardFilePlants bigArray = {tempArray[cardNum]}></CardFilePlants>;
+       card = <CardFilePlants bigArray = {tempArray[cardNum]}></CardFilePlants>;
         addCard(card);
         console.log("CARD",card);
       }
