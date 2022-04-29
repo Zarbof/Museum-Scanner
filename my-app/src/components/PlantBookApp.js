@@ -132,9 +132,8 @@ export default function PlantBookApp(props) {
       console.log("finalArray", tempArray);
       setTemp(tempArray);
       //create a card from each data point
-      let card = "";
       for(var cardNum = 0; cardNum < tempArray.length; cardNum++){
-       card = <CardFilePlants bigArray = {tempArray[cardNum]}></CardFilePlants>;
+        let card = <CardFilePlants bigArray = {tempArray[cardNum]}></CardFilePlants>;
         addCard(card);
         console.log("CARD",card);
       }
@@ -152,7 +151,7 @@ console.log("cardsArray",cardsArray)
     rows.push(<Accordion.Item eventKey={i} key={i}>
       <Accordion.Header>{tempArray[i][1]}</Accordion.Header>
       <Accordion.Body>
-        {card}
+        {cardsArray}
       </Accordion.Body>
     </Accordion.Item>);
   }
