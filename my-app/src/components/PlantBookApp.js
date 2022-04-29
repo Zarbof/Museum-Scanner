@@ -245,7 +245,8 @@ export default function PlantBookApp(props) {
         </Card>);
 
     let newCard = cardsArray;
-    addCard(card);
+    newCard.push(card);
+    addCard(newCard);
       
       }
 
