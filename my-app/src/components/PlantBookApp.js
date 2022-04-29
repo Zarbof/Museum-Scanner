@@ -105,7 +105,7 @@ export default function PlantBookApp(props) {
           bigArray.splice(m,1);
         for(var n = 0; n < bigArray.length; n++){
           if(bigArray[n][4] != "plants"){
-            if(bigArray[n][4] == bigArray[m][0]){
+            if(tempArray[0][4] == bigArray[m][0]){
               tempArray[m].push(bigArray[n]);
             }
           }
