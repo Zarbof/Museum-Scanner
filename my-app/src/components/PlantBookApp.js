@@ -98,8 +98,9 @@ export default function PlantBookApp(props) {
    
       // console.log("array2:", array[1]);
       var finalArray = [];
-      var tempArray = [];
       for(var m = 0; m < bigArray.length; m++){
+      var tempArray = [];
+
         if(bigArray[m][3] == "plant"){
           tempArray[m] = bigArray[m]; //sets plant name and description into first slot
           bigArray.splice(m,1);
