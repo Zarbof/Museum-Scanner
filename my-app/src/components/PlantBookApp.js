@@ -167,8 +167,8 @@ console.log("cardsArray",cardsArray)
         <button type="submit">Submit</button>
       </form>
 
-
-      <Accordion defaultActiveKey="0">
+      {tempArray[cardNum]}     
+       <Accordion defaultActiveKey="0">
         {/* <Accordion.Item eventKey="0">
           <Accordion.Header>Plant Type</Accordion.Header>
           <Accordion.Body>
