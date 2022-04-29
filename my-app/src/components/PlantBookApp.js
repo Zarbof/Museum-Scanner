@@ -70,7 +70,7 @@ useEffect(() => {
               test = true;
             }
           }
-          if(!test){
+          if(test){
           console.log("fucked")
           bigArray[k] = array;
           }
