@@ -157,8 +157,8 @@ import Cookies from 'universal-cookie';
                 <Routes>
                     <Route path="home" element={<ArtifactHomeApp />} />
                     <Route path="plantbook" element={<PlantBookApp plantType={plantType} />} />
-                    {/* <Route path="db" element={<AccessDataBase />} />
-                    <Route path="dbToken" element={<GrabToken />} /> */}
+                    <Route path="db" element={<AccessDataBase />} />
+                    <Route path="dbToken" element={<GrabToken />} />
 
     
                 </Routes>
