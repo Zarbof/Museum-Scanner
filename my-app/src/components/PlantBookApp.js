@@ -1,4 +1,3 @@
-import React from 'react';
 import { Accordion, Card, CardGroup } from 'react-bootstrap'
 import { Component, React, useState, useEffect, useRef } from "react";
 import { ReactSession } from 'react-client-session';
