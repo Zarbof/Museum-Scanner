@@ -260,7 +260,7 @@ export default function PlantBookApp(props) {
     rows.push(<Accordion.Item eventKey={i} key={i}>
       <Accordion.Header>{tempArrays[i][1]}</Accordion.Header>
       <Accordion.Body>
-        {cardsArray}
+        {card[i]}
       </Accordion.Body>
     </Accordion.Item>);
   }
