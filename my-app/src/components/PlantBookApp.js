@@ -64,7 +64,9 @@ useEffect(() => {
               //console.log("updatedStr", {updatedStr2});
             
           }
+          if(!bigArray.includes(array)){
           bigArray[k] = array;
+          }
       }
       setArray(bigArray);
       console.log("array:", bigArray);
