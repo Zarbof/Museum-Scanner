@@ -60,6 +60,8 @@ useEffect(() => {
       }
       setArray(bigArray);
       console.log("array:", array);
+      console.log("array2:", array[1]);
+
 
 
   }
