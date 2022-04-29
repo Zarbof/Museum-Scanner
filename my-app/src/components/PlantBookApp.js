@@ -69,22 +69,12 @@ export default function PlantBookApp(props) {
         }
         array.filter(n => n)
         var arr = array.filter(function (n) { return n; });
-        var test = false;
-        if (k > 0) {
-          for (var j = 0; j < bigArray.length; j++) {
-            if (bigArray.includes(arr)) {
-              console.log("bigArray",bigArray[j])
-              console.log("arr",arr)
-              test = true;
-            }
-          }
-        }
-        if (!test) {
           bigArray[k] = arr;
 
-        }
-
       }
+      let uniqueChars = bigArray.filter((element, index) => {
+        return bigArray.indexOf(element) === index;
+    });
       setArray(bigArray);
       console.log("array:", bigArray);
       // console.log("array2:", array[1]);
