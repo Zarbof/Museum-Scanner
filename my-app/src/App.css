@@ -11,7 +11,7 @@
   border: white !important;
 }
 
-.navbar-nav {
+.color-nav {
   background-color: #791212 !important;
   color: #791212 !important;
 }
@@ -21,12 +21,15 @@
   color: white !important;
 
 }
+
 .MuiCardHeader-subheader{
   color: white !important;
 }
+
 .MuiTypography-body2{
   color: white !important;
 }
+
 /* .accordion-button{
   background-color: #471d1d !important;
 } */
