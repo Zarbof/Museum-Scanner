@@ -36,7 +36,7 @@ const CardFilePlants = (props) => {
         var mediaDescriptions = [];
         var mediaTypes = [];
         const str1 = "a";
-        for (var i = 1; i < array.length; i++) {
+        for (var i = 3; i < array.length; i++) {
             var mediaNumber = array[i][2];
             mediaNames[i - 1] = mediaNumber.split("a")[1];   //set back to pos 0 in assignment
             mediaDescriptions[i - 1] = array[i][3];
