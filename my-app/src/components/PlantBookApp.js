@@ -249,8 +249,8 @@ export default function PlantBookApp(props) {
           </CardActionArea>
         </Card>
 
-      }
       addCard(card);
+      }
 
 
     }
