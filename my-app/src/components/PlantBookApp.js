@@ -151,7 +151,7 @@ export default function PlantBookApp(props) {
 
 
       //create a card from each data point
-      var mediaUrl = "http://lelooska.pugetsound.edu/phpApp/media/"
+      //var mediaUrl = "http://lelooska.pugetsound.edu/phpApp/media/"
       for (var cardNum = 0; cardNum < tempArrays.length; cardNum++) {
       //   // console.log("cardNum", tempArrays[cardNum]);
       //   // let card = <CardFilePlants bigArray = {tempArrays[cardNum]}></CardFilePlants>;
