@@ -66,11 +66,12 @@ useEffect(() => {
           }
           var test = false;
           for(var j = 0; j < bigArray.length; j++){
+            console.log("array[0]",array[0])
             if(array[0] == bigArray[0] || array[0] == bigArray[1]){
               test = true;
             }
           }
-          if(test){
+          if(!test){
           console.log("fucked")
           bigArray[k] = array;
           }
