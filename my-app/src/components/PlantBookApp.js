@@ -150,7 +150,7 @@ export default function PlantBookApp(props) {
 console.log("cardsArray",cardsArray)
   var rows = [];
 
-  for (var i = 0; i < tempArray.length; i++) {
+  for (var i = 0; i < tempArrays.length; i++) {
     rows.push(<Accordion.Item eventKey={i} key={i}>
       <Accordion.Header>{tempArrays[i][1]}</Accordion.Header>
       <Accordion.Body>
