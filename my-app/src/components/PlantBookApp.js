@@ -103,7 +103,7 @@ export default function PlantBookApp(props) {
         for (var m = 0; m < bigArray.length; m++) {
           if (bigArray[m][3] == "plant") {
             tempArray[m] = bigArray[m]; //sets plant name and description into first slot
-            bigArray.splice(m, 1);
+           
           } 
 
         }
