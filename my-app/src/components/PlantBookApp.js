@@ -68,7 +68,8 @@ useEffect(() => {
             
           }
           array.filter(n => n)
-          bigArray[k] = array;
+          arr = array.filter(function(n){return n; });
+          bigArray[k] = arr;
           
       }
       setArray(bigArray);
