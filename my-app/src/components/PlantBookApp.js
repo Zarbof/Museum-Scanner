@@ -69,7 +69,16 @@ useEffect(() => {
           }
           array.filter(n => n)
           var arr = array.filter(function(n){return n; });
-          bigArray[k] = arr;
+          var test = false;
+          for(var j = 0; j < bigArray.length; j++){
+            if(bigArray[j][0] == arr[0]){
+              test = true;
+            }
+          }
+          if(!test){
+            bigArray[k] = arr;
+
+          }
           
       }
       setArray(bigArray);
