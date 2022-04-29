@@ -64,17 +64,9 @@ useEffect(() => {
               //console.log("updatedStr", {updatedStr2});
             
           }
-          var test = false;
-          for(var j = 0; j < bigArray.length; j++){
-            console.log("array[0]",array[0])
-            if(array[0] == bigArray[0] || array[0] == bigArray[1]){
-              test = true;
-            }
-          }
-          if(!test){
-          console.log("fucked")
+         
           bigArray[k] = array;
-          }
+          
       }
       setArray(bigArray);
       console.log("array:", bigArray);
