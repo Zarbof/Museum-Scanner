@@ -69,32 +69,20 @@ export default function PlantBookApp(props) {
         }
         array.filter(n => n)
         var arr = array.filter(function (n) { return n; });
-        console.log("arr:", arr[0])
+
         var test = false;
-        if(k == 0){
+        if (k == 0) {
           bigArray[k] = arr;
-
         }
-
-        console.log("bigArray:", bigArray[0][0])
         for (var j = 0; j < bigArray.length; j++) {
-          console.log("smaller check small",arr)
-          try{
-          if (arr[0] == bigArray[j][0]) {
-            console.log("firstcheck small",arr[0])
-            console.log("firstcheck big",bigArray[j][0])
-            console.log("got em")
-            console.log("k",k)
-            console.log("j",j)
-
-            test = true;
-         console.log("array in loop:", bigArray);
-
+          try {
+            if (arr[0] == bigArray[j][0]) {
+              test = true;
+            }
           }
-        }
-        catch(e){
-          console.log('Error')
-        }
+          catch (e) {
+            console.log('Error')
+          }
         }
         if (!test) {
           bigArray[k] = arr;
