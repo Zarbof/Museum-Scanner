@@ -41,7 +41,6 @@ useEffect(() => {
       var lengths = 5;
       var bigArray = [];
       console.log("entry0");
-      console.log("result length = ", { length } - 1)
       for (var k = 0; k < result.length - 1; k++) {   //loops through array of all entry blocks
           console.log("entry");
           var array = [];
