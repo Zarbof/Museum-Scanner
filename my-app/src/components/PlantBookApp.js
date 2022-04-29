@@ -60,7 +60,10 @@ useEffect(() => {
               var updatedStr = tempStr[i];
               var updatedStr2 = updatedStr.split(":");
               updatedStr = updatedStr2[1];
-              array[i] = updatedStr;
+              if(updatedStr != null){
+                array[i] = updatedStr;
+
+              }
               //console.log("updatedStr", {updatedStr2});
             
           }
