@@ -152,7 +152,7 @@ console.log("cardsArray",cardsArray)
 
   for (var i = 0; i < tempArray.length; i++) {
     rows.push(<Accordion.Item eventKey={i} key={i}>
-      <Accordion.Header>{tempArray[i][1]}</Accordion.Header>
+      <Accordion.Header>{tempArrays[i][1]}</Accordion.Header>
       <Accordion.Body>
         {cardsArray}
       </Accordion.Body>
