@@ -11,9 +11,9 @@
   border: white !important;
 }
 
-.navbar-text {
+.navbar-nav {
   background-color: #791212 !important;
-  color:#791212 !important;
+  color: #791212 !important;
 }
 
 .MuiCard-root{
