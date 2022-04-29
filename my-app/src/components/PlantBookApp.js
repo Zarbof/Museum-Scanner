@@ -27,7 +27,7 @@ export default function PlantBookApp(props) {
           console.log("data:",data);
           const presplit = data.replace(/[^,.:}'0-9a-zA-Z ]/g, "")
           const split = presplit.split("}");
-          console.log("new data:",data);
+          console.log("new data:",split);
 
           setResult(split);
 
