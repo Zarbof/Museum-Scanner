@@ -82,6 +82,9 @@ export default function PlantBookApp(props) {
             console.log("firstcheck small",arr[0])
             console.log("firstcheck big",bigArray[j][0])
             console.log("got em")
+            console.log("k",k)
+            console.log("j",j)
+
             test = true;
           }
         }
