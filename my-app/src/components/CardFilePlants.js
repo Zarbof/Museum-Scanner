@@ -19,16 +19,11 @@ import { CardActionArea } from '@mui/material';
 // array[1][2] = location
 // array[1][3] = description
 // array[1][4] = entryID 
-const CardFilePlants = (props) => {
-
-
-    const title = props.title;
-    const description = props.description;
-    const imagesrc = props.imagesrc;
+const CardFilePlants = (props) => {  
     var array = props.bigArray;
-    var cardArray = [];
-    console.log(array);
-    console.log(array);
+    
+
+
     var mediaUrl = "http://lelooska.pugetsound.edu/phpApp/media/"
     if (array[1] != null) {
         // var mediaNumber = array[1][2];
@@ -60,6 +55,7 @@ const CardFilePlants = (props) => {
 
 
         }
+        console.log("MEDIA NUMBER",mediaNumber);
         console.log("media type audi", mediaTypes[1]);
 
 
