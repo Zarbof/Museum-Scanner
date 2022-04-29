@@ -243,9 +243,9 @@ export default function PlantBookApp(props) {
           </CardActionArea>
         </Card>
 
+bigCard[cardNum] = card;
       
       }
-      bigCard[cardNum] = card;
 
     }
   }, [result]);
