@@ -22,7 +22,9 @@ export default function ArtifactHomeApp() {
             Visitors can navigate to the Museum's plant guidebook through the Navigation Bar.
           </ListGroupItem>
           <ListGroupItem>
-            If you wish to visit the Lelooska Foundation's offical website or donate to the Foundation, click the links below!</ListGroupItem>
+            If you wish to visit the Lelooska Foundation's offical website or donate to the Foundation, those links
+            can also be found in the Nav Bar.
+          </ListGroupItem>
         </ListGroup>
         {/*
         <Card.Body>
