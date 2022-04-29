@@ -95,6 +95,19 @@ export default function PlantBookApp(props) {
       setArray(bigArray);
       console.log("array:", bigArray);
       // console.log("array2:", array[1]);
+      var finalArray = [];
+      var tempArray = [];
+      for(var m = 0; m < bigArray.length; m++){
+        if(bigArray[m][3] == "plant"){
+          tempArray[m] = bigArray[m]; //sets plant name and description into first slot
+        for(var n = 0; n < bigArray.length; n++){
+          if(bigArray[n][4] == bigArray[m][0]){
+            tempArray[m].push(bigArray[n]);
+          }
+        }
+        finalArray.push(tempArray);
+        }
+      }
 
 
 
