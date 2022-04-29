@@ -183,10 +183,10 @@ export default function PlantBookApp(props) {
           <CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                {tempArrays[0][1]}
+                {tempArrays[cardNum][0][1]}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {tempArrays[0][2]}
+                {tempArrays[cardNum][0][2]}
               </Typography>
             </CardContent>
 
