@@ -4,28 +4,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function ArtifactHomeApp() {
   return(
-    <div className="text-center">
+    <div >
 
-
-      <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
-        <Tab eventKey="media" title="Media">
-          <ListGroup>
-          <ListGroup.Item>
-            <Image src="https://greatinspire.com/wp-content/uploads/2016/09/The-Beauty-Of-Small-Things-Photography-4.jpg"></Image>
-            <p>flowers :)</p>
-          </ListGroup.Item>
-          <ListGroup.Item>
-            <p>please code this soon</p>
-          </ListGroup.Item>
-          <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-          <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-          <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-        </ListGroup>
-        </Tab>
-        <Tab eventKey="description" title="Description">
-          <p>Here is where description text will go</p>
-        </Tab>
-      </Tabs>
+      <Alert variant="success">
+        <Alert.Heading>Hey, nice to see you</Alert.Heading>
+        <p>
+          Aww yeah, you successfully read this important alert message. This example
+          text is going to run a bit longer so that you can see how spacing within an
+          alert works with this kind of content.
+        </p>
+        <hr />
+        <p className="mb-0">
+          Whenever you need to, be sure to use margin utilities to keep things nice
+          and tidy.
+        </p>
+      </Alert>
+            
       
     </div>
     

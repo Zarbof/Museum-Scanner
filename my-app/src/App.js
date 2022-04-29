@@ -140,16 +140,15 @@ import Cookies from 'universal-cookie';
                 <BrowserRouter>
                     <Navbar bg="light" expand="lg">
                         <Container>
-                            <Navbar.Brand href="#home">Lelooska</Navbar.Brand>
+                            <Navbar.Brand href="home">Lelooska</Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 <Nav.Link href="plantbook">Plant Book</Nav.Link>
                                 {/* <Nav.Link href="db">Database Test</Nav.Link>
                                 <Nav.Link href="dbToken">Token Test</Nav.Link> */}
-
-
                                 <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
+                                <Nav.Link href="http://lelooska.org">Lelooska Foundation</Nav.Link>
                             </Nav>
                             </Navbar.Collapse>
                         </Container>
@@ -159,8 +158,6 @@ import Cookies from 'universal-cookie';
                     <Route path="plantbook" element={<PlantBookApp plantType={plantType} />} />
                     <Route path="db" element={<AccessDataBase />} />
                     <Route path="dbToken" element={<GrabToken />} />
-
-    
                 </Routes>
                 </BrowserRouter>
             </div>
