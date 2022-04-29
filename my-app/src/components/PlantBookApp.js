@@ -133,11 +133,7 @@ export default function PlantBookApp(props) {
 
       console.log("finalArray", tempArrays);
       console.log("finalArray length", tempArrays.length);
-      if(tempArray.length > 0){
-      console.log("arrayAccess test", tempArrays[0][4])
-      console.log("arrayAccess test", tempArrays[0][4][2])
-    }
-
+    
 
       //create a card from each data point
       for(var cardNum = 0; cardNum < tempArrays.length; cardNum++){
