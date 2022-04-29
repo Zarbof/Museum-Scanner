@@ -145,8 +145,8 @@ import Cookies from 'universal-cookie';
                             <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 <Nav.Link href="plantbook">Plant Book</Nav.Link>
-                                <Nav.Link href="db">Database Test</Nav.Link>
-                                <Nav.Link href="dbToken">Token Test</Nav.Link>
+                                {/* <Nav.Link href="db">Database Test</Nav.Link>
+                                <Nav.Link href="dbToken">Token Test</Nav.Link> */}
 
 
                                 <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
@@ -157,8 +157,8 @@ import Cookies from 'universal-cookie';
                 <Routes>
                     <Route path="home" element={<ArtifactHomeApp />} />
                     <Route path="plantbook" element={<PlantBookApp plantType={plantType} />} />
-                    <Route path="db" element={<AccessDataBase />} />
-                    <Route path="dbToken" element={<GrabToken />} />
+                    {/* <Route path="db" element={<AccessDataBase />} />
+                    <Route path="dbToken" element={<GrabToken />} /> */}
 
     
                 </Routes>
