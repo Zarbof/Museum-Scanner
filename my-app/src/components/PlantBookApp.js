@@ -75,6 +75,7 @@ export default function PlantBookApp(props) {
       let uniqueChars = bigArray.filter((element, index) => {
         return bigArray.indexOf(element) === index;
     });
+      uniqueChars();
       setArray(bigArray);
       console.log("array:", bigArray);
       // console.log("array2:", array[1]);
