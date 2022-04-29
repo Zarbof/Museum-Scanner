@@ -178,7 +178,7 @@ export default function PlantBookApp(props) {
 
 
         }
-        card[cardNum] === <Card variant="outlined" style={{ textAlign: "center" }}>
+        card[cardNum] = <Card variant="outlined" style={{ textAlign: "center" }}>
           <CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
