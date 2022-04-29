@@ -51,15 +51,15 @@ useEffect(() => {
           for (var i = 0; i < tempStr.length; i++) {  //loops through each element in array for processing
               var updatedStr = tempStr[i];
               var updatedStr2 = updatedStr.split(":");
-
               updatedStr = updatedStr2[1];
               array[i] = updatedStr;
               //console.log("updatedStr", {updatedStr2});
-
+            
           }
           bigArray[k] = array;
       }
       setArray(bigArray);
+      console.log("array:", array);
 
 
   }
