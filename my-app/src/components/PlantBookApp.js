@@ -254,6 +254,8 @@ export default function PlantBookApp(props) {
 
 
   console.log("cardsArray", cardsArray)
+  console.log("cardsArray2", card)
+
   var rows = [];
 
   for (var i = 0; i < tempArrays.length; i++) {
