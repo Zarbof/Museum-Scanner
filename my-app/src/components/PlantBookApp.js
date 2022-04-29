@@ -20,6 +20,7 @@ export default function PlantBookApp(props) {
   const [id, setName] = useState("5");
   var [cardsArray, addCard] = useState([]);
   const buttonRef = useRef(null);
+  let card = [];
 
   useEffect(() => {
 
@@ -144,7 +145,6 @@ export default function PlantBookApp(props) {
 
       //create a card from each data point
 
-      var card = [];
       for (var cardNum = 0; cardNum < tempArrays.length; cardNum++) {
       var mediaUrl = "http://lelooska.pugetsound.edu/phpApp/media/"
         // console.log("cardNum", tempArrays[cardNum]);
