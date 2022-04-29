@@ -64,8 +64,14 @@ useEffect(() => {
               //console.log("updatedStr", {updatedStr2});
             
           }
-          if(!bigArray.includes(array)){
-            console.log("fucked")
+          var test = false;
+          for(var j = 0; j < bigArray.length; j++){
+            if(array[i] == bigArray[0] || array[i] == bigArray[1]){
+              test = true;
+            }
+          }
+          if(!test){
+          console.log("fucked")
           bigArray[k] = array;
           }
       }
