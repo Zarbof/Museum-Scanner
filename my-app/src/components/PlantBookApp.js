@@ -104,9 +104,11 @@ export default function PlantBookApp(props) {
           tempArray[m] = bigArray[m]; //sets plant name and description into first slot
           bigArray.splice(m,1);
         }else{
+          if(tempArray.length > 0){
           if(bigArray[m][5] == tempArray[m][0]){
             tempArray.push(bigArray[m])
           }
+        }
 
         }
 
