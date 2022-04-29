@@ -26,6 +26,8 @@ export default function PlantBookApp(props) {
     if (id != null) {
         // handleSumbit(id);
         buttonRef.current.click();
+        buttonRef.current.click();
+
 
     }
 }, [id]);
