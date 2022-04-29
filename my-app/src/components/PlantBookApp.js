@@ -139,7 +139,7 @@ export default function PlantBookApp(props) {
   var rows = [];
   for (var i = 0; i < tempArray.length-1; i++) {
     rows.push(<Accordion.Item eventKey={i} key={i}>
-      <Accordion.Header>{username}</Accordion.Header>
+      <Accordion.Header>{tempArray[i][1]}</Accordion.Header>
       <Accordion.Body>
         
       </Accordion.Body>
