@@ -143,6 +143,8 @@ export default function PlantBookApp(props) {
 
 
       //create a card from each data point
+
+      var card = [];
       for (var cardNum = 0; cardNum < tempArrays.length; cardNum++) {
       var mediaUrl = "http://lelooska.pugetsound.edu/phpApp/media/"
         // console.log("cardNum", tempArrays[cardNum]);
@@ -176,7 +178,7 @@ export default function PlantBookApp(props) {
 
 
         }
-        let card = <Card variant="outlined" style={{ textAlign: "center" }}>
+        card[cardNum] = <Card variant="outlined" style={{ textAlign: "center" }}>
           <CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
@@ -241,7 +243,7 @@ export default function PlantBookApp(props) {
           </CardActionArea>
         </Card>
 
-      addCard(card);
+      
       }
 
 
@@ -258,7 +260,7 @@ export default function PlantBookApp(props) {
     rows.push(<Accordion.Item eventKey={i} key={i}>
       <Accordion.Header>{tempArrays[i][1]}</Accordion.Header>
       <Accordion.Body>
-        {cardsArray[i]}
+        {cardsArray}
       </Accordion.Body>
     </Accordion.Item>);
   }
