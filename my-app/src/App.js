@@ -142,12 +142,12 @@ import Cookies from 'universal-cookie';
                         <style type="text/css">
                             {`
                             .navbar-lelooska {
-                                color: #791212;
+                                background-color: #791212;
                             }
                             `}
                         </style>
                     </>
-                    <Navbar bg="light" expand="lg" className="navbar-lelooska">
+                    <Navbar bg="light" expand="lg" variant="lelooska" >
                         <Container>
                             <Navbar.Brand href="home">Lelooska</Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
