@@ -138,7 +138,16 @@ import Cookies from 'universal-cookie';
         return (
             <div className="wrapper">
                 <BrowserRouter>
-                    <Navbar bg="light" expand="lg">
+                    <>
+                        <style type="text/css">
+                            {`
+                            .navbar-lelooska {
+                                color: #791212;
+                            }
+                            `}
+                        </style>
+                    </>
+                    <Navbar bg="light" expand="lg" variant="lelooska">
                         <Container>
                             <Navbar.Brand href="home">Lelooska</Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
