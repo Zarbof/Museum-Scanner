@@ -71,6 +71,11 @@ export default function PlantBookApp(props) {
         var arr = array.filter(function (n) { return n; });
         console.log("arr:", arr[0])
         var test = false;
+        if(k == 0){
+          bigArray[k] = arr;
+
+        }
+
         console.log("bigArray:", bigArray[0][0])
         for (var j = 0; j < k; j++) {
           if (arr[0] == bigArray[j][0]) {
