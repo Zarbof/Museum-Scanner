@@ -72,7 +72,7 @@ export default function PlantBookApp(props) {
         var test = false;
         if (k > 0) {
           for (var j = 0; j < bigArray.length; j++) {
-            if (bigArray.Contains(arr)) {
+            if (bigArray.includes(arr)) {
               console.log("bigArray",bigArray[j])
               console.log("arr",arr)
               test = true;
