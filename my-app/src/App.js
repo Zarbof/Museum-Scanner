@@ -147,7 +147,7 @@ import Cookies from 'universal-cookie';
                             `}
                         </style>
                     </>
-                    <Navbar bg="light" expand="lg" variant="lelooska">
+                    <Navbar bg="light" expand="lg">
                         <Container>
                             <Navbar.Brand href="home">Lelooska</Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
