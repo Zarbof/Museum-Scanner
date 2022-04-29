@@ -67,7 +67,7 @@ useEffect(() => {
               //console.log("updatedStr", {updatedStr2});
             
           }
-         
+          array.filter(n => n)
           bigArray[k] = array;
           
       }
