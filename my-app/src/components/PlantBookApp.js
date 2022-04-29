@@ -59,14 +59,6 @@ export default function PlantBookApp(props) {
   };
 
   useEffect(() => {
-    console.log("result length:", result.length)
-    console.log("result 0:", result[0])
-    console.log("result 1:", result[1])
-    console.log("result 2:", result[2])
-    console.log("result 3:", result[3])
-    console.log("result 4:", result[4])
-    console.log("result 5:", result[5])
-
     if (result.length > 0) {
       // var bigArray = Array.from(Array(2), () => new Array(4))
       var lengths = 5;
@@ -144,9 +136,9 @@ export default function PlantBookApp(props) {
       }
       setTemp(tempArray);
 
-      // console.log("finalArray", tempArrays);
-      // console.log("finalArray length", tempArrays.length);
-      // console.log("accessTest", tempArrays[0][4]);
+      console.log("finalArray", tempArrays);
+      console.log("finalArray length", tempArrays.length);
+      console.log("accessTest", tempArrays[0][4]);
 
 
 
