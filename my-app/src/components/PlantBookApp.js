@@ -136,9 +136,9 @@ export default function PlantBookApp(props) {
       }
       setTemp(tempArray);
 
-      console.log("finalArray", tempArrays);
-      console.log("finalArray length", tempArrays.length);
-      console.log("accessTest", tempArrays[0][4]);
+      // console.log("finalArray", tempArrays);
+      // console.log("finalArray length", tempArrays.length);
+      // console.log("accessTest", tempArrays[0][4]);
 
 
 
