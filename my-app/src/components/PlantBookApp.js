@@ -20,7 +20,7 @@ export default function PlantBookApp(props) {
   var [cardsArray, addCard] = useState([]);
   const buttonRef = useRef(null);
 
-  document.addEventListener('DOMContentLoaded', function () {
+  window.addEventListener('DOMContentLoaded', function () {
     function int(){
       buttonRef.current.click();
   
