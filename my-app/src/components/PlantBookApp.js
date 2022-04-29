@@ -65,6 +65,7 @@ useEffect(() => {
             
           }
           if(!bigArray.includes(array)){
+            console.log("fucked")
           bigArray[k] = array;
           }
       }
