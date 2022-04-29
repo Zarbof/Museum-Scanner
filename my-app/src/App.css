@@ -13,8 +13,12 @@
 
 .navbar {
   background-color: #791212 !important;
+}
+
+.navbar-text {
   color: white !important;
 }
+
 
 .MuiCard-root{
   background-color: #343d46 !important;
