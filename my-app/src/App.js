@@ -149,6 +149,7 @@ import Cookies from 'universal-cookie';
                                 <Nav.Link href="dbToken">Token Test</Nav.Link> */}
                                 <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
                                 <Nav.Link href="http://lelooska.org">Lelooska Foundation</Nav.Link>
+                                <Nav.Link href="http://lelooska.org/donate">Donate!</Nav.Link>
                             </Nav>
                             </Navbar.Collapse>
                         </Container>
