@@ -21,34 +21,12 @@ export default function PlantBookApp(props) {
           console.log("------ test ------")
           // const myObject = JSON.parse(data);
           // console.log(myObject.name);
-          console.log(data);
+          console.log("data:",data);
         },
     });
-};
+};  
 
-  // // Code to grab the data from the database
-  // $.ajax({
-  //   // Change URL to correct path for plants
-  //   url: 'http://lelooska.pugetsound.edu/phpApp/plantList.php',
-  //   type: "GET",
-  //   success: function(data) {
-  //     console.log('success')
-  //     console.log(data)
-  //     // const myObject = JSON.parse(data);
-  //     // const mystring = JSON.stringify(myObject);
-  //     // const dailyTokenString = dailyToken.replaceAll('"', '');
 
-  //     // const userTokenString = {userToken}.userToken;
-
-  //     // if(dailyTokenString === userTokenString) {
-  //     //   ReactSession.set("token", dailyTokenString);
-  //     //   setDailyDBToken(dailyTokenString);
-  //     // } 
-  //   }.bind(this),
-  //   error: function(xhr, status, err) {
-  //     console.log('error')
-  //   }.bind(this)
-  // });
 
 
 
