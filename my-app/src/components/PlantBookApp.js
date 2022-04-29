@@ -1,4 +1,9 @@
-import { Accordion, Card, CardGroup } from 'react-bootstrap'
+import { Accordion} from 'react-bootstrap'
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
 import { Component, React, useState, useEffect, useRef } from "react";
 import { ReactSession } from 'react-client-session';
 import $ from "jquery";
