@@ -152,7 +152,7 @@ console.log("cardsArray",cardsArray)
     rows.push(<Accordion.Item eventKey={i} key={i}>
       <Accordion.Header>{tempArray[i][1]}</Accordion.Header>
       <Accordion.Body>
-        {cardsArray[i]}
+        {cardsArray}
       </Accordion.Body>
     </Accordion.Item>);
   }
@@ -167,7 +167,7 @@ console.log("cardsArray",cardsArray)
         <button type="submit">Submit</button>
       </form>
 
-         
+        
        <Accordion defaultActiveKey="0">
         {/* <Accordion.Item eventKey="0">
           <Accordion.Header>Plant Type</Accordion.Header>
