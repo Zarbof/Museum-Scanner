@@ -20,11 +20,17 @@ export default function PlantBookApp(props) {
   var [cardsArray, addCard] = useState([]);
   const buttonRef = useRef(null);
 
+  document.addEventListener('DOMContentLoaded', function () {
+    function int(){
+      buttonRef.current.click();
+  
+    }
+  })
+
 
 
   var [result, setResult] = useState("");
-
-  buttonRef.current.click();
+  
 
   const handleSumbit = (e) => {
     e.preventDefault();
