@@ -176,7 +176,7 @@ export default function PlantBookApp(props) {
 
             }
 
-
+            console.log("mediaNumber", mediaNames[0])
         }
         let card = (<Card variant="outlined" style={{ textAlign: "center" }}>
           <CardActionArea>
