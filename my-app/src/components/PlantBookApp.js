@@ -66,7 +66,7 @@ useEffect(() => {
           }
           var test = false;
           for(var j = 0; j < bigArray.length; j++){
-            if(array[i] == bigArray[0] || array[i] == bigArray[1]){
+            if(array[0] == bigArray[0] || array[0] == bigArray[1]){
               test = true;
             }
           }
