@@ -36,7 +36,7 @@ export default function PlantBookApp(props) {
 
   var [result, setResult] = useState("");
 
-
+try{
   const handleSumbit = (e) => {
     e.preventDefault();
     const form = $(e.target);
@@ -267,7 +267,10 @@ export default function PlantBookApp(props) {
       </Accordion.Body>
     </Accordion.Item>);
   }
-
+}
+catch(e){
+  console.log("fucked lol");
+}
   return (
     <div>
       <form
