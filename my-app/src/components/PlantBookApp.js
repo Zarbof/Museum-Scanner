@@ -146,7 +146,7 @@ export default function PlantBookApp(props) {
 
       console.log("finalArray", tempArrays);
       console.log("finalArray length", tempArrays.length);
-      console.log("accessTest", tempArrays[0][5]);
+      console.log("accessTest", tempArrays[0][4]);
       
 
 
