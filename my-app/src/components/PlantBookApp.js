@@ -99,6 +99,7 @@ export default function PlantBookApp(props) {
       // console.log("array2:", array[1]);
       var finalArray = [];
       var tempArray = [];
+      try{
       for(var m = 0; m < bigArray.length; m++){
         if(bigArray[m][3] == "plant"){
           tempArray[m] = bigArray[m]; //sets plant name and description into first slot
@@ -113,6 +114,10 @@ export default function PlantBookApp(props) {
         }
 
       }
+    }
+    catch(e){
+      console.log(e);
+    }
       console.log("finalArray", tempArray);
 
 
