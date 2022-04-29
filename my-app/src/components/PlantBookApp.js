@@ -1,5 +1,6 @@
 import React from 'react';
 import { Accordion, Card, CardGroup } from 'react-bootstrap'
+import { Component, React, useState, useEffect, useRef } from "react";
 import { ReactSession } from 'react-client-session';
 import $ from "jquery";
 
@@ -9,6 +10,9 @@ import $ from "jquery";
 export default function PlantBookApp(props) {
   const plantType = props.plantType
   const username = ReactSession.get("username");
+  var [array, setArray] = useState([]);
+  var [result, setResult] = useState("");
+
 
   const handleSumbit = (e) => {
     e.preventDefault();
@@ -22,9 +26,46 @@ export default function PlantBookApp(props) {
           // const myObject = JSON.parse(data);
           // console.log(myObject.name);
           console.log("data:",data);
+          const presplit = data.replace(/[^,.:}'0-9a-zA-Z ]/g, "")
+          const split = presplit.split("}");
+          console.log("new data:",data);
+
+          setResult(split);
+
         },
     });
 };  
+
+useEffect(() => {
+  if (result.length > 0) {
+      // var bigArray = Array.from(Array(2), () => new Array(4))
+      var lengths = 5;
+      var bigArray = [];
+      console.log("entry0");
+      console.log("result length = ", { length } - 1)
+      for (var k = 0; k < result.length - 1; k++) {   //loops through array of all entry blocks
+          console.log("entry");
+          var array = [];
+          var tempStr = result[k];
+          tempStr = result[k].split(",");
+          console.log("tempStr", { tempStr });
+          //tempStr = tempStr.split(",");
+          for (var i = 0; i < tempStr.length; i++) {  //loops through each element in array for processing
+              var updatedStr = tempStr[i];
+              var updatedStr2 = updatedStr.split(":");
+              console.log("updatedStr", { updatedStr2 });
+              updatedStr = updatedStr2[1];
+              array[i] = updatedStr;
+              //console.log("updatedStr", {updatedStr2});
+              console.log("entry2");
+          }
+          bigArray[k] = array;
+      }
+      setArray(bigArray);
+      console.log("initialization test")
+      console.log(bigArray[0][0])
+  }
+}, [result]);
 
 
 
