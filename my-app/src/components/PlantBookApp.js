@@ -1,4 +1,4 @@
-import { Accordion} from 'react-bootstrap'
+import { Accordion } from 'react-bootstrap'
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
@@ -24,17 +24,17 @@ export default function PlantBookApp(props) {
   useEffect(() => {
 
     if (id != null) {
-        // handleSumbit(id);
-        buttonRef.current.click();
-        buttonRef.current.click();
+      // handleSumbit(id);
+      buttonRef.current.click();
+      buttonRef.current.click();
 
 
     }
-}, [id]);
+  }, [id]);
 
 
   var [result, setResult] = useState("");
-  
+
 
   const handleSumbit = (e) => {
     e.preventDefault();
@@ -126,17 +126,17 @@ export default function PlantBookApp(props) {
         for (var m = 0; m < bigArray.length; m++) {
           if (bigArray[m][3] == "plant") {
             tempArray[m] = bigArray[m]; //sets plant name and description into first slot
-          } 
+          }
         }
       }
       catch (e) {
         console.log(e);
       }
 
-      for(var b = 0; b < tempArray.length; b++){
-        for(var c = 0; c < bigArray.length; c++){
-          if(bigArray[c].length > 4){
-            if(bigArray[c][4] == tempArray[b][0]){
+      for (var b = 0; b < tempArray.length; b++) {
+        for (var c = 0; c < bigArray.length; c++) {
+          if (bigArray[c].length > 4) {
+            if (bigArray[c][4] == tempArray[b][0]) {
               tempArray[b].push(bigArray[c])
             }
           }
@@ -147,82 +147,110 @@ export default function PlantBookApp(props) {
       console.log("finalArray", tempArrays);
       console.log("finalArray length", tempArrays.length);
       console.log("accessTest", tempArrays[0][4]);
-      
+
 
 
       //create a card from each data point
-      for(var cardNum = 0; cardNum < tempArrays.length; cardNum++){
+      for (var cardNum = 0; cardNum < tempArrays.length; cardNum++) {
         // console.log("cardNum", tempArrays[cardNum]);
         // let card = <CardFilePlants bigArray = {tempArrays[cardNum]}></CardFilePlants>;
-        // addCard(card);
         // console.log("CARD",card);
+        var mediaNames = [];
+        var mediaDescriptions = [];
+        var mediaTypes = [];
+        const str1 = "a";
+        for (var i = 4; i < tempArrays.length; i++) {
+            var mediaNumber = tempArrays[i][2];
+            mediaNames[i - 1] = mediaNumber.split("a")[1];   //set back to pos 0 in assignment
+            mediaDescriptions[i - 1] = array[i][3];
+            if (array[i][1] == "photo") { //check if is set to photo and change to img for each element that is a photo
+                mediaTypes[i - 1] = "img";
+            }
+            else {
+                mediaTypes[i - 1] = array[i][1];
+            }
+            if (array[i][1] == "audio") { //check if is set to photo and change to img for each element that is a photo
+                console.log("audio before", mediaNames[i - 1])
+                if (!mediaNames[i - 1].endsWith("3")) {
+                    mediaNames[i - 1] = mediaNames[i - 1].concat('', str1)
+                    console.log("we have liftoff")
+                }
+                console.log(mediaNames[i - 1].concat('', str1))
+                console.log("audio after", mediaNames[i - 1])
+                
 
-    //     let card = <Card  variant="outlined" style={{textAlign: "center"}}>
-    //     <CardActionArea>
-    //         <CardContent>
-    //             <Typography gutterBottom variant="h5" component="div">
-    //                 {tempArrays[0][1]}
-    //             </Typography>
-    //             <Typography variant="body2" color="text.secondary">
-    //                 {array[0][2]}
-    //             </Typography>
-    //         </CardContent>
+            }
 
-    //         <CardMedia
-    //             component={mediaTypes[0]}
-    //             controls
-    //             src={mediaUrl.concat('', mediaNames[0])}
-    //         />
-    //         <CardContent>
-    //             <Typography variant="body2" color="text.secondary">
-    //                 {mediaDescriptions[0]}
-    //             </Typography>
-    //         </CardContent>
 
-    //         <CardMedia
-    //             component={mediaTypes[1]}
-    //             controls
-    //             src={mediaUrl.concat('', mediaNames[1])}
-    //         />
-    //         <CardContent>
-    //             <Typography variant="body2" color="text.secondary">
-    //                 {mediaDescriptions[1]}
-    //             </Typography>
-    //         </CardContent>
-    //         <CardMedia
-    //             component={mediaTypes[2]}
-    //             controls
-    //             src={mediaUrl.concat('', mediaNames[2])}
-    //         />
-    //         <CardContent>
-    //             <Typography variant="body2" color="text.secondary">
-    //                 {mediaDescriptions[2]}
-    //             </Typography>
-    //         </CardContent>
-    //         <CardMedia
-    //             component={mediaTypes[3]}
-    //             controls
-    //             src={mediaUrl.concat('', mediaNames[3])}
-    //         />
-    //         <CardContent>
-    //             <Typography variant="body2" color="text.secondary">
-    //                 {mediaDescriptions[3]}
-    //             </Typography>
-    //         </CardContent>
-    //         <CardMedia
-    //             component={mediaTypes[4]}
-    //             controls
-    //             src={mediaUrl.concat('', mediaNames[4])}
-    //         />
-    //         <CardContent>
-    //             <Typography variant="body2" color="text.secondary">
-    //                 {mediaDescriptions[4]}
-    //             </Typography>
-    //         </CardContent>
-    //     </CardActionArea>
-    // </Card>
+        }
+        let card = <Card variant="outlined" style={{ textAlign: "center" }}>
+          <CardActionArea>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {tempArrays[0][1]}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {tempArrays[0][2]}
+              </Typography>
+            </CardContent>
+
+            <CardMedia
+              component={mediaTypes[0]}
+              controls
+              src={mediaUrl.concat('', mediaNames[0])}
+            />
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                {mediaDescriptions[0]}
+              </Typography>
+            </CardContent>
+
+            <CardMedia
+              component={mediaTypes[1]}
+              controls
+              src={mediaUrl.concat('', mediaNames[1])}
+            />
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                {mediaDescriptions[1]}
+              </Typography>
+            </CardContent>
+            <CardMedia
+              component={mediaTypes[2]}
+              controls
+              src={mediaUrl.concat('', mediaNames[2])}
+            />
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                {mediaDescriptions[2]}
+              </Typography>
+            </CardContent>
+            <CardMedia
+              component={mediaTypes[3]}
+              controls
+              src={mediaUrl.concat('', mediaNames[3])}
+            />
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                {mediaDescriptions[3]}
+              </Typography>
+            </CardContent>
+            <CardMedia
+              component={mediaTypes[4]}
+              controls
+              src={mediaUrl.concat('', mediaNames[4])}
+            />
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                {mediaDescriptions[4]}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
 
       }
+      addCard(card);
+
 
     }
   }, [result]);
@@ -230,7 +258,7 @@ export default function PlantBookApp(props) {
 
 
 
-console.log("cardsArray",cardsArray)
+  console.log("cardsArray", cardsArray)
   var rows = [];
 
   for (var i = 0; i < tempArrays.length; i++) {
@@ -249,11 +277,11 @@ console.log("cardsArray",cardsArray)
         method="post"
         onSubmit={(event) => handleSumbit(event)}
       >
-        <button type="submit"ref={buttonRef}>Submit</button>
+        <button type="submit" ref={buttonRef}>Submit</button>
       </form>
 
-        
-       <Accordion defaultActiveKey="0">
+
+      <Accordion defaultActiveKey="0">
         {/* <Accordion.Item eventKey="0">
           <Accordion.Header>Plant Type</Accordion.Header>
           <Accordion.Body>
