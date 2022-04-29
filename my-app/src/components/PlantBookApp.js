@@ -262,7 +262,7 @@ bigCard[cardNum] = card;
     rows.push(<Accordion.Item eventKey={i} key={i}>
       <Accordion.Header>{tempArrays[i][1]}</Accordion.Header>
       <Accordion.Body>
-        {card}
+        {bigCard}
       </Accordion.Body>
     </Accordion.Item>);
   }
