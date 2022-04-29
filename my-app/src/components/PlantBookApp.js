@@ -114,7 +114,7 @@ export default function PlantBookApp(props) {
         finalArray.push(tempArray);
         }
       }
-      console.log("finalArray", finalArray[0][0][0]);
+      console.log("finalArray", finalArray[0][0]);
 
 
     }
