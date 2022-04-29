@@ -70,10 +70,10 @@ export default function PlantBookApp(props) {
         array.filter(n => n)
         var arr = array.filter(function (n) { return n; });
           bigArray[k] = arr;
-
+          console.log("arr:",arr[0])
+          console.log("bigArray:",bigArray[0][0])
       }
-      console.log("arr:",arr[0])
-      console.log("bigArray:",bigArray[0][0])
+      
       
       setArray(bigArray);
       console.log("array:", bigArray);
