@@ -147,7 +147,7 @@ import Cookies from 'universal-cookie';
                             `}
                         </style>
                     </>
-                    <Navbar expand="lg" variant="light" style={{backgroundColor: '#791212'}}>
+                    <Navbar expand="lg">
                         <Container>
                             <Navbar.Brand href="home">Lelooska</Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
