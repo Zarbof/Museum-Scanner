@@ -103,13 +103,21 @@ export default function PlantBookApp(props) {
         for (var m = 0; m < bigArray.length; m++) {
           if (bigArray[m][3] == "plant") {
             tempArray[m] = bigArray[m]; //sets plant name and description into first slot
-           
           } 
-
         }
       }
       catch (e) {
         console.log(e);
+      }
+
+      for(var b = 0; b < tempArray.length; b++){
+        for(var c = 0; c < bigArray.length; c++){
+          if(bigArray[c].length > 4){
+            if(bigArray[c][4] == tempArray[b][0]){
+              tempArray[b].push(bigArray[c])
+            }
+          }
+        }
       }
       console.log("finalArray", tempArray);
 
