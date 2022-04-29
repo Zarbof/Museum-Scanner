@@ -16,7 +16,7 @@ export default function PlantBookApp(props) {
   const plantType = props.plantType
   const username = ReactSession.get("username");
   var [array, setArray] = useState([]);
-  var [tempArray, setTemp] = useState([]);
+  var [tempArrays, setTemp] = useState([]);
   var [cardsArray, addCard] = useState([]);
 
 
@@ -129,14 +129,14 @@ export default function PlantBookApp(props) {
           }
         }
       }
-      console.log("finalArray", tempArray);
-      console.log("finalArray length", tempArray.length);
+      console.log("finalArray", tempArrays);
+      console.log("finalArray length", tempArrays.length);
 
       setTemp(tempArray);
       //create a card from each data point
-      for(var cardNum = 0; cardNum < tempArray.length; cardNum++){
-        console.log("cardNum", tempArray[cardNum]);
-        let card = <CardFilePlants bigArray = {tempArray[cardNum]}></CardFilePlants>;
+      for(var cardNum = 0; cardNum < tempArrays.length; cardNum++){
+        console.log("cardNum", tempArrays[cardNum]);
+        let card = <CardFilePlants bigArray = {tempArrays[cardNum]}></CardFilePlants>;
         addCard(card);
         console.log("CARD",card);
       }
