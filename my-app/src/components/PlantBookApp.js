@@ -133,13 +133,82 @@ export default function PlantBookApp(props) {
 
       console.log("finalArray", tempArrays);
       console.log("finalArray length", tempArrays.length);
+      console.log("arrayAccess test", tempArrays[0][5])
+      console.log("arrayAccess test", tempArrays[0][5][2])
+
 
       //create a card from each data point
       for(var cardNum = 0; cardNum < tempArrays.length; cardNum++){
-        console.log("cardNum", tempArrays[cardNum]);
-        let card = <CardFilePlants bigArray = {tempArrays[cardNum]}></CardFilePlants>;
-        addCard(card);
-        console.log("CARD",card);
+        // console.log("cardNum", tempArrays[cardNum]);
+        // let card = <CardFilePlants bigArray = {tempArrays[cardNum]}></CardFilePlants>;
+        // addCard(card);
+        // console.log("CARD",card);
+
+    //     let card = <Card  variant="outlined" style={{textAlign: "center"}}>
+    //     <CardActionArea>
+    //         <CardContent>
+    //             <Typography gutterBottom variant="h5" component="div">
+    //                 {tempArrays[0][1]}
+    //             </Typography>
+    //             <Typography variant="body2" color="text.secondary">
+    //                 {array[0][2]}
+    //             </Typography>
+    //         </CardContent>
+
+    //         <CardMedia
+    //             component={mediaTypes[0]}
+    //             controls
+    //             src={mediaUrl.concat('', mediaNames[0])}
+    //         />
+    //         <CardContent>
+    //             <Typography variant="body2" color="text.secondary">
+    //                 {mediaDescriptions[0]}
+    //             </Typography>
+    //         </CardContent>
+
+    //         <CardMedia
+    //             component={mediaTypes[1]}
+    //             controls
+    //             src={mediaUrl.concat('', mediaNames[1])}
+    //         />
+    //         <CardContent>
+    //             <Typography variant="body2" color="text.secondary">
+    //                 {mediaDescriptions[1]}
+    //             </Typography>
+    //         </CardContent>
+    //         <CardMedia
+    //             component={mediaTypes[2]}
+    //             controls
+    //             src={mediaUrl.concat('', mediaNames[2])}
+    //         />
+    //         <CardContent>
+    //             <Typography variant="body2" color="text.secondary">
+    //                 {mediaDescriptions[2]}
+    //             </Typography>
+    //         </CardContent>
+    //         <CardMedia
+    //             component={mediaTypes[3]}
+    //             controls
+    //             src={mediaUrl.concat('', mediaNames[3])}
+    //         />
+    //         <CardContent>
+    //             <Typography variant="body2" color="text.secondary">
+    //                 {mediaDescriptions[3]}
+    //             </Typography>
+    //         </CardContent>
+    //         <CardMedia
+    //             component={mediaTypes[4]}
+    //             controls
+    //             src={mediaUrl.concat('', mediaNames[4])}
+    //         />
+    //         <CardContent>
+    //             <Typography variant="body2" color="text.secondary">
+    //                 {mediaDescriptions[4]}
+    //             </Typography>
+    //         </CardContent>
+    //     </CardActionArea>
+    // </Card>
+
       }
 
     }
