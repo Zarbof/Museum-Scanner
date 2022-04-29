@@ -15,6 +15,8 @@ export default function PlantBookApp(props) {
   const plantType = props.plantType
   const username = ReactSession.get("username");
   var [array, setArray] = useState([]);
+  var [tempArray, setTemp] = useState([]);
+
   var [result, setResult] = useState("");
 
 
@@ -125,7 +127,7 @@ export default function PlantBookApp(props) {
         }
       }
       console.log("finalArray", tempArray);
-
+      setTemp(tempArray);
 
     }
   }, [result]);
@@ -135,7 +137,7 @@ export default function PlantBookApp(props) {
 
 
   var rows = [];
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < tempArray.length; i++) {
     rows.push(<Accordion.Item eventKey={i} key={i}>
       <Accordion.Header>{username}</Accordion.Header>
       <Accordion.Body>
