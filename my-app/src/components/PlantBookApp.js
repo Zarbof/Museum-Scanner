@@ -86,6 +86,8 @@ export default function PlantBookApp(props) {
             console.log("j",j)
 
             test = true;
+         console.log("array in loop:", bigArray);
+
           }
         }
         if (!test) {
