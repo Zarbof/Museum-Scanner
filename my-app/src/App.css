@@ -25,3 +25,6 @@
 .accordion-button{
   background-color: #471d1d !important;
 }
+.accordion-header{
+  color: white !important;
+}
