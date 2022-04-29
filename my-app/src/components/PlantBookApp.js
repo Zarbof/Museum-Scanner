@@ -7,6 +7,7 @@ import { CardActionArea } from '@mui/material';
 import { Component, React, useState, useEffect, useRef } from "react";
 import { ReactSession } from 'react-client-session';
 import $ from "jquery";
+import CardFilePlants from './CardFilePlants';
 
 
 
@@ -16,6 +17,8 @@ export default function PlantBookApp(props) {
   const username = ReactSession.get("username");
   var [array, setArray] = useState([]);
   var [tempArray, setTemp] = useState([]);
+  var [cardsArray, addCard] = useState([]);
+
 
   var [result, setResult] = useState("");
 
@@ -128,6 +131,10 @@ export default function PlantBookApp(props) {
       }
       console.log("finalArray", tempArray);
       setTemp(tempArray);
+      //create a card from each data point
+      for(var cardNum = 0; cardNum < tempArray.length; cardNum++){
+        let card = <CardFilePlants></CardFilePlants>;
+      }
 
     }
   }, [result]);
