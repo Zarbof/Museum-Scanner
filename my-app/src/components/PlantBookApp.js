@@ -277,7 +277,7 @@ export default function PlantBookApp(props) {
         method="post"
         onSubmit={(event) => handleSumbit(event)}
       >
-        <button type="submit" ref={buttonRef}>Submit</button>
+        <button type="submit" ref={buttonRef} hidden>Submit</button>
       </form>
 
 
