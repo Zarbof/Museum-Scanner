@@ -40,28 +40,28 @@ useEffect(() => {
       // var bigArray = Array.from(Array(2), () => new Array(4))
       var lengths = 5;
       var bigArray = [];
-      console.log("entry0");
+
       for (var k = 0; k < result.length - 1; k++) {   //loops through array of all entry blocks
-          console.log("entry");
+
           var array = [];
           var tempStr = result[k];
           tempStr = result[k].split(",");
-          console.log("tempStr", { tempStr });
+          
           //tempStr = tempStr.split(",");
           for (var i = 0; i < tempStr.length; i++) {  //loops through each element in array for processing
               var updatedStr = tempStr[i];
               var updatedStr2 = updatedStr.split(":");
-              console.log("updatedStr", { updatedStr2 });
+
               updatedStr = updatedStr2[1];
               array[i] = updatedStr;
               //console.log("updatedStr", {updatedStr2});
-              console.log("entry2");
+
           }
           bigArray[k] = array;
       }
       setArray(bigArray);
-      console.log("initialization test")
-      console.log(bigArray[0][0])
+
+
   }
 }, [result]);
 
