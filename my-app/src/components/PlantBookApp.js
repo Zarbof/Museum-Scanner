@@ -18,10 +18,13 @@ export default function PlantBookApp(props) {
   var [array, setArray] = useState([]);
   var [tempArrays, setTemp] = useState([]);
   var [cardsArray, addCard] = useState([]);
+  const buttonRef = useRef(null);
+
 
 
   var [result, setResult] = useState("");
 
+  buttonRef.current.click();
 
   const handleSumbit = (e) => {
     e.preventDefault();
@@ -234,7 +237,7 @@ console.log("cardsArray",cardsArray)
         method="post"
         onSubmit={(event) => handleSumbit(event)}
       >
-        <button type="submit">Submit</button>
+        <button type="submit"ref={buttonRef}>Submit</button>
       </form>
 
         
