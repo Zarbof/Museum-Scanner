@@ -36,6 +36,7 @@ export default function PlantBookApp(props) {
 };  
 
 useEffect(() => {
+  console.log("result length:", result.length)
   if (result.length > 0) {
       // var bigArray = Array.from(Array(2), () => new Array(4))
       var lengths = 5;
@@ -60,7 +61,7 @@ useEffect(() => {
       }
       setArray(bigArray);
       console.log("array:", array);
-      console.log("array2:", array[1]);
+      // console.log("array2:", array[1]);
 
 
 
