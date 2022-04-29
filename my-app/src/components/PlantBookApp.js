@@ -56,7 +56,7 @@ useEffect(() => {
           tempStr = result[k].split(",");
           
           //tempStr = tempStr.split(",");
-          for (var i = 0; i < tempStr.length-1; i++) {  //loops through each element in array for processing
+          for (var i = 0; i < tempStr.length; i++) {  //loops through each element in array for processing
               var updatedStr = tempStr[i];
               var updatedStr2 = updatedStr.split(":");
               updatedStr = updatedStr2[1];
