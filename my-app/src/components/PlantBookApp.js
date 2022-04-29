@@ -17,16 +17,18 @@ export default function PlantBookApp(props) {
   const username = ReactSession.get("username");
   var [array, setArray] = useState([]);
   var [tempArrays, setTemp] = useState([]);
+  const [id, setName] = useState("5");
   var [cardsArray, addCard] = useState([]);
   const buttonRef = useRef(null);
 
-  window.addEventListener('DOMContentLoaded', function () {
-    function int(){
-      buttonRef.current.click();
-  
-    }
-  })
+  useEffect(() => {
 
+    if (id != null) {
+        // handleSumbit(id);
+        buttonRef.current.click();
+
+    }
+}, [id]);
 
 
   var [result, setResult] = useState("");
