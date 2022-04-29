@@ -25,8 +25,8 @@ export default function ArtifactHomeApp() {
             If you wish to visit the Lelooska Foundation's offical website or donate to the Foundation, click the links below!</ListGroupItem>
         </ListGroup>
         <Card.Body>
-          <Card.Link href="http://lelooska.org">Lelooska Foundation Website </Card.Link>
-          <Card.Link href="http://lelooska.org/donate">Donate</Card.Link>
+          <Nav.Link href="http://lelooska.org">Lelooska Foundation Website </Nav.Link>
+          <Nav.Link href="http://lelooska.org/donate">Donate</Nav.Link>
         </Card.Body>
       </Card>
             
