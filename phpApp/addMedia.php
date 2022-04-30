@@ -42,6 +42,7 @@ try {
 	// if artifactID was valid, define variables
 	$entryName = $tuple['entryName'];
 	$entryDescription = $tuple['entryDescription'];
+	$entryType =  $tuple['entryType'];
 
 	// disconnect from db
     $db = null;
@@ -90,7 +91,11 @@ catch(PDOException $e){
 
 					<div>What type of media would you like to add?</div>
 					<div><input type="radio" id="photo" name="mediaType" value="photo" required><label for="photo"> Photo</label></div>
-					<div><input type="radio" id="video" name="mediaType" value="video" required><label for="video"> Video</label></div>
+					<?php
+						if ($tuple['entryType'] == 'artifact'){
+							echo '<div><input type="radio" id="video" name="mediaType" value="video" required><label for="video"> Video</label></div>';
+						}
+					?>
 					<div><input type="radio" id="audio" name="mediaType" value="audio" required><label for="audio"> Audio</label></div><br>
 
 					<label for="mymedia">Please select a file:</label>
