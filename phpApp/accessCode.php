@@ -74,7 +74,7 @@
 						$date->setTimeZone(new DateTimeZone('America/Los_Angeles'));
 						$date= $date->format('m-d-Y g:i A');
 						echo '<b>Current Access Code:</b> '.$tokenValue.'';
-						echo '<br><b>Last updated:</b> ';
+						echo '<br><b>Last Updated:</b> ';
 						echo $date;
 		            ?>
 		        </header>
