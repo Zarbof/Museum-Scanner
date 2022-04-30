@@ -19,11 +19,11 @@ export default function ArtifactHomeApp() {
             If your phone's camera does not have this functionality, downloading a free QR scanner app will be necessary for access to artifact information.
           </ListGroupItem>
           <ListGroupItem>
-            Visitors can navigate to the Museum's plant guidebook through the Navigation Bar.
+            Visitors can navigate to the Museum's plant guidebook through the Navigation Menu at the top right.
           </ListGroupItem>
           <ListGroupItem>
             If you wish to visit the Lelooska Foundation's offical website or donate to the Foundation, those links
-            can be found below.
+            can be found below and through the Navigation Menu.
           </ListGroupItem>
         </ListGroup>
         <Card.Body>
