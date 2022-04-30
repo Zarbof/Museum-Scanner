@@ -124,7 +124,7 @@ catch(PDOException $e){
 
 				<header class="title">
 					<h2>Plant Media</h2>
-					<p>(max of five media files per plant)</p>
+					<p>(max of two media files per plant)</p>
 
 					<?php
 						// check whether media limit is exceeded
@@ -145,7 +145,7 @@ catch(PDOException $e){
 							$result->execute([$plantID]);
 							$row = $result->fetch(PDO::FETCH_ASSOC);
 							$count = $row['mediaCount'];
-							if ($count < 5){
+							if ($count < 2){
 								echo "<br><a href='addMedia.php?ID=$plantID' class='strong-button small'>Add new media for plant</a><br>";
 							}
             			}
