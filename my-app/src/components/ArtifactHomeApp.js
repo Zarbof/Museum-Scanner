@@ -23,7 +23,7 @@ export default function ArtifactHomeApp() {
           </ListGroupItem>
           <ListGroupItem>
             If you wish to visit the Lelooska Foundation's offical website or donate to the Foundation, those links
-            can also be found in the Nav Bar.
+            can be found below.
           </ListGroupItem>
         </ListGroup>
         <Card.Body>
