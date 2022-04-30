@@ -70,9 +70,12 @@
 		            <a href="adjustCode.php" class="strong-button big">Change Access Code</a>
 		            <br><br><br>
 		            <?php
+						$date = DateTime::createFromFormat('U', $lastChanged);
+						$date->setTimeZone(new DateTimeZone('America/Los_Angeles'));
+						$date= $date->format('m-d-Y g:i A');
 						echo '<b>Current Access Code:</b> '.$tokenValue.'';
 						echo '<br><b>Last updated:</b> ';
-						echo date('m/d/Y', $lastChanged);
+						echo $date;
 		            ?>
 		        </header>
 			</article>
