@@ -26,14 +26,10 @@ export default function ArtifactHomeApp() {
             can also be found in the Nav Bar.
           </ListGroupItem>
         </ListGroup>
-        {/*
         <Card.Body>
-          <Button type="submit" onclick="location.href = 'http://lelooska.org';">Login</Button>
-
           <Card.Link href="http://lelooska.org">Lelooska Foundation Website </Card.Link>
           <Card.Link href="http://lelooska.org/donate">Donate</Card.Link>
         </Card.Body>
-        */}
       </Card>
             
       
