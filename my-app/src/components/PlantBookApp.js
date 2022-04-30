@@ -162,7 +162,7 @@ export default function PlantBookApp(props) {
                 mediaTypes[i - 1] = "img";
             }
             else {
-                mediaTypes[i - 1] = tempArrays[cardNum][i][1];
+                mediaTypes[i - 1] = tempArrays[cardNum][1];
             }
             if (tempArrays[cardNum][i][1] == "audio") { //check if is set to photo and change to img for each element that is a photo
                 console.log("audio before", mediaNames[i - 1])
