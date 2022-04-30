@@ -10,13 +10,13 @@ export default function ArtifactHomeApp() {
         <Card.Body>
           <Card.Title>Lelooska Museum Exploration App!</Card.Title>
           <Card.Text>
-            Welcome to the exploration app!
+            Welcome to the exploration app! Now that you have gained access to the app, you are able to scan the QR codes placed around the museum!
           </Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
           <ListGroupItem>
-            iPhone users can simply open their phone's camera and hover over QR codes to scan. 
-            Android users will need to download a QR scanner app before they can begin.
+            Most modern smart phones have QR scanners built into their phone's camera app!
+            If your phone's camera does not have this functionality, downloading a free QR scanner app will be necessary for access to artifact information.
           </ListGroupItem>
           <ListGroupItem>
             Visitors can navigate to the Museum's plant guidebook through the Navigation Bar.
