@@ -49,7 +49,7 @@ const AccessDataBase = (props) => {
             }
             setArray(bigArray);
             console.log("initialization test")
-            console.log(bigArray[0][0])
+            console.log(bigArray)
         }
     }, [result]);
 
