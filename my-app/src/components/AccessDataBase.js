@@ -34,11 +34,12 @@ const AccessDataBase = (props) => {
             // var bigArray = Array.from(Array(2), () => new Array(4))
             var lengths = 5;
             var bigArray = [];
+            const re = /,./;
             for (var k = 0; k < result.length - 1; k++) {   //loops through array of all entry blocks
                 var array = [];
                 var tempStr = result[k];
                 console.log("entire string array",tempStr,tempStr.length)
-                tempStr = result[k].split(",");
+                tempStr = result[k].split(re);
                 
                 console.log(tempStr,tempStr.length)
                 //tempStr = tempStr.split(",");
