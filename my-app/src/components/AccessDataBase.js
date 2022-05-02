@@ -31,6 +31,7 @@ const AccessDataBase = (props) => {
 
     useEffect(() => {
         if (result.length > 0) {
+            console.log("original array", result)
             // var bigArray = Array.from(Array(2), () => new Array(4))
             var lengths = 5;
             var bigArray = [];
