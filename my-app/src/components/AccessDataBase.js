@@ -38,7 +38,8 @@ const AccessDataBase = (props) => {
                 var array = [];
                 var tempStr = result[k];
                 console.log("entire string array",tempStr,tempStr.length)
-                tempStr = result[k].split(",");
+                tempStr = result[k].split(",m");
+                
                 console.log(tempStr,tempStr.length)
                 //tempStr = tempStr.split(",");
                 for (var i = 0; i < tempStr.length; i++) {  //loops through each element in array for processing
