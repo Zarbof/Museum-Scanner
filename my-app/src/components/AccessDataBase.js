@@ -37,8 +37,9 @@ const AccessDataBase = (props) => {
             for (var k = 0; k < result.length - 1; k++) {   //loops through array of all entry blocks
                 var array = [];
                 var tempStr = result[k];
-                console.log("entire string array",tempStr)
+                console.log("entire string array",tempStr,tempStr.length)
                 tempStr = result[k].split(",");
+                console.log(tempStr.length)
                 //tempStr = tempStr.split(",");
                 for (var i = 0; i < tempStr.length; i++) {  //loops through each element in array for processing
                     var updatedStr = tempStr[i];
