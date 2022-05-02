@@ -34,7 +34,7 @@ const AccessDataBase = (props) => {
             // var bigArray = Array.from(Array(2), () => new Array(4))
             var lengths = 5;
             var bigArray = [];
-            const re = /,./;
+            const re = /,\S/;
             for (var k = 0; k < result.length - 1; k++) {   //loops through array of all entry blocks
                 var array = [];
                 var tempStr = result[k];
