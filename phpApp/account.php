@@ -84,7 +84,6 @@ catch(PDOException $e){
 						type="text"
 						name="username"
 						value= "<?php echo "$username"; ?>"
-						pattern="[A-Za-z0-9]{1,}"
 						required
 					/>
 
@@ -94,7 +93,6 @@ catch(PDOException $e){
 						type="text"
 						name="password"
 						value= "<?php echo "$password"; ?>"
-						pattern="[A-Za-z0-9]{1,}"
 						required
 					/>
 
