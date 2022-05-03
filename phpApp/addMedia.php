@@ -126,4 +126,5 @@ catch(PDOException $e){
 
 <?php
 	unset($_SESSION['success']);
+	unset($_SESSION['error']);
 ?>
