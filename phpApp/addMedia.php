@@ -11,9 +11,8 @@
 
 <?php
 
-// get artifactID from URL
+// get entry ID from URL
 $artifactID = $_GET['ID'];
-$iderror = "Invalid artifact ID (please select an artifact from the list below).";
 
 // path to the SQLite database file
 $db_file = './museum.db';
@@ -25,16 +24,15 @@ try {
     // set errormode to use exceptions
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // prepare to fetch info of artifact item with this id
+    // prepare to fetch info of entry item with this id
 	$stmt = $db->prepare("select * from Entry where entryID = ?");
 
-	// fetch info of artifact with this id
+	// fetch info of entry with this id
 	$stmt->execute([$artifactID]);
 	$tuple = $stmt->fetch(PDO::FETCH_ASSOC);
 
-	// if artifactID was invalid (if no artifact with this id)
+	// if entry ID was invalid (if no entry with this id)
 	if (empty($tuple)){
-		$_SESSION['error'] = $iderror;
 		$db = null;
 		header("Location: artifactList.php");
 	}
@@ -57,7 +55,7 @@ catch(PDOException $e){
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<link href='//fonts.googleapis.com/css?family=Forum|Open+Sans:600,regular,italic,700&amp;subset=latin' rel='stylesheet' type='text/css'>
 		<meta charset="UTF-8" />
-		<title>Add media to artifact</title>
+		<title>Add media</title>
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
@@ -79,7 +77,7 @@ catch(PDOException $e){
 			<!--Title and Form-->
 			<article class="content">
 				<header class="title">
-					<h2>Add media to artifact</h2>
+					<h2>Add media</h2>
 				</header>
 
 				<!-- Form -->
