@@ -91,18 +91,27 @@ catch(PDOException $e){
 				>
 
 					<div>What type of media would you like to add?</div>
-					<div><input type="radio" id="photo" name="mediaType" value="photo" required><label for="photo"> Photo</label></div>
+					<div><input type="radio" id="photo" name="mediaType" value="photo" required><label for="photo"> Photo (jpg, jpeg, or png)</label></div>
 					<?php
 						if ($tuple['entryType'] == 'artifact'){
-							echo '<div><input type="radio" id="video" name="mediaType" value="video" required><label for="video"> Video</label></div>';
+							echo '<div><input type="radio" id="video" name="mediaType" value="video" required><label for="video"> Video (mp4 or mov)</label></div>';
 						}
 					?>
-					<div><input type="radio" id="audio" name="mediaType" value="audio" required><label for="audio"> Audio</label></div><br>
+					<div><input type="radio" id="audio" name="mediaType" value="audio" required><label for="audio"> Audio (mp3, m4a, or wav)</label></div><br>
 
-					<label for="mymedia">Please select a file:</label>
-  					<input type="file" id="mymedia" name="mymedia">
+					<label for="mymedia">Please select a file (20 MB size limit):</label>
+  					<input type="file" id="mymedia" name="mymedia" required>
 
-  					<br><br>
+  					<br>
+
+  					<?php
+  						if(isset($_SESSION['error'])){
+		                   			$error = $_SESSION['error'];
+		                    			echo "<br><span><b>$error</b></span><br>";
+		                		}
+  					?>
+
+  					<br>
 
   					<label for="mediaDescription">Media Description (optional)</label>
 					<textarea name="mediaDescription" rows="10" cols="89"></textarea>
