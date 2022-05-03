@@ -40,7 +40,6 @@ session_start();
 						class="textInput"
 						type="text"
 						name="username"
-						pattern="[A-Za-z0-9]{1,}"
 						required
 					/>
 
@@ -50,7 +49,6 @@ session_start();
 						type="password"
 						name="password"
 						id="myInput"
-						pattern="[A-Za-z0-9]{1,}"
 						required
 					/>
 
