@@ -118,8 +118,11 @@ catch(PDOException $e){
 					/>
 
 					<label for="entryDescription">Artifact Description (optional)</label>
-					<textarea name="entryDescription" rows="10" cols="89"><?php if ($entryDescription != 'NULL'){ echo "$entryDescription"; } ?>
-					</textarea>
+					<?php
+						echo '<textarea name="entryDescription" rows="10" cols="89">';
+						if ($entryDescription != "NULL"){ echo "$entryDescription"; };
+						echo '</textarea>';
+					?>
 
 					<input type="submit" value="Edit Artifact Info" />
 
