@@ -40,7 +40,7 @@ session_start();
 						class="textInput"
 						type="text"
 						name="username"
-						pattern="[A-Za-z]{1,}"
+						pattern="[A-Za-z0-9]{1,}"
 						required
 					/>
 
