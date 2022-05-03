@@ -18,8 +18,45 @@ session_start();
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         if (isset($_GET['artifactID'])) { // if adding media to entry
+            $entryID = $_GET['artifactID'];
             $addSuccess = "Media successfully added!";
-            // prepare to insert new media info 
+            $sizeError = "Exceeded file size limit";
+
+            // check filesize
+            if ($_FILES['mymedia']['error'] == 1 || $_FILES['mymedia']['error'] == 2){
+                $_SESSION['error'] = $sizeError;
+                header("Location: addMedia.php?ID=$entryID");
+                exit();
+            }
+            
+            // check file type
+            $mediaType = $_POST['mediaType'];
+            // find file extension
+            $target_file = 'media/' . basename($_FILES["mymedia"]["name"]);
+            $extension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            if ($mediaType=='photo'){
+                if ($extension != 'jpg' && $extension != 'jpeg' && $extension != 'png'){
+                    $_SESSION['error'] = "Not a valid image file type";
+                    header("Location: addMedia.php?ID=$entryID");
+                    exit();
+                }
+            }
+            if ($mediaType=='video'){
+                if ($extension != 'mp4' && $extension != 'mov'){
+                    $_SESSION['error'] = "Not a valid video file type";
+                    header("Location: addMedia.php?ID=$entryID");
+                    exit();
+                }
+            }
+            if ($mediaType == 'audio'){
+                if ($extension != 'mp3' && $extension != 'm4a' && $extension != 'wav'){
+                    $_SESSION['error'] = "Not a valid audio file type";
+                    header("Location: addMedia.php?ID=$entryID");
+                    exit();
+                }
+            }
+
+            // if no errors, prepare to insert new media info 
             $qry = $db->prepare('INSERT INTO Media (mediaID, mediaType, location, description, entryID) VALUES (?, ?, ?, ?, ?)');
             $qry->bindParam(1, $mediaID);
             $qry->bindParam(2, $mediaType);
@@ -30,10 +67,6 @@ session_start();
             // find current max mediaID to find next available mediaID
             $result = $db->query("SELECT MAX(mediaID) AS max_mediaID FROM Media");
             $row = $result->fetch(PDO::FETCH_ASSOC);
-
-            // find file extension
-            $target_file = 'media/' . basename($_FILES["mymedia"]["name"]);
-            $extension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
             // fill in variables
             $mediaID = $row['max_mediaID'] + 1;
