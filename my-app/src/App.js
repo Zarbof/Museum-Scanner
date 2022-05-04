@@ -15,7 +15,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
     function App() {
-        // const [userToken, setUserToken] = useState("");
+        const [userToken, setUserToken] = useState("");
         // const [dailyDBToken, setDailyDBToken] = useState("");
         document.body.style = 'background: #343d46;';
 
@@ -45,6 +45,7 @@ import Cookies from 'universal-cookie';
               if(dailyTokenString === cookies.get('userToken')) {
                   console.log("THE TOKENS WERE EQUAL...")
                   setVarLoggedIn(true);
+                  setUserToken(cookies.get('userToken'));
                   console.log("Here is the new value: " + {varLoggedIn}.varLoggedIn)
                 // ReactSession.set("token", dailyTokenString);
                 // setDailyDBToken(dailyTokenString);
@@ -147,20 +148,21 @@ import Cookies from 'universal-cookie';
                 url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
                 type: "GET",
                 success: function(data) {
-                //   console.log("This is the users token: " + cookies.get('loggedIn'));
+                  console.log("This is the users token {userToken}: " + {userToken}.userToken);
 
                   console.log('Succes: Retrieved information from ')
                   const myObject = JSON.parse(data);
                   const dailyToken = JSON.stringify(myObject.tokenValue);
                   const dailyTokenString = dailyToken.replaceAll('"', '');
-                  console.log("The string token: " + dailyTokenString);
+                  console.log("The correct string token: " + dailyTokenString);
 
-                //   const userTokenString = {userToken}.userToken;
+                  const userTokenString = {userToken}.userToken;
     
-                //   if(dailyTokenString === userTokenString) {
-                //     ReactSession.set("token", dailyTokenString);
-                //     setDailyDBToken(dailyTokenString);
-                //   } 
+                  if(dailyTokenString === userTokenString) {
+                      setVarLoggedIn(true);
+                    // ReactSession.set("token", dailyTokenString);
+                    // setDailyDBToken(dailyTokenString);
+                  } 
                 }.bind(this),
                 error: function(xhr, status, err) {
                   console.log('error')
