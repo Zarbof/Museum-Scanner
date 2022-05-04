@@ -20,7 +20,8 @@ import Cookies from 'universal-cookie';
         document.body.style = 'background: #343d46;';
 
         // ReactSession.setStoreType("localStorage");
-        // const cookies = new Cookies();
+        const cookies = new Cookies();
+        cookies.set('loggedIn', False);
 
         const plantType = 'plant1';
 
@@ -140,6 +141,8 @@ import Cookies from 'universal-cookie';
                 url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
                 type: "GET",
                 success: function(data) {
+                  console.log("This is the users token: " + cookies.get('loggedIn'));
+
                   console.log('Succes: Retrieved information from ')
                   const myObject = JSON.parse(data);
                   const dailyToken = JSON.stringify(myObject.tokenValue);
