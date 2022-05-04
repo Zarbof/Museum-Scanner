@@ -162,7 +162,7 @@ import Cookies from 'universal-cookie';
               });
         });
 
-        if(cookies.get('loggedIn') === false) {
+        if(cookies.get('loggedIn') !== false) {
             return (
                 <div className="wrapper" style={{
                     display: 'flex',
