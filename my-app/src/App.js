@@ -33,6 +33,8 @@ import Cookies from 'universal-cookie';
             url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
             type: "GET",
             success: function(data) {
+                console.log("This was the users input and is saved as cookies (userToken)" + cookies.get('userToken'))
+
               console.log('Sucessfully retrieved the db token during a button press.')
               const myObject = JSON.parse(data);
               const dailyToken = JSON.stringify(myObject.tokenValue);
@@ -142,7 +144,7 @@ import Cookies from 'universal-cookie';
                 url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
                 type: "GET",
                 success: function(data) {
-                  console.log("This is the users token: " + cookies.get('loggedIn'));
+                //   console.log("This is the users token: " + cookies.get('loggedIn'));
 
                   console.log('Succes: Retrieved information from ')
                   const myObject = JSON.parse(data);
