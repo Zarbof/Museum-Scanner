@@ -150,7 +150,7 @@ import Cookies from 'universal-cookie';
                 success: function(data) {
                   console.log("This is the users token {userToken}: " + {userToken}.userToken);
                   console.log("Users loggedIn status...cookie: " + cookies.get('loggedIn'))
-                  console.log("Users loggedIn variable..." + {loggedIn}.loggedIn);
+                  console.log("Users loggedIn variable..." + {varLoggedIn}.varLoggedIn);
 
                   console.log('Succes: Retrieved information from ')
                   const myObject = JSON.parse(data);
