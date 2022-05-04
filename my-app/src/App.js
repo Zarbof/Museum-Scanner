@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 //import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import { Nav, Container, Navbar, InputGroup, FormControl, Button, Card, Row } from 'react-bootstrap'
@@ -133,6 +133,9 @@ import Cookies from 'universal-cookie';
         //     </div>
         // );
 
+        useEffect(() => {
+            console.log("useEffect test");
+        });
 
         // with no access token
         return (
