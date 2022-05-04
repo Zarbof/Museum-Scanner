@@ -162,7 +162,7 @@ import Cookies from 'universal-cookie';
               });
         });
 
-        if(cookies.get('loggedIn') !== false) {
+        if(cookies.get('loggedIn')) {
             console.log('This is what loggedIn is...' + cookies.get('loggedIn'))
             return (
                 <div className="wrapper" style={{
