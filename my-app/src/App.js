@@ -33,7 +33,7 @@ import Cookies from 'universal-cookie';
             url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
             type: "GET",
             success: function(data) {
-                console.log("This was the users input and is saved as cookies (userToken)" + cookies.get('userToken'))
+            console.log("This was the users input and is saved as cookies (userToken)" + cookies.get('userToken'))
 
               console.log('Sucessfully retrieved the db token during a button press.')
               const myObject = JSON.parse(data);
@@ -42,10 +42,13 @@ import Cookies from 'universal-cookie';
                 console.log("The db token retrieved is: " + dailyTokenString);
             //   const userTokenString = {userToken}.userToken;
 
-            //   if(dailyTokenString === userTokenString) {
-            //     ReactSession.set("token", dailyTokenString);
-            //     setDailyDBToken(dailyTokenString);
-            //   } 
+              if(dailyTokenString === cookies.get('userToken')) {
+                  console.log("THE TOKENS WERE EQUAL...")
+                  setVarLoggedIn(true);
+                  console.log("Here is the new value: " + {varLoggedIn}.varLoggedIn)
+                // ReactSession.set("token", dailyTokenString);
+                // setDailyDBToken(dailyTokenString);
+              } 
             }.bind(this),
             error: function(xhr, status, err) {
               console.log('error')
