@@ -21,7 +21,7 @@ import Cookies from 'universal-cookie';
 
         // ReactSession.setStoreType("localStorage");
         const cookies = new Cookies();
-        cookies.set('loggedIn', false);
+        cookies.set('loggedIn', true);
 
         const plantType = 'plant1';
 
@@ -211,6 +211,7 @@ import Cookies from 'universal-cookie';
                 </div>
             );  
         } else {
+            console.log('This is what loggedIn is...' + cookies.get('loggedIn'))
             return (
                 <div className="wrapper">
                     <BrowserRouter>
