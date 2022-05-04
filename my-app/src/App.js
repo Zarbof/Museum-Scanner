@@ -21,8 +21,8 @@ import Cookies from 'universal-cookie';
 
         // ReactSession.setStoreType("localStorage");
         const cookies = new Cookies();
-        // cookies.set('loggedIn', false);
-        // const [varLoggedIn, setVarLoggedIn] = useState(false);
+        cookies.set('loggedIn', false);
+        const [varLoggedIn, setVarLoggedIn] = useState(false);
 
         const plantType = 'plant1';
 
@@ -137,7 +137,6 @@ import Cookies from 'universal-cookie';
 
         useEffect(() => {
             console.log("useEffect test");
-            cookies.set('loggedIn', false);
 
             $.ajax({
                 url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
@@ -164,8 +163,8 @@ import Cookies from 'universal-cookie';
               });
         });
 
-        if(cookies.get('loggedIn')) {
-            console.log('This is what loggedIn is...' + cookies.get('loggedIn'))
+        if({varLoggedIn}.varLoggedIn) {
+            console.log('This is what loggedIn is...t' + {varLoggedIn}.varLoggedIn)
             return (
                 <div className="wrapper" style={{
                     display: 'flex',
@@ -213,7 +212,7 @@ import Cookies from 'universal-cookie';
                 </div>
             );  
         } else {
-            console.log('This is what loggedIn is...' + cookies.get('loggedIn'))
+            console.log('This is what loggedIn is...f' + {varLoggedIn}.varLoggedIn)
             return (
                 <div className="wrapper">
                     <BrowserRouter>
