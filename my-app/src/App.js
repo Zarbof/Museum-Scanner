@@ -15,7 +15,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
     function App() {
-        const [userToken, setUserToken] = useState("");
+        const [userToken, setUserToken] = useState("red");
         // const [dailyDBToken, setDailyDBToken] = useState("");
         document.body.style = 'background: #343d46;';
 
