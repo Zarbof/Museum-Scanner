@@ -21,7 +21,8 @@ import Cookies from 'universal-cookie';
 
         // ReactSession.setStoreType("localStorage");
         const cookies = new Cookies();
-        cookies.set('loggedIn', false);
+        // cookies.set('loggedIn', false);
+        // const [varLoggedIn, setVarLoggedIn] = useState(false);
 
         const plantType = 'plant1';
 
@@ -136,6 +137,7 @@ import Cookies from 'universal-cookie';
 
         useEffect(() => {
             console.log("useEffect test");
+            cookies.set('loggedIn', false);
 
             $.ajax({
                 url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
