@@ -143,7 +143,7 @@ import Cookies from 'universal-cookie';
         // );
 
         useEffect(() => {
-            console.log("useEffect test");
+            console.log("useEffect -----------------");
             
             $.ajax({
                 url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
@@ -153,7 +153,6 @@ import Cookies from 'universal-cookie';
                   console.log("Users loggedIn status...cookie: " + cookies.get('loggedIn'))
                   console.log("Users loggedIn variable..." + {varLoggedIn}.varLoggedIn);
 
-                  console.log('Succes: Retrieved information from ')
                   const myObject = JSON.parse(data);
                   const dailyToken = JSON.stringify(myObject.tokenValue);
                   const dailyTokenString = dailyToken.replaceAll('"', '');
