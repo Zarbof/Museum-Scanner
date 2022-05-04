@@ -209,6 +209,35 @@ import Cookies from 'universal-cookie';
                     
                 </div>
             );  
+        } else {
+            return (
+                <div className="wrapper">
+                    <BrowserRouter>
+                        <Navbar expand="lg" variant="dark">
+                            <Container>
+                                <Navbar.Brand href="home">Lelooska</Navbar.Brand>
+                                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                                <Navbar.Collapse id="basic-navbar-nav">
+                                <Nav className="me-auto">
+                                    <Nav.Link href="plantbook">Plant Book</Nav.Link>
+                                    {/* <Nav.Link href="db">Database Test</Nav.Link>
+                                    <Nav.Link href="dbToken">Token Test</Nav.Link> */}
+                                    <Nav.Link href="http://lelooska.pugetsound.edu/phpApp/museumLogin.php">Admin Login</Nav.Link>
+                                    <Nav.Link href="http://lelooska.org">Lelooska Foundation</Nav.Link>
+                                    <Nav.Link href="http://lelooska.org/donate">Donate!</Nav.Link>
+                                </Nav>
+                                </Navbar.Collapse>
+                            </Container>
+                        </Navbar>
+                    <Routes>
+                        <Route path="home" element={<ArtifactHomeApp />} />
+                        <Route path="plantbook" element={<PlantBookApp plantType={plantType} />} />
+                        <Route path="db" element={<AccessDataBase />} />
+                        <Route path="dbToken" element={<GrabToken />} />
+                    </Routes>
+                    </BrowserRouter>
+                </div>
+                );
         }
         // with no access token
         return (
