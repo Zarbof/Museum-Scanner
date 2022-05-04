@@ -163,8 +163,8 @@ import Cookies from 'universal-cookie';
               });
         });
 
-        if({varLoggedIn}.varLoggedIn) {
-            console.log('This is what loggedIn is...t' + {varLoggedIn}.varLoggedIn)
+        if({varLoggedIn}.varLoggedIn === false) {
+            console.log('This is what loggedIn is...f' + {varLoggedIn}.varLoggedIn)
             return (
                 <div className="wrapper" style={{
                     display: 'flex',
@@ -212,7 +212,7 @@ import Cookies from 'universal-cookie';
                 </div>
             );  
         } else {
-            console.log('This is what loggedIn is...f' + {varLoggedIn}.varLoggedIn)
+            console.log('This is what loggedIn is...t' + {varLoggedIn}.varLoggedIn)
             return (
                 <div className="wrapper">
                     <BrowserRouter>
