@@ -135,6 +135,28 @@ import Cookies from 'universal-cookie';
 
         useEffect(() => {
             console.log("useEffect test");
+
+            $.ajax({
+                url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
+                type: "GET",
+                success: function(data) {
+                  console.log('Succes: Retrieved information from ')
+                  const myObject = JSON.parse(data);
+                  const dailyToken = JSON.stringify(myObject.tokenValue);
+                  const dailyTokenString = dailyToken.replaceAll('"', '');
+                  console.log("The string token: " + dailyTokenString);
+
+                //   const userTokenString = {userToken}.userToken;
+    
+                //   if(dailyTokenString === userTokenString) {
+                //     ReactSession.set("token", dailyTokenString);
+                //     setDailyDBToken(dailyTokenString);
+                //   } 
+                }.bind(this),
+                error: function(xhr, status, err) {
+                  console.log('error')
+                }.bind(this)
+              });
         });
 
         // with no access token
