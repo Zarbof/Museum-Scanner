@@ -21,7 +21,7 @@ import Cookies from 'universal-cookie';
 
         // ReactSession.setStoreType("localStorage");
         const cookies = new Cookies();
-        cookies.set('loggedIn', true);
+        cookies.set('loggedIn', false);
 
         const plantType = 'plant1';
 
