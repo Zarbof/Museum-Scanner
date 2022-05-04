@@ -15,7 +15,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
     function App() {
+        // Replace the variable below with a cookie instead
         const [userToken, setUserToken] = useState("");
+
         // const [dailyDBToken, setDailyDBToken] = useState("");
         document.body.style = 'background: #343d46;';
 
@@ -27,6 +29,7 @@ import Cookies from 'universal-cookie';
         const plantType = 'plant1';
 
         function onFormSubmitSuccess(e) {
+            console.log("onFormSubmitSuccess ------------")
             e.preventDefault();
 
           $.ajax({
@@ -46,7 +49,7 @@ import Cookies from 'universal-cookie';
                   console.log("THE TOKENS WERE EQUAL...")
                   setVarLoggedIn(true);
                   cookies.set('loggedIn', true);
-                  setUserToken(cookies.get('userToken'));
+                //   setUserToken(cookies.get('userToken'));
                   console.log("Here is the new value: " + {varLoggedIn}.varLoggedIn)
                 // ReactSession.set("token", dailyTokenString);
                 // setDailyDBToken(dailyTokenString);
@@ -149,7 +152,7 @@ import Cookies from 'universal-cookie';
                 url: 'http://lelooska.pugetsound.edu/phpApp/getAccessCode.php',
                 type: "GET",
                 success: function(data) {
-                  console.log("This is the users token {userToken}: " + {userToken}.userToken);
+                  console.log("This is the users token {userToken}: " + cookies.get('userToken'));
                   console.log("Users loggedIn status...cookie: " + cookies.get('loggedIn'))
                   console.log("Users loggedIn variable..." + {varLoggedIn}.varLoggedIn);
 
@@ -158,7 +161,7 @@ import Cookies from 'universal-cookie';
                   const dailyTokenString = dailyToken.replaceAll('"', '');
                   console.log("The correct string token: " + dailyTokenString);
 
-                  const userTokenString = {userToken}.userToken;
+                  const userTokenString = cookies.get('userToken');
     
                   if(dailyTokenString === userTokenString) {
                       setVarLoggedIn(true);
