@@ -45,6 +45,7 @@ import Cookies from 'universal-cookie';
               if(dailyTokenString === cookies.get('userToken')) {
                   console.log("THE TOKENS WERE EQUAL...")
                   setVarLoggedIn(true);
+                  cookies.set('loggedIn', true);
                   setUserToken(cookies.get('userToken'));
                   console.log("Here is the new value: " + {varLoggedIn}.varLoggedIn)
                 // ReactSession.set("token", dailyTokenString);
