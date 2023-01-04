@@ -26,8 +26,6 @@ We created a web app written in React.js and PHP designed to enhance the experie
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * [React.js](https://reactjs.org/)
 * [React-Bootstrap](https://react-bootstrap.github.io/)
 * [JQuery](https://jquery.com)
@@ -35,27 +33,4 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [PHP](https://www.php.net/)
 * [Material-ui](https://mui.com/)
 
-
-
-
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-This project at current time of editing is not ready for public use, and is here merely for internal purposes only, features will not work properly if downloaded this fix is on the roadmap.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Add easy way to change destination links without editing code itself
-- [ ] Add ability for "plug and play" functionality
-- [ ] add editing page for logo and theme that can be accessed from admin pages.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
